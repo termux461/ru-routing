@@ -1,0 +1,22 @@
+name: PHP checks
+on:
+  push:
+    paths: ['src/**', 'bin/**', 'tests/**', 'sources/**', '.github/workflows/**']
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['8.2', '8.3', '8.4']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: curl
+          coverage: none
+      - run: find src bin tests -name '*.php' -print0 | xargs -0 -n1 php -l
+      - run: php tests/run.php

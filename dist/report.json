@@ -1,0 +1,12 @@
+{
+    "built_at": "2026-10-26T15:39:33+00:00",
+    "mode": "services",
+    "domains_total": 77,
+    "domains_accepted": 75,
+    "subnets_total": 127,
+    "skipped_domains": [
+        "mironline.ru",
+        "ozonusercontent.com"
+    ],
+    "note": "RU registration is not proof of hosting location or exclusive ownership; shared IPs can bypass unrelated sites."
+}
