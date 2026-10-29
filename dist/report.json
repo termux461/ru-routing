@@ -1,12 +1,623 @@
 {
-    "built_at": "2026-10-26T16:05:47+00:00",
+    "built_at": "2026-10-29T11:23:30+00:00",
     "mode": "services",
-    "domains_total": 77,
-    "domains_accepted": 75,
-    "subnets_total": 127,
+    "domains_total": 826,
+    "domains_accepted": 767,
+    "subnets_total": 954,
+    "service_networks_total": 205,
     "skipped_domains": [
+        "1c.com",
+        "abbyy.com",
+        "aif.ru",
+        "aliexpress.ru",
+        "autodoc.ru",
+        "autoscout24.ru",
+        "aviasales.ru",
+        "azimuth.aero",
+        "bookmate.com",
+        "codeforces.com",
+        "cyberleninka.ru",
+        "doktor.ru",
+        "e-olymp.com",
+        "fom.ru",
+        "gismeteo.ru",
+        "gq.ru",
+        "group-ib.ru",
+        "hexlet.io",
+        "hotellook.ru",
+        "indriver.com",
+        "joom.com",
+        "kaspersky.com",
+        "kinorium.com",
+        "kupibilet.ru",
+        "lingualeo.com",
+        "lokomotiv.info",
         "mironline.ru",
-        "ozonusercontent.com"
+        "mkb.ru",
+        "nhl.ru",
+        "okey.ru",
+        "osago-online.ru",
+        "ozonusercontent.com",
+        "p7-office.ru",
+        "pedsovet.su",
+        "petersburgedu.ru",
+        "pgu.spb.ru",
+        "postamat.ru",
+        "posylka.ru",
+        "practicum.com",
+        "redwings.aero",
+        "reshuege.ru",
+        "rostehnadzor.ru",
+        "ru.aliexpress.com",
+        "rudn.ru",
+        "ruskino.ru",
+        "russia-24.ru",
+        "sapsan.com",
+        "smartavia.com",
+        "soc.fund",
+        "svetofor.com",
+        "tinkoff-mobile.ru",
+        "tinkoff.com",
+        "tmall.ru",
+        "track24.ru",
+        "trip.ru",
+        "uchitelya.com",
+        "vipnet.ru",
+        "xn--80abucjiibhv9a.xn--p1ai",
+        "zadarma.com"
     ],
-    "note": "RU registration is not proof of hosting location or exclusive ownership; shared IPs can bypass unrelated sites."
+    "skip_reasons": {
+        "1c.com": "no_approved_ipv4",
+        "abbyy.com": "no_approved_ipv4",
+        "aif.ru": "no_approved_ipv4",
+        "aliexpress.ru": "no_approved_ipv4",
+        "autodoc.ru": "no_approved_ipv4",
+        "autoscout24.ru": "no_approved_ipv4",
+        "aviasales.ru": "no_approved_ipv4",
+        "azimuth.aero": "no_approved_ipv4",
+        "bookmate.com": "no_approved_ipv4",
+        "codeforces.com": "no_approved_ipv4",
+        "cyberleninka.ru": "no_approved_ipv4",
+        "doktor.ru": "no_approved_ipv4",
+        "e-olymp.com": "no_approved_ipv4",
+        "fom.ru": "no_approved_ipv4",
+        "gismeteo.ru": "no_approved_ipv4",
+        "gq.ru": "no_approved_ipv4",
+        "group-ib.ru": "no_approved_ipv4",
+        "hexlet.io": "no_approved_ipv4",
+        "hotellook.ru": "no_approved_ipv4",
+        "indriver.com": "no_approved_ipv4",
+        "joom.com": "no_approved_ipv4",
+        "kaspersky.com": "no_approved_ipv4",
+        "kinorium.com": "no_approved_ipv4",
+        "kupibilet.ru": "no_approved_ipv4",
+        "lingualeo.com": "no_approved_ipv4",
+        "lokomotiv.info": "no_approved_ipv4",
+        "mironline.ru": "no_a_record",
+        "mkb.ru": "no_approved_ipv4",
+        "nhl.ru": "no_approved_ipv4",
+        "okey.ru": "dns_error",
+        "osago-online.ru": "no_approved_ipv4",
+        "ozonusercontent.com": "no_a_record",
+        "p7-office.ru": "no_approved_ipv4",
+        "pedsovet.su": "no_approved_ipv4",
+        "petersburgedu.ru": "no_approved_ipv4",
+        "pgu.spb.ru": "no_approved_ipv4",
+        "postamat.ru": "dns_error",
+        "posylka.ru": "no_approved_ipv4",
+        "practicum.com": "no_approved_ipv4",
+        "redwings.aero": "no_approved_ipv4",
+        "reshuege.ru": "no_approved_ipv4",
+        "rostehnadzor.ru": "dns_error",
+        "ru.aliexpress.com": "no_approved_ipv4",
+        "rudn.ru": "no_approved_ipv4",
+        "ruskino.ru": "no_approved_ipv4",
+        "russia-24.ru": "no_approved_ipv4",
+        "sapsan.com": "no_approved_ipv4",
+        "smartavia.com": "no_approved_ipv4",
+        "soc.fund": "no_approved_ipv4",
+        "svetofor.com": "no_approved_ipv4",
+        "tinkoff-mobile.ru": "no_approved_ipv4",
+        "tinkoff.com": "no_approved_ipv4",
+        "tmall.ru": "no_approved_ipv4",
+        "track24.ru": "no_approved_ipv4",
+        "trip.ru": "no_approved_ipv4",
+        "uchitelya.com": "no_approved_ipv4",
+        "vipnet.ru": "no_approved_ipv4",
+        "xn--80abucjiibhv9a.xn--p1ai": "no_approved_ipv4",
+        "zadarma.com": "no_approved_ipv4"
+    },
+    "filtered_addresses": {
+        "1c.com": [
+            "18.184.212.59"
+        ],
+        "360tv.ru": [
+            "104.21.6.187",
+            "172.67.135.45"
+        ],
+        "abbyy.com": [
+            "40.88.236.169",
+            "64.239.109.65",
+            "64.239.123.65"
+        ],
+        "aif.ru": [
+            "91.214.119.234",
+            "91.214.119.200"
+        ],
+        "aliexpress.ru": [
+            "47.246.133.143",
+            "47.246.133.147",
+            "47.246.133.142",
+            "47.246.133.148",
+            "47.246.133.141",
+            "47.246.133.144",
+            "47.246.133.149",
+            "47.246.133.150"
+        ],
+        "amediateka.ru": [
+            "143.204.204.128",
+            "143.204.204.57",
+            "143.204.204.101",
+            "143.204.204.40"
+        ],
+        "autodoc.ru": [
+            "37.230.209.135"
+        ],
+        "autoscout24.ru": [
+            "99.86.77.71",
+            "99.86.77.25",
+            "99.86.77.68",
+            "99.86.77.24",
+            "3.171.22.50",
+            "3.171.22.42",
+            "3.171.22.104",
+            "3.171.22.41"
+        ],
+        "aviasales.ru": [
+            "3.168.40.101",
+            "3.168.40.75",
+            "3.168.40.8",
+            "3.168.40.44"
+        ],
+        "azimuth.aero": [
+            "172.67.151.6",
+            "104.21.90.19"
+        ],
+        "bookmate.com": [
+            "104.26.1.110",
+            "172.67.74.137",
+            "104.26.0.110"
+        ],
+        "codeforces.com": [
+            "172.67.68.254",
+            "104.26.6.164",
+            "104.26.7.164"
+        ],
+        "cyberleninka.ru": [
+            "172.67.70.180",
+            "104.26.11.2",
+            "104.26.10.2"
+        ],
+        "doktor.ru": [
+            "172.67.146.202",
+            "104.21.10.217"
+        ],
+        "e-olymp.com": [
+            "63.180.222.6",
+            "63.189.18.28"
+        ],
+        "fix-price.ru": [
+            "104.18.18.50",
+            "104.18.19.50"
+        ],
+        "fom.ru": [
+            "186.2.163.182"
+        ],
+        "gdeposylka.ru": [
+            "104.25.106.6",
+            "172.67.80.113",
+            "104.25.107.6"
+        ],
+        "gismeteo.ru": [
+            "31.172.76.58",
+            "31.172.76.59",
+            "31.172.76.57",
+            "31.172.76.60"
+        ],
+        "gq.ru": [
+            "151.101.64.239",
+            "151.101.192.239",
+            "151.101.0.239",
+            "151.101.128.239"
+        ],
+        "group-ib.ru": [
+            "95.217.24.6"
+        ],
+        "hexlet.io": [
+            "104.26.1.213",
+            "172.67.73.203",
+            "104.26.0.213"
+        ],
+        "hotellook.ru": [
+            "188.42.57.108"
+        ],
+        "indriver.com": [
+            "143.204.204.108",
+            "143.204.204.12",
+            "143.204.204.91",
+            "143.204.204.87"
+        ],
+        "joom.com": [
+            "34.49.252.71"
+        ],
+        "kaspersky.com": [
+            "185.85.15.46",
+            "185.54.220.248"
+        ],
+        "kaspersky.ru": [
+            "185.54.220.248"
+        ],
+        "kinorium.com": [
+            "52.212.68.201"
+        ],
+        "kupibilet.ru": [
+            "54.195.117.23",
+            "63.32.156.254"
+        ],
+        "lingualeo.com": [
+            "18.158.78.117",
+            "18.156.132.54",
+            "3.122.74.121"
+        ],
+        "lokomotiv.info": [
+            "194.67.203.180"
+        ],
+        "magnit-market.ru": [
+            "5.187.6.161"
+        ],
+        "mkb.ru": [
+            "93.92.113.12"
+        ],
+        "multiurok.ru": [
+            "104.26.8.176",
+            "172.67.71.240",
+            "104.26.9.176"
+        ],
+        "nhl.ru": [
+            "46.36.220.250"
+        ],
+        "osago-online.ru": [
+            "65.109.65.153"
+        ],
+        "p7-office.ru": [
+            "212.233.77.41"
+        ],
+        "pedsovet.su": [
+            "185.86.95.57"
+        ],
+        "petersburgedu.ru": [
+            "46.243.177.102",
+            "46.243.177.103",
+            "46.243.177.26"
+        ],
+        "pgu.mos.ru": [
+            "37.230.149.156"
+        ],
+        "pgu.spb.ru": [
+            "104.21.38.185",
+            "172.67.137.92"
+        ],
+        "posylka.ru": [
+            "50.114.102.115"
+        ],
+        "practicum.com": [
+            "172.67.74.88",
+            "104.26.15.39",
+            "104.26.14.39"
+        ],
+        "redwings.aero": [
+            "74.81.89.98",
+            "172.67.131.129",
+            "104.21.10.143"
+        ],
+        "reshuege.ru": [
+            "172.67.130.140",
+            "104.21.8.157"
+        ],
+        "ru.aliexpress.com": [
+            "23.214.170.32",
+            "23.214.170.81",
+            "23.214.170.66",
+            "23.214.170.98",
+            "23.214.170.91",
+            "23.214.170.49",
+            "47.89.80.223"
+        ],
+        "rudn.ru": [
+            "37.18.93.135"
+        ],
+        "ruskino.ru": [
+            "104.21.51.92",
+            "172.67.178.28"
+        ],
+        "russia-24.ru": [
+            "82.97.243.107"
+        ],
+        "sapsan.com": [
+            "66.235.200.146"
+        ],
+        "smartavia.com": [
+            "13.223.25.84",
+            "54.243.117.197"
+        ],
+        "snob.ru": [
+            "172.67.180.17",
+            "104.21.96.124"
+        ],
+        "soc.fund": [
+            "76.223.54.146",
+            "13.248.169.48"
+        ],
+        "svetofor.com": [
+            "64.190.63.222"
+        ],
+        "tinkoff-mobile.ru": [
+            "45.151.100.85"
+        ],
+        "tinkoff.com": [
+            "216.40.34.41"
+        ],
+        "tmall.ru": [
+            "47.246.133.86",
+            "47.246.133.88",
+            "47.246.133.89",
+            "47.246.133.87",
+            "47.246.133.208"
+        ],
+        "track24.ru": [
+            "212.233.76.133",
+            "172.67.69.55",
+            "104.26.9.89",
+            "104.26.8.89"
+        ],
+        "trip.ru": [
+            "185.157.223.250"
+        ],
+        "uchitelya.com": [
+            "104.21.38.218",
+            "172.67.139.83"
+        ],
+        "videouroki.net": [
+            "172.67.72.113",
+            "104.26.9.107",
+            "104.26.8.107"
+        ],
+        "vipnet.ru": [
+            "185.35.146.5"
+        ],
+        "xn--80abucjiibhv9a.xn--p1ai": [
+            "185.209.21.112"
+        ],
+        "zadarma.com": [
+            "185.45.155.29"
+        ]
+    },
+    "dns_errors": {
+        "rostehnadzor.ru": {
+            "rostehnadzor.ru": "HTTP 400; ",
+            "www.rostehnadzor.ru": "HTTP 400; "
+        },
+        "okey.ru": {
+            "okey.ru": "HTTP 400; ",
+            "www.okey.ru": "HTTP 400; "
+        },
+        "postamat.ru": {
+            "postamat.ru": "HTTP 400; ",
+            "www.postamat.ru": "HTTP 400; "
+        }
+    },
+    "note": "RU registration is not proof of hosting location or exclusive ownership; shared IPs can bypass unrelated sites.",
+    "asn": {
+        "AS13238": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 30,
+            "selected_ipv4": 14
+        },
+        "AS47541": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 21,
+            "selected_ipv4": 13
+        },
+        "AS47542": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 7,
+            "selected_ipv4": 5
+        },
+        "AS28709": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 14,
+            "selected_ipv4": 10
+        },
+        "AS62243": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 1,
+            "selected_ipv4": 1
+        },
+        "AS207581": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 2,
+            "selected_ipv4": 2
+        },
+        "AS47764": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 99,
+            "selected_ipv4": 80
+        },
+        "AS60863": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 1,
+            "selected_ipv4": 1
+        },
+        "AS207970": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 1,
+            "selected_ipv4": 1
+        },
+        "AS213235": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 1,
+            "selected_ipv4": 1
+        },
+        "AS35237": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 15,
+            "selected_ipv4": 8
+        },
+        "AS43399": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 20,
+            "selected_ipv4": 5
+        },
+        "AS15632": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 13,
+            "selected_ipv4": 5
+        },
+        "AS24823": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 13,
+            "selected_ipv4": 3
+        },
+        "AS41551": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 2,
+            "selected_ipv4": 2
+        },
+        "AS60702": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 1,
+            "selected_ipv4": 1
+        },
+        "AS35022": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 2,
+            "selected_ipv4": 2
+        },
+        "AS21292": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 2,
+            "selected_ipv4": 2
+        },
+        "AS41185": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 3,
+            "selected_ipv4": 1
+        },
+        "AS41187": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 3,
+            "selected_ipv4": 1
+        },
+        "AS50339": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 2,
+            "selected_ipv4": 2
+        },
+        "AS44386": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 9,
+            "selected_ipv4": 5
+        },
+        "AS207986": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 8,
+            "selected_ipv4": 1
+        },
+        "AS57073": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 18,
+            "selected_ipv4": 11
+        },
+        "AS201012": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 16,
+            "selected_ipv4": 3
+        },
+        "AS47724": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 6,
+            "selected_ipv4": 2
+        },
+        "AS211609": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 25,
+            "selected_ipv4": 12
+        },
+        "AS57629": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 9,
+            "selected_ipv4": 2
+        },
+        "AS24638": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 3,
+            "selected_ipv4": 3
+        },
+        "AS21231": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 4,
+            "selected_ipv4": 3
+        },
+        "AS44704": {
+            "mode": "ru-service-networks",
+            "announced_ipv4": 3,
+            "selected_ipv4": 3
+        },
+        "AS57724": {
+            "mode": "domain-ip-only",
+            "announced_ipv4": 34,
+            "selected_ipv4": 34
+        },
+        "AS49612": {
+            "mode": "domain-ip-only",
+            "announced_ipv4": 1,
+            "selected_ipv4": 1
+        },
+        "AS50245": {
+            "mode": "domain-ip-only",
+            "announced_ipv4": 14,
+            "selected_ipv4": 14
+        },
+        "AS59796": {
+            "mode": "domain-ip-only",
+            "announced_ipv4": 15,
+            "selected_ipv4": 15
+        },
+        "AS197068": {
+            "mode": "domain-ip-only",
+            "announced_ipv4": 7,
+            "selected_ipv4": 7
+        },
+        "AS200449": {
+            "mode": "domain-ip-only",
+            "announced_ipv4": 10,
+            "selected_ipv4": 10
+        },
+        "AS209671": {
+            "mode": "domain-ip-only",
+            "announced_ipv4": 4,
+            "selected_ipv4": 4
+        },
+        "AS211112": {
+            "mode": "domain-ip-only",
+            "announced_ipv4": 1,
+            "selected_ipv4": 1
+        }
+    },
+    "www_checked": true,
+    "sources": {
+        "country": "https://www.ipdeny.com/ipblocks/data/aggregated/ru-aggregated.zone",
+        "announcements": "https://stat.ripe.net/data/announced-prefixes/data.json",
+        "domain_source_sha256": "a93f96bde201f66fb2b86c843282a3c8c3d7c5ba2d2d9d6a13252ccdf2367671"
+    }
 }

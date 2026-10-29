@@ -3,9 +3,10 @@
 declare(strict_types=1);
 
 require dirname(__DIR__) . '/src/Routing.php';
+require dirname(__DIR__) . '/src/Sources.php';
 
 use RuRouting\Networks;
-use function RuRouting\{lines, fetch, build};
+use function RuRouting\{lines, fetch, build, domain, resolveMany, loadAsnNetworks, checkRegression};
 
 try {
     if (PHP_INT_SIZE < 8) {
@@ -32,12 +33,32 @@ try {
         }
         return $data;
     };
+    fwrite(STDERR, "Загрузка RU-подсетей…\n");
     $ru = new Networks(lines(fetch('https://www.ipdeny.com/ipblocks/data/aggregated/ru-aggregated.zone')));
     if (count($ru->cidrs) < 100) {
         throw new RuntimeException('Слишком маленький список RU-подсетей. Сборка отменена.');
     }
-    $files = build(lines($read($root . '/sources/domains.txt')), $ru,
-        new Networks(lines($read($root . '/sources/cidr.txt'))), 'RuRouting\\resolve', in_array('--all-ru', $argv, true));
+    $domains = array_values(array_unique(array_map('RuRouting\\domain', lines($read($root . '/sources/domains.txt')))));
+    fwrite(STDERR, "Загрузка подсетей сервисов из RIPEstat…\n");
+    [$services, $protection, $asnReport] = loadAsnNetworks(lines($read($root . '/sources/asn.txt')),
+        lines($read($root . '/sources/protection-asn.txt')), $ru);
+    fwrite(STDERR, 'Проверка DNS для ' . count($domains) . " доменов и www…\n");
+    [$answers, $dnsErrors] = resolveMany($domains);
+    $files = build($domains, $ru, new Networks(lines($read($root . '/sources/cidr.txt'))),
+        fn($host) => $answers[$host], in_array('--all-ru', $argv, true), $services, $protection, $dnsErrors);
+    $report = json_decode($files['report.json'], true, 512, JSON_THROW_ON_ERROR);
+    $report['asn'] = $asnReport;
+    $report['www_checked'] = true;
+    $report['sources'] = [
+        'country' => 'https://www.ipdeny.com/ipblocks/data/aggregated/ru-aggregated.zone',
+        'announcements' => 'https://stat.ripe.net/data/announced-prefixes/data.json',
+        'domain_source_sha256' => hash_file('sha256', $root . '/sources/domains.txt'),
+    ];
+    if (is_file($root . '/dist/report.json')) {
+        $previous = json_decode($read($root . '/dist/report.json'), true, 512, JSON_THROW_ON_ERROR);
+        checkRegression($previous, $report);
+    }
+    $files['report.json'] = json_encode($report, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR) . "\n";
     $stage = $root . '/.build-' . bin2hex(random_bytes(6));
     if (!mkdir($stage, 0755)) {
         throw new RuntimeException('Не удалось создать временную папку.');

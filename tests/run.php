@@ -1,9 +1,10 @@
 <?php
 declare(strict_types=1);
 require dirname(__DIR__) . '/src/Routing.php';
+require dirname(__DIR__) . '/src/Sources.php';
 
 use RuRouting\Networks;
-use function RuRouting\{lines, domain, cidr, build};
+use function RuRouting\{lines, domain, cidr, build, parseDns, dnsNames, asns, parsePrefixes, ipv4, checkRegression, resolveMany};
 
 $checks = 0;
 function check(bool $ok, string $message): void {
@@ -16,6 +17,7 @@ function rejects(callable $fn): bool {
     return false;
 }
 check(lines(" # comment\na.ru # inline\na.ru\n\nb.ru") === ['a.ru', 'b.ru'], 'comments/dedup');
+check(lines("# Поддомены входа/статики\r\nya.ru # Всё русское\r\nbank.ru") === ['ya.ru', 'bank.ru'], 'UTF-8 comments must not split inside multibyte characters');
 check(domain('YANDEX.RU.') === 'yandex.ru', 'domain normalization');
 foreach (['https://ya.ru', '*.ru', '127.0.0.1', 'a/b.ru', "a.ru\nother.ru"] as $bad) {
     check(rejects(fn() => domain($bad)), "invalid domain $bad");
@@ -56,4 +58,53 @@ foreach ($sourceDomains as $host) {
 check(count($sourceDomains) > 0, 'real domain source is valid and nonempty');
 new Networks(lines(file_get_contents($root . '/sources/cidr.txt')));
 check(true, 'real CIDR source is valid');
+$cut = (new Networks(['77.88.0.0/16']))->intersect(new Networks(['77.88.1.0/24', '77.88.3.0/25']));
+check($cut->cidrs === ['77.88.1.0/24', '77.88.3.0/25'], 'partial RU overlap is clipped, never expanded');
+check(!$cut->contains('77.88.2.1') && $cut->contains('77.88.3.127') && !$cut->contains('77.88.3.128'), 'intersection boundaries');
+check(!(new Networks(['8.8.8.0/24']))->intersect($ru)->cidrs, 'disjoint networks');
+check((new Networks(['77.88.0.0/25', '77.88.0.128/25']))->intersect($ru)->cidrs === ['77.88.0.0/24'], 'adjacent intervals merge');
+check(dnsNames(['ya.ru', 'www.bank.ru']) === ['ya.ru' => ['ya.ru', 'www.ya.ru'], 'www.bank.ru' => ['www.bank.ru']], 'www query planning');
+check(parseDns('{"Status":3}') === [], 'NXDOMAIN is a normal empty answer');
+check(rejects(fn() => parseDns('{"Status":2}')), 'SERVFAIL is an error');
+check(rejects(fn() => parseDns('{}')), 'missing status is an error');
+check(parseDns('{"Status":0,"Answer":[{"type":5,"data":"alias.ru"},{"type":1,"data":"77.88.1.1"},{"type":1,"data":"77.88.1.1"},{"type":28,"data":"::1"}]}') === ['77.88.1.1'], 'DNS CNAME, IPv6 and duplicates');
+check(asns(['as13238', 'AS13238']) === ['AS13238'], 'ASN normalization');
+check(rejects(fn() => asns(['AS4294967296'])), 'ASN out of range');
+check(rejects(fn() => asns(['AS1/../../'])), 'ASN injection rejected');
+$ripe = '{"status":"ok","data":{"prefixes":[{"prefix":"77.88.1.0/24"},{"prefix":"2a02::/32"}]}}';
+check(parsePrefixes($ripe) === ['77.88.1.0/24'], 'RIPE IPv4 only');
+check(rejects(fn() => parsePrefixes('{"status":"ok","data":{"prefixes":[]}}')), 'empty ASN fails instead of dropping routes');
+check(rejects(fn() => parsePrefixes('{"status":"ok","data":{"prefixes":[{"prefix":"0.0.0.0/0"}]}}')), 'RIPE default route rejected');
+$protected = build(['cdn.ru'], $ru, new Networks([]), fn() => ['8.8.8.8', '1.1.1.1'], false,
+    new Networks(['77.88.1.0/24']), new Networks(['8.8.8.0/24']));
+check(str_contains($protected['ru-subnets.txt'], '8.8.8.8/32') && !str_contains($protected['ru-subnets.txt'], '8.8.8.0/24'), 'protection ASN adds only exact approved domain IP');
+check(!str_contains($protected['ru-subnets.txt'], '1.1.1.1'), 'foreign CDN outside protection remains rejected');
+check(str_contains($protected['ru-subnets.txt'], '77.88.1.0/24'), 'service prefixes are exported');
+$covered = build(['ya.ru'], $ru, new Networks([]), $dns, false, new Networks(['77.88.1.0/24']));
+check(!str_contains($covered['ru-subnets.txt'], '77.88.1.1/32'), 'redundant host routes removed');
+check(json_decode($protected['report.json'], true)['filtered_addresses']['cdn.ru'] === ['1.1.1.1'], 'filtered addresses reported');
+$emptyDns = build(['ya.ru', 'absent.ru'], $ru, new Networks([]), fn($h) => $h === 'ya.ru' ? ['77.88.1.1'] : []);
+check(json_decode($emptyDns['report.json'], true)['skip_reasons']['absent.ru'] === 'no_a_record', 'skip reason reported');
+foreach (['asn.txt', 'protection-asn.txt'] as $source) {
+    check(count(asns(lines(file_get_contents($root . '/sources/' . $source)))) > 0, "real $source valid");
+}
+check(count($sourceDomains) >= 800, 'full service catalogue must not regress to a starter list');
+check(!ipv4('100.100.1.1') && !ipv4('100.127.255.255') && ipv4('100.128.0.1'), 'CGNAT full range excluded');
+check(rejects(fn() => checkRegression(['domains_accepted' => 800], ['domains_accepted' => 500, 'service_networks_total' => 200])), 'domain collapse aborts');
+check(rejects(fn() => checkRegression(['service_networks_total' => 200], ['domains_accepted' => 800, 'service_networks_total' => 100])), 'ASN collapse aborts');
+checkRegression(['domains_accepted' => 800], ['domains_accepted' => 560, 'service_networks_total' => 0]);
+check(true, 'exact 30 percent boundary allowed');
+$calls = 0;
+$request = function($urls) use (&$calls) {
+    $calls++;
+    if ($calls === 1) { return [[], array_fill_keys(array_keys($urls), 'timeout')]; }
+    check(str_starts_with(reset($urls), 'https://cloudflare-dns.com/'), 'fallback uses secondary DoH');
+    return [array_fill_keys(array_keys($urls), '{"Status":0,"Answer":[{"type":1,"data":"77.88.1.1"}]}'), []];
+};
+[$result, $errors] = resolveMany(['ya.ru'], $request);
+check($calls === 2 && $result['ya.ru'] === ['77.88.1.1'] && !$errors, 'fallback recovers transport errors and merges www');
+$calls = 0;
+resolveMany(['absent.ru'], function($urls) use (&$calls) { $calls++; return [array_fill_keys(array_keys($urls), '{"Status":3}'), []]; });
+check($calls === 1, 'NXDOMAIN is not retried');
+check(rejects(fn() => resolveMany(['a.ru', 'b.ru'], fn($urls) => [[], array_fill_keys(array_keys($urls), 'timeout')])), 'mass DNS failure aborts');
 echo "OK: $checks checks\n";

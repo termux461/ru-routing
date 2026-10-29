@@ -26,6 +26,7 @@ jobs:
           coverage: none
       - run: php tests/run.php
       - run: php bin/build.php
+      - run: php tests/artifacts.php
       - name: Commit updated lists
         run: |
           git config user.name 'github-actions[bot]'

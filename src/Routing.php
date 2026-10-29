@@ -8,7 +8,7 @@ use RuntimeException;
 function lines(string $text): array
 {
     $result = [];
-    foreach (preg_split('/\R/', $text) as $line) {
+    foreach (preg_split('/\r\n|\n|\r/', $text) as $line) {
         $line = trim(explode('#', $line, 2)[0]);
         if ($line !== '') {
             $result[$line] = true;
@@ -31,7 +31,17 @@ function ipv4(string $ip): bool
 {
     return filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 | FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) !== false
         && (int)explode('.', $ip)[0] > 0 && (int)explode('.', $ip)[0] < 224
-        && !str_starts_with($ip, '100.64.') && !str_starts_with($ip, '169.254.');
+        && !(ip2long($ip) >= ip2long('100.64.0.0') && ip2long($ip) <= ip2long('100.127.255.255'))
+        && !str_starts_with($ip, '169.254.');
+}
+
+function checkRegression(array $previous, array $current): void
+{
+    foreach (['domains_accepted', 'service_networks_total'] as $metric) {
+        if (($previous[$metric] ?? 0) > 0 && $current[$metric] < $previous[$metric] * 0.7) {
+            throw new RuntimeException("Падение $metric более чем на 30%. Предыдущая сборка сохранена. Проверьте источники.");
+        }
+    }
 }
 
 /** Return the canonical network and its inclusive integer bounds (64-bit PHP). */
@@ -108,6 +118,29 @@ final class Networks
         }
         return false;
     }
+
+    /** Exact CIDR intersection; a RU overlap never authorizes a whole foreign prefix. */
+    public function intersect(self $other): self
+    {
+        $out = [];
+        $i = $j = 0;
+        while (isset($this->ranges[$i], $other->ranges[$j])) {
+            [$a, $b] = $this->ranges[$i];
+            [$c, $d] = $other->ranges[$j];
+            $start = max($a, $c);
+            $end = min($b, $d);
+            while ($start <= $end) {
+                $size = $start & (-$start);
+                while ($size > $end - $start + 1) {
+                    $size >>= 1;
+                }
+                $out[] = long2ip($start) . '/' . (32 - (int)round(log($size, 2)));
+                $start += $size;
+            }
+            if ($b < $d) { $i++; } else { $j++; }
+        }
+        return new self($out);
+    }
 }
 
 function fetch(string $url): string
@@ -153,7 +186,8 @@ function resolve(string $host): array
 }
 
 /** DNS is injectable so regression tests never depend on the network. */
-function build(array $domains, Networks $ru, Networks $manual, callable $resolver, bool $allRu = false): array
+function build(array $domains, Networks $ru, Networks $manual, callable $resolver, bool $allRu = false,
+    ?Networks $services = null, ?Networks $protection = null, array $dnsErrors = []): array
 {
     $hosts = array_unique(array_map(__NAMESPACE__ . '\\domain', $domains));
     sort($hosts, SORT_STRING);
@@ -163,13 +197,21 @@ function build(array $domains, Networks $ru, Networks $manual, callable $resolve
     $entries = [];
     $accepted = [];
     $skipped = [];
+    $reasons = [];
+    $rejected = [];
     $ipSet = [];
+    $services ??= new Networks([]);
+    $protection ??= new Networks([]);
     foreach ($hosts as $host) {
         $addresses = $resolver($host);
-        $ips = array_values(array_unique(array_filter($addresses, fn($ip) => $ru->contains($ip) || $manual->contains($ip))));
+        $ips = array_values(array_unique(array_filter($addresses, fn($ip) => $ru->contains($ip)
+            || $manual->contains($ip) || $protection->contains($ip))));
+        $filtered = array_values(array_diff($addresses, $ips));
+        if ($filtered) { $rejected[$host] = $filtered; }
         sort($ips, SORT_STRING);
         if (!$ips) {
             $skipped[] = $host;
+            $reasons[$host] = isset($dnsErrors[$host]) ? 'dns_error' : ($addresses ? 'no_approved_ipv4' : 'no_a_record');
             continue;
         }
         $accepted[] = $host;
@@ -182,9 +224,13 @@ function build(array $domains, Networks $ru, Networks $manual, callable $resolve
     if (count($accepted) < max(1, (int)ceil(count($hosts) / 2))) {
         throw new RuntimeException('Менее половины доменов получили разрешённые IP. Предыдущая сборка сохранена. Проверьте DNS и RU-список.');
     }
-    $subnets = array_values(array_unique(array_merge(array_keys($ipSet), $manual->cidrs, $allRu ? $ru->cidrs : [])));
+    $wholeNetworks = array_values(array_unique(array_merge($manual->cidrs, $services->cidrs, $allRu ? $ru->cidrs : [])));
+    // Drop redundant /32s already covered by whole service networks.
+    $whole = new Networks($wholeNetworks);
+    $singleIps = array_filter(array_keys($ipSet), fn($net) => !$whole->contains(explode('/', $net)[0]));
+    $subnets = array_values(array_unique(array_merge($singleIps, $wholeNetworks)));
     sort($subnets, SORT_STRING);
-    foreach (array_values(array_unique(array_merge($manual->cidrs, $allRu ? $ru->cidrs : []))) as $network) {
+    foreach ($wholeNetworks as $network) {
         $entries[] = ['hostname' => $network, 'ip' => $network, 'ips' => [$network]];
     }
     $json = fn($v) => json_encode($v, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR) . "\n";
@@ -203,7 +249,9 @@ function build(array $domains, Networks $ru, Networks $manual, callable $resolve
         'clash.yaml' => $clash,
         'report.json' => $json(['built_at' => gmdate('c'), 'mode' => $allRu ? 'all-ru' : 'services',
             'domains_total' => count($hosts), 'domains_accepted' => count($accepted),
-            'subnets_total' => count($subnets), 'skipped_domains' => $skipped,
+            'subnets_total' => count($subnets), 'service_networks_total' => count($services->cidrs),
+            'skipped_domains' => $skipped, 'skip_reasons' => $reasons,
+            'filtered_addresses' => $rejected, 'dns_errors' => $dnsErrors,
             'note' => 'RU registration is not proof of hosting location or exclusive ownership; shared IPs can bypass unrelated sites.']),
     ];
 }

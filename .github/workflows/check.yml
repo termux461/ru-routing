@@ -1,7 +1,7 @@
 name: PHP checks
 on:
   push:
-    paths: ['src/**', 'bin/**', 'tests/**', 'sources/**', '.github/workflows/**']
+    paths: ['src/**', 'bin/**', 'tests/**', 'sources/**', 'dist/**', '.github/workflows/**']
   pull_request:
 permissions:
   contents: read
