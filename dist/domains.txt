@@ -737,6 +737,7 @@ wbstatic.net
 wciom.ru
 weather.yandex.ru
 web.alfabank.ru
+webmoney.ru
 wer.ru
 whoosh.bike
 wifire.ru
