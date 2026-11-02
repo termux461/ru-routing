@@ -1,0 +1,337 @@
+{
+    "generated_at": "2026-11-02T16:04:04+00:00",
+    "revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
+    "source": "https://github.com/rekryt/iplist",
+    "count": 229,
+    "groups": [
+        {
+            "id": "ai",
+            "sites": [
+                "aistudio.google.com",
+                "canva.com",
+                "chatgpt.com",
+                "claude.ai",
+                "copilot",
+                "cursor.com",
+                "deepl.com",
+                "deepseek.com",
+                "elevenlabs.io",
+                "grammarly.com",
+                "grok.com",
+                "kilo.ai",
+                "meta.ai",
+                "notebooklm.google",
+                "perplexity.ai",
+                "pollo.ai",
+                "stitch.withgoogle.com"
+            ]
+        },
+        {
+            "id": "anime",
+            "sites": [
+                "amedia.site",
+                "anidub.pro",
+                "anilibria.tv",
+                "animego.org",
+                "animevost.org",
+                "bato.to",
+                "crunchyroll.com",
+                "hentailib.me",
+                "jut.su",
+                "kara.su",
+                "kodik.info",
+                "mangahub.ru",
+                "mangapark.net",
+                "myanimelist.net",
+                "nyaa.land",
+                "nyaa.si",
+                "shikimori.one",
+                "yummyanime.tv"
+            ]
+        },
+        {
+            "id": "art",
+            "sites": [
+                "archiveofourown.org",
+                "danbooru.donmai.us",
+                "deviantart.com",
+                "e621.net",
+                "ficbook.net",
+                "gelbooru.com",
+                "hentaichan.live",
+                "infinitenovel.eu",
+                "pixabay.com",
+                "pixiv.net",
+                "rulate.ru",
+                "vndb.org",
+                "younettranslate.com"
+            ]
+        },
+        {
+            "id": "casino",
+            "sites": [
+                "7k.casino",
+                "combotech",
+                "vavada.com"
+            ]
+        },
+        {
+            "id": "discord",
+            "sites": [
+                "discord.com",
+                "discord.gg",
+                "discord.media"
+            ]
+        },
+        {
+            "id": "education",
+            "sites": [
+                "duolingo.com",
+                "flibusta.is",
+                "ieee.org",
+                "mrakopedia.net",
+                "refactoring.guru",
+                "wikiart.org",
+                "znanija.com"
+            ]
+        },
+        {
+            "id": "finance",
+            "sites": [
+                "aave.com",
+                "euler.finance",
+                "morpho.org",
+                "wise.com"
+            ]
+        },
+        {
+            "id": "games",
+            "sites": [
+                "arma2",
+                "chess.com",
+                "heroes.thelazy.net",
+                "itch.io",
+                "modrinth.com",
+                "nexusmods.com"
+            ]
+        },
+        {
+            "id": "hosting",
+            "sites": [
+                "bitninja.com",
+                "cloudlinux.com",
+                "godaddy.com",
+                "hetzner.com",
+                "namecheap.com"
+            ]
+        },
+        {
+            "id": "jetbrains",
+            "sites": [
+                "jetbrains.com",
+                "jetbrains@cdn",
+                "jetbrains@grazie.ai"
+            ]
+        },
+        {
+            "id": "messengers",
+            "sites": [
+                "messenger.com",
+                "signal.org",
+                "telegram.org",
+                "viber.com",
+                "whatsapp.com",
+                "zello.com"
+            ]
+        },
+        {
+            "id": "music",
+            "sites": [
+                "deezer.com",
+                "last.fm",
+                "musicbrainz.org",
+                "soundcloud.com",
+                "spotify.com",
+                "tidal.com"
+            ]
+        },
+        {
+            "id": "news",
+            "sites": [
+                "agents.media",
+                "agentura.ru",
+                "bbc.com",
+                "bellingcat.com",
+                "cherta.media",
+                "colta.ru",
+                "currenttime.tv",
+                "dept.one",
+                "doxa.team",
+                "dw.com",
+                "echofm.online",
+                "ehorussia.com",
+                "ej.ru",
+                "euronews.com",
+                "exler.ru",
+                "golosameriki.com",
+                "gordonua.com",
+                "gulagu.net",
+                "holod.media",
+                "hrw.org",
+                "istories.media",
+                "kasparov.ru",
+                "kavkaz-uzel.eu",
+                "korrespondent.net",
+                "krymr.com",
+                "meduza.io",
+                "memohrc.org",
+                "moscowtimes.ru",
+                "navalny.com",
+                "newtimes.ru",
+                "novayagazeta.ru",
+                "ovd.info",
+                "paperpaper.ru",
+                "polit.ru",
+                "proekt.media",
+                "prostovpn.org",
+                "radiosvoboda.org",
+                "semnasem.org",
+                "svoboda.org",
+                "tayga.info",
+                "the-village.ru",
+                "theins.ru",
+                "thetruestory.news",
+                "tvrain.ru",
+                "unian.net",
+                "verstka.media",
+                "vot-tak.tv",
+                "zona.media"
+            ]
+        },
+        {
+            "id": "porn",
+            "sites": [
+                "beeg.com",
+                "f95zone.to",
+                "hqporner.com",
+                "kemono.cr",
+                "pornhub.com",
+                "pornolab.net",
+                "reddxxx.com",
+                "redgifs.com",
+                "redtube.com",
+                "rule34.xxx",
+                "xhamster.com",
+                "xhamsterlive.com",
+                "xnxx-ru.com",
+                "xvideos.com"
+            ]
+        },
+        {
+            "id": "shop",
+            "sites": [
+                "babook.org",
+                "ralphlauren.eu",
+                "ui.com"
+            ]
+        },
+        {
+            "id": "socials",
+            "sites": [
+                "4pda.to",
+                "cwer.ws",
+                "facebook.com",
+                "hornet.com",
+                "instagram.com",
+                "linkedin.com",
+                "patreon.com",
+                "quora.com",
+                "ru-board.com",
+                "snapchat.com",
+                "tiktok.com",
+                "x.com"
+            ]
+        },
+        {
+            "id": "tools",
+            "sites": [
+                "9proxy.com",
+                "10minutemail.com",
+                "aida64.com",
+                "anydesk.com",
+                "autodesk.com",
+                "basecamp.com",
+                "beeble.com",
+                "bestchange.ru",
+                "capcut.com",
+                "clickup.com",
+                "connect.garmin.com",
+                "fastpic.org",
+                "fatsecret.com",
+                "fmhy.net",
+                "linktr.ee",
+                "make.com",
+                "medium.com",
+                "miro.com",
+                "myheritage.com",
+                "naukri.com",
+                "notepad-plus-plus.org",
+                "notion.so",
+                "proton.me",
+                "proxy6.net",
+                "proxyline.net",
+                "sankakucomplex.com",
+                "sentry.io",
+                "strava.com",
+                "trainingpeaks.com",
+                "tuta.com",
+                "whoop.com",
+                "wikidot.com",
+                "zapier.com"
+            ]
+        },
+        {
+            "id": "torrent",
+            "sites": [
+                "1337x.to",
+                "booktracker.org",
+                "filmitorrent.net",
+                "freetp.org",
+                "kinozal.me",
+                "newstudio.tv",
+                "nnmclub.to",
+                "rustorka.com",
+                "rutor.info",
+                "rutracker.org",
+                "thepiratebay.org",
+                "torrent.by"
+            ]
+        },
+        {
+            "id": "video",
+            "sites": [
+                "daramalive.life",
+                "doramy.club",
+                "filmix.fm",
+                "hdrezka.ag",
+                "kino.watch",
+                "kinobase.org",
+                "kinovod.pro",
+                "kinozal.tv",
+                "lostfilm.tv",
+                "netflix.com",
+                "seasonvar.ru",
+                "stremio.com",
+                "themoviedb.org",
+                "zeflix.online"
+            ]
+        },
+        {
+            "id": "youtube",
+            "sites": [
+                "revanced.app",
+                "youtube.com"
+            ]
+        }
+    ]
+}

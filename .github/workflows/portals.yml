@@ -1,0 +1,39 @@
+name: Update portal index
+on:
+  schedule:
+    - cron: '53 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['bin/build-portals.php', 'src/PortalIndex.php', 'tests/portals.php', '.github/workflows/portals.yml']
+permissions:
+  contents: write
+concurrency:
+  group: routing-lists
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: curl
+          coverage: none
+      - run: php tests/portals.php
+      - run: php bin/build-portals.php
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Commit portal index
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add dist/portals.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: refresh portal index'
+            git push origin HEAD:main
+          fi
