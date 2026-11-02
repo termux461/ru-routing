@@ -1,11 +1,7 @@
 name: Discover new service domains
 on:
-  schedule:
-    - cron: '11 * * * *'
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ['bin/discover.php', 'src/Catalog.php', '.github/workflows/discover.yml']
+
 permissions:
   contents: write
 concurrency:

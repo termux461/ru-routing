@@ -1,11 +1,7 @@
 name: Update routing lists
 on:
-  schedule:
-    - cron: '23 * * * *'
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ['sources/**', 'src/**', 'bin/**', '.github/workflows/update.yml']
+
 permissions:
   contents: write
 concurrency:
