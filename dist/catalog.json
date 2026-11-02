@@ -1,59 +1,59 @@
 {
-    "built_at": "2026-11-02T16:11:02+00:00",
+    "built_at": "2026-11-02T20:44:56+00:00",
     "categories": [
         {
             "id": "banks",
             "name": "Банки и финансы",
-            "domains": 176,
-            "addresses": 201
+            "domains": 208,
+            "addresses": 232
         },
         {
             "id": "government",
             "name": "Госуслуги",
-            "domains": 154,
-            "addresses": 177
+            "domains": 180,
+            "addresses": 202
         },
         {
             "id": "shops",
             "name": "Магазины и доставка",
-            "domains": 89,
-            "addresses": 107
+            "domains": 93,
+            "addresses": 111
         },
         {
             "id": "technology",
             "name": "Технологии и соцсети",
-            "domains": 129,
-            "addresses": 145
+            "domains": 130,
+            "addresses": 146
         },
         {
             "id": "media",
             "name": "Медиа и спорт",
             "domains": 105,
-            "addresses": 162
+            "addresses": 163
         },
         {
             "id": "travel",
             "name": "Транспорт и путешествия",
-            "domains": 60,
-            "addresses": 76
+            "domains": 62,
+            "addresses": 78
         },
         {
             "id": "telecom",
             "name": "Связь",
             "domains": 29,
-            "addresses": 38
+            "addresses": 49
         },
         {
             "id": "education",
             "name": "Образование",
-            "domains": 78,
-            "addresses": 90
+            "domains": 81,
+            "addresses": 92
         },
         {
             "id": "health",
             "name": "Медицина",
-            "domains": 47,
-            "addresses": 49
+            "domains": 58,
+            "addresses": 57
         },
         {
             "id": "life",
@@ -255,6 +255,37 @@
         "k-bnk.ru": "banks",
         "kamkombank.ru": "banks",
         "kbb.ru": "banks",
+        "koronapay.com": "banks",
+        "koshelev-bank.ru": "banks",
+        "kremlinbank.ru": "banks",
+        "kubankredit.ru": "banks",
+        "kuzbank.ru": "banks",
+        "lanta.ru": "banks",
+        "lk.tbank.ru": "banks",
+        "lk.vtb.ru": "banks",
+        "maritimebank.com": "banks",
+        "mcbank.ru": "banks",
+        "metallinvestbank.ru": "banks",
+        "metib.ru": "banks",
+        "mfk-bank.ru": "banks",
+        "mhcb.ru": "banks",
+        "mhcbr.ru": "banks",
+        "moneta.ru": "banks",
+        "mspbank.ru": "banks",
+        "mtsdengi.ru": "banks",
+        "mvs-bank.ru": "banks",
+        "myapelsin.ru": "banks",
+        "nationalclearingcentre.ru": "banks",
+        "nico-bank.ru": "banks",
+        "nipbank.ru": "banks",
+        "nkcbank.ru": "banks",
+        "noosferabank.ru": "banks",
+        "norvikbank.ru": "banks",
+        "novobank.ru": "banks",
+        "ns-bank.ru": "banks",
+        "nskbl.ru": "banks",
+        "okbank.ru": "banks",
+        "orbank.ru": "banks",
         "arbitr.ru": "government",
         "kad.arbitr.ru": "government",
         "avtokod.ru": "government",
@@ -412,6 +443,32 @@
         "khakassia.ru": "government",
         "khv.ru": "government",
         "kirov.ru": "government",
+        "koenig.ru": "government",
+        "kostroma.ru": "government",
+        "krasnodar.su": "government",
+        "krasnoyarsk.ru": "government",
+        "kuban.ru": "government",
+        "kurgan.ru": "government",
+        "kursk.ru": "government",
+        "lipetsk.ru": "government",
+        "magadan.ru": "government",
+        "mari-el.ru": "government",
+        "mari.ru": "government",
+        "marine.ru": "government",
+        "mgfoms.ru": "government",
+        "mil.ru": "government",
+        "mordovia.ru": "government",
+        "mospat.ru": "government",
+        "mosreg.ru": "government",
+        "murmansk.ru": "government",
+        "nalchik.ru": "government",
+        "nn.ru": "government",
+        "novosibirsk.ru": "government",
+        "nsk.ru": "government",
+        "omsk.ru": "government",
+        "online.nalog.gov.ru": "government",
+        "ooc-school.ru": "government",
+        "orb.ru": "government",
         "5ka.ru": "shops",
         "aliexpress.ru": "shops",
         "ru.aliexpress.com": "shops",
@@ -506,6 +563,10 @@
         "fix-price.com": "shops",
         "id.ozon.ru": "shops",
         "ilovesakura.ru": "shops",
+        "lenta.tech": "shops",
+        "myspar.ru": "shops",
+        "notik.ru": "shops",
+        "ostin.com": "shops",
         "360.yandex.ru": "technology",
         "alice.yandex.ru": "technology",
         "browser.yandex.ru": "technology",
@@ -641,6 +702,7 @@
         "hacksoft.ru": "technology",
         "hardware.ru": "technology",
         "iguides.ru": "technology",
+        "kod.ru": "technology",
         "116.ru": "media",
         "161.ru": "media",
         "29.ru": "media",
@@ -829,6 +891,8 @@
         "fasten.ru": "travel",
         "gorodpay.ru": "travel",
         "greywallpass.com": "travel",
+        "metro.spb.ru": "travel",
+        "mos.transport.vtb.ru": "travel",
         "beeline.ru": "telecom",
         "cloud.rt.ru": "telecom",
         "dom.ru": "telecom",
@@ -950,6 +1014,8 @@
         "gramotei.online": "education",
         "kakpishem.ru": "education",
         "kartaslov.ru": "education",
+        "mel.fm": "education",
+        "melfm.ru": "education",
         "366.ru": "health",
         "apteka.ru": "health",
         "asna.ru": "health",
@@ -998,6 +1064,17 @@
         "hello-doc.ru": "health",
         "hellodoc.app": "health",
         "hellodoc.ru": "health",
+        "klinikabudzdorov.ru": "health",
+        "medflex.ru": "health",
+        "medlock.ru": "health",
+        "medrocket.me": "health",
+        "medsi-premium.ru": "health",
+        "medsi.com": "health",
+        "medtochka.ru": "health",
+        "megapteka.ru": "health",
+        "mofoms.ru": "health",
+        "mosgorzdrav.ru": "health",
+        "oms.karelia.ru": "health",
         "am.ru": "life",
         "auto.ru": "life",
         "autodoc.ru": "life",
@@ -1426,12 +1503,13 @@
         },
         {
             "hostname": "amediateka.ru",
-            "ip": "212.193.155.190",
+            "ip": "212.193.152.57",
             "ips": [
+                "212.193.152.57",
+                "212.193.153.218",
                 "212.193.155.190",
                 "212.193.157.85",
-                "46.235.189.169",
-                "46.235.189.170"
+                "46.235.190.60"
             ]
         },
         {
@@ -2148,9 +2226,9 @@
         },
         {
             "hostname": "cdn.sberbank.ru",
-            "ip": "91.231.236.245",
+            "ip": "151.236.65.237",
             "ips": [
-                "91.231.236.245"
+                "151.236.65.237"
             ]
         },
         {
@@ -3642,8 +3720,9 @@
         },
         {
             "hostname": "gosapteka.ru",
-            "ip": "45.130.41.22",
+            "ip": "155.212.191.205",
             "ips": [
+                "155.212.191.205",
                 "45.130.41.22"
             ]
         },
@@ -3957,9 +4036,9 @@
         },
         {
             "hostname": "id.mos.ru",
-            "ip": "212.11.155.134",
+            "ip": "212.11.155.135",
             "ips": [
-                "212.11.155.134"
+                "212.11.155.135"
             ]
         },
         {
@@ -3994,9 +4073,9 @@
         },
         {
             "hostname": "id.vtb.ru",
-            "ip": "185.179.144.34",
+            "ip": "185.179.146.34",
             "ips": [
-                "185.179.144.34"
+                "185.179.146.34"
             ]
         },
         {
@@ -4037,9 +4116,9 @@
         },
         {
             "hostname": "img.mail.ru",
-            "ip": "94.100.180.101",
+            "ip": "217.69.139.100",
             "ips": [
-                "94.100.180.101"
+                "217.69.139.100"
             ]
         },
         {
@@ -4153,7 +4232,6 @@
             "ip": "195.209.86.111",
             "ips": [
                 "195.209.86.111",
-                "195.209.87.105",
                 "195.209.89.131",
                 "217.65.2.92",
                 "217.65.2.93"
@@ -4484,6 +4562,27 @@
             ]
         },
         {
+            "hostname": "klinikabudzdorov.ru",
+            "ip": "95.129.238.92",
+            "ips": [
+                "95.129.238.92"
+            ]
+        },
+        {
+            "hostname": "kod.ru",
+            "ip": "95.129.238.47",
+            "ips": [
+                "95.129.238.47"
+            ]
+        },
+        {
+            "hostname": "koenig.ru",
+            "ip": "195.135.212.142",
+            "ips": [
+                "195.135.212.142"
+            ]
+        },
+        {
             "hostname": "kolesa.ru",
             "ip": "95.129.232.243",
             "ips": [
@@ -4505,6 +4604,29 @@
             ]
         },
         {
+            "hostname": "koronapay.com",
+            "ip": "193.232.20.100",
+            "ips": [
+                "193.232.20.100",
+                "193.232.94.100",
+                "194.85.18.104"
+            ]
+        },
+        {
+            "hostname": "koshelev-bank.ru",
+            "ip": "188.225.19.29",
+            "ips": [
+                "188.225.19.29"
+            ]
+        },
+        {
+            "hostname": "kostroma.ru",
+            "ip": "85.113.212.69",
+            "ips": [
+                "85.113.212.69"
+            ]
+        },
+        {
             "hostname": "kp.ru",
             "ip": "185.71.64.65",
             "ips": [
@@ -4512,10 +4634,24 @@
             ]
         },
         {
+            "hostname": "krasnodar.su",
+            "ip": "178.210.74.11",
+            "ips": [
+                "178.210.74.11"
+            ]
+        },
+        {
             "hostname": "krasnoeibeloe.ru",
             "ip": "95.181.177.105",
             "ips": [
                 "95.181.177.105"
+            ]
+        },
+        {
+            "hostname": "krasnoyarsk.ru",
+            "ip": "195.112.224.111",
+            "ips": [
+                "195.112.224.111"
             ]
         },
         {
@@ -4528,10 +4664,31 @@
             ]
         },
         {
+            "hostname": "kremlinbank.ru",
+            "ip": "91.215.42.238",
+            "ips": [
+                "91.215.42.238"
+            ]
+        },
+        {
             "hostname": "ksrf.ru",
             "ip": "95.173.151.218",
             "ips": [
                 "95.173.151.218"
+            ]
+        },
+        {
+            "hostname": "kuban.ru",
+            "ip": "91.230.54.50",
+            "ips": [
+                "91.230.54.50"
+            ]
+        },
+        {
+            "hostname": "kubankredit.ru",
+            "ip": "178.248.238.35",
+            "ips": [
+                "178.248.238.35"
             ]
         },
         {
@@ -4546,6 +4703,27 @@
             "ip": "194.190.0.50",
             "ips": [
                 "194.190.0.50"
+            ]
+        },
+        {
+            "hostname": "kurgan.ru",
+            "ip": "141.8.192.184",
+            "ips": [
+                "141.8.192.184"
+            ]
+        },
+        {
+            "hostname": "kursk.ru",
+            "ip": "185.71.67.154",
+            "ips": [
+                "185.71.67.154"
+            ]
+        },
+        {
+            "hostname": "kuzbank.ru",
+            "ip": "185.129.101.97",
+            "ips": [
+                "185.129.101.97"
             ]
         },
         {
@@ -4589,6 +4767,13 @@
             "ip": "195.128.157.237",
             "ips": [
                 "195.128.157.237"
+            ]
+        },
+        {
+            "hostname": "lanta.ru",
+            "ip": "185.71.67.174",
+            "ips": [
+                "185.71.67.174"
             ]
         },
         {
@@ -4636,6 +4821,13 @@
             ]
         },
         {
+            "hostname": "lenta.tech",
+            "ip": "178.248.235.78",
+            "ips": [
+                "178.248.235.78"
+            ]
+        },
+        {
             "hostname": "letu.ru",
             "ip": "93.93.89.201",
             "ips": [
@@ -4648,6 +4840,13 @@
             "ips": [
                 "188.254.0.116",
                 "195.208.66.149"
+            ]
+        },
+        {
+            "hostname": "lipetsk.ru",
+            "ip": "185.183.175.230",
+            "ips": [
+                "185.183.175.230"
             ]
         },
         {
@@ -4691,6 +4890,20 @@
             "ip": "217.77.104.136",
             "ips": [
                 "217.77.104.136"
+            ]
+        },
+        {
+            "hostname": "lk.tbank.ru",
+            "ip": "178.130.128.39",
+            "ips": [
+                "178.130.128.39"
+            ]
+        },
+        {
+            "hostname": "lk.vtb.ru",
+            "ip": "217.14.50.197",
+            "ips": [
+                "217.14.50.197"
             ]
         },
         {
@@ -4745,9 +4958,9 @@
         },
         {
             "hostname": "login.mos.ru",
-            "ip": "94.79.51.137",
+            "ip": "94.79.51.135",
             "ips": [
-                "94.79.51.137"
+                "94.79.51.135"
             ]
         },
         {
@@ -4815,6 +5028,14 @@
             ]
         },
         {
+            "hostname": "magadan.ru",
+            "ip": "188.92.222.37",
+            "ips": [
+                "188.92.222.37",
+                "212.14.192.143"
+            ]
+        },
+        {
             "hostname": "magnit-market.ru",
             "ip": "95.163.244.138",
             "ips": [
@@ -4875,6 +5096,38 @@
             ]
         },
         {
+            "hostname": "mari-el.ru",
+            "ip": "77.40.0.55",
+            "ips": [
+                "77.40.0.55",
+                "85.193.74.45",
+                "85.193.74.46"
+            ]
+        },
+        {
+            "hostname": "mari.ru",
+            "ip": "77.40.0.2",
+            "ips": [
+                "77.40.0.2",
+                "77.40.0.55"
+            ]
+        },
+        {
+            "hostname": "marine.ru",
+            "ip": "178.210.74.11",
+            "ips": [
+                "178.210.74.11",
+                "81.200.144.195"
+            ]
+        },
+        {
+            "hostname": "maritimebank.com",
+            "ip": "194.85.149.37",
+            "ips": [
+                "194.85.149.37"
+            ]
+        },
+        {
             "hostname": "market.yandex.ru",
             "ip": "87.250.250.22",
             "ips": [
@@ -4912,6 +5165,13 @@
             ]
         },
         {
+            "hostname": "mcbank.ru",
+            "ip": "185.71.64.167",
+            "ips": [
+                "185.71.64.167"
+            ]
+        },
+        {
             "hostname": "mchs.gov.ru",
             "ip": "84.42.111.247",
             "ips": [
@@ -4924,6 +5184,13 @@
             "ip": "178.154.245.251",
             "ips": [
                 "178.154.245.251"
+            ]
+        },
+        {
+            "hostname": "medflex.ru",
+            "ip": "95.143.186.230",
+            "ips": [
+                "95.143.186.230"
             ]
         },
         {
@@ -4941,10 +5208,24 @@
             ]
         },
         {
+            "hostname": "medlock.ru",
+            "ip": "5.188.57.75",
+            "ips": [
+                "5.188.57.75"
+            ]
+        },
+        {
             "hostname": "medportal.ru",
             "ip": "82.202.213.210",
             "ips": [
                 "82.202.213.210"
+            ]
+        },
+        {
+            "hostname": "medrocket.me",
+            "ip": "5.188.57.75",
+            "ips": [
+                "5.188.57.75"
             ]
         },
         {
@@ -4955,11 +5236,32 @@
             ]
         },
         {
+            "hostname": "medsi-premium.ru",
+            "ip": "212.109.215.240",
+            "ips": [
+                "212.109.215.240"
+            ]
+        },
+        {
+            "hostname": "medsi.com",
+            "ip": "212.109.215.240",
+            "ips": [
+                "212.109.215.240"
+            ]
+        },
+        {
             "hostname": "medsi.ru",
             "ip": "212.109.215.214",
             "ips": [
                 "212.109.215.214",
                 "212.109.215.240"
+            ]
+        },
+        {
+            "hostname": "medtochka.ru",
+            "ip": "82.202.251.59",
+            "ips": [
+                "82.202.251.59"
             ]
         },
         {
@@ -4980,6 +5282,28 @@
             ]
         },
         {
+            "hostname": "megapteka.ru",
+            "ip": "178.248.237.14",
+            "ips": [
+                "178.248.237.14",
+                "178.248.238.243"
+            ]
+        },
+        {
+            "hostname": "mel.fm",
+            "ip": "185.137.232.148",
+            "ips": [
+                "185.137.232.148"
+            ]
+        },
+        {
+            "hostname": "melfm.ru",
+            "ip": "185.137.232.148",
+            "ips": [
+                "185.137.232.148"
+            ]
+        },
+        {
             "hostname": "mephi.ru",
             "ip": "85.143.112.110",
             "ips": [
@@ -4987,10 +5311,46 @@
             ]
         },
         {
+            "hostname": "metallinvestbank.ru",
+            "ip": "194.84.190.148",
+            "ips": [
+                "194.84.190.148"
+            ]
+        },
+        {
+            "hostname": "metib.ru",
+            "ip": "194.84.190.148",
+            "ips": [
+                "194.84.190.148"
+            ]
+        },
+        {
             "hostname": "metro-cc.ru",
             "ip": "95.181.177.3",
             "ips": [
                 "95.181.177.3"
+            ]
+        },
+        {
+            "hostname": "metro.spb.ru",
+            "ip": "178.176.229.209",
+            "ips": [
+                "178.176.229.209"
+            ]
+        },
+        {
+            "hostname": "mfk-bank.ru",
+            "ip": "194.58.89.97",
+            "ips": [
+                "194.58.89.97",
+                "5.253.61.79"
+            ]
+        },
+        {
+            "hostname": "mgfoms.ru",
+            "ip": "195.133.255.86",
+            "ips": [
+                "195.133.255.86"
             ]
         },
         {
@@ -5012,6 +5372,27 @@
             "ip": "195.178.108.240",
             "ips": [
                 "195.178.108.240"
+            ]
+        },
+        {
+            "hostname": "mhcb.ru",
+            "ip": "195.24.68.24",
+            "ips": [
+                "195.24.68.24"
+            ]
+        },
+        {
+            "hostname": "mhcbr.ru",
+            "ip": "195.24.68.24",
+            "ips": [
+                "195.24.68.24"
+            ]
+        },
+        {
+            "hostname": "mil.ru",
+            "ip": "212.192.156.38",
+            "ips": [
+                "212.192.156.38"
             ]
         },
         {
@@ -5163,6 +5544,27 @@
             ]
         },
         {
+            "hostname": "mofoms.ru",
+            "ip": "79.137.219.55",
+            "ips": [
+                "79.137.219.55"
+            ]
+        },
+        {
+            "hostname": "moneta.ru",
+            "ip": "185.111.86.11",
+            "ips": [
+                "185.111.86.11"
+            ]
+        },
+        {
+            "hostname": "mordovia.ru",
+            "ip": "178.210.74.11",
+            "ips": [
+                "178.210.74.11"
+            ]
+        },
+        {
             "hostname": "more.tv",
             "ip": "212.193.153.131",
             "ips": [
@@ -5181,7 +5583,36 @@
             "hostname": "mos.ru",
             "ip": "212.11.155.134",
             "ips": [
-                "212.11.155.134"
+                "212.11.155.134",
+                "94.79.51.135"
+            ]
+        },
+        {
+            "hostname": "mos.transport.vtb.ru",
+            "ip": "91.198.98.140",
+            "ips": [
+                "91.198.98.140"
+            ]
+        },
+        {
+            "hostname": "mosgorzdrav.ru",
+            "ip": "82.202.189.125",
+            "ips": [
+                "82.202.189.125"
+            ]
+        },
+        {
+            "hostname": "mospat.ru",
+            "ip": "176.99.9.44",
+            "ips": [
+                "176.99.9.44"
+            ]
+        },
+        {
+            "hostname": "mosreg.ru",
+            "ip": "185.169.155.145",
+            "ips": [
+                "185.169.155.145"
             ]
         },
         {
@@ -5196,6 +5627,13 @@
             "ip": "193.233.68.141",
             "ips": [
                 "193.233.68.141"
+            ]
+        },
+        {
+            "hostname": "mspbank.ru",
+            "ip": "212.119.219.150",
+            "ips": [
+                "212.119.219.150"
             ]
         },
         {
@@ -5234,6 +5672,13 @@
             ]
         },
         {
+            "hostname": "mtsdengi.ru",
+            "ip": "185.163.159.154",
+            "ips": [
+                "185.163.159.154"
+            ]
+        },
+        {
             "hostname": "mtt.ru",
             "ip": "185.200.242.8",
             "ips": [
@@ -5245,6 +5690,13 @@
             "ip": "95.129.237.198",
             "ips": [
                 "95.129.237.198"
+            ]
+        },
+        {
+            "hostname": "murmansk.ru",
+            "ip": "77.222.55.71",
+            "ips": [
+                "77.222.55.71"
             ]
         },
         {
@@ -5286,6 +5738,13 @@
             ]
         },
         {
+            "hostname": "mvs-bank.ru",
+            "ip": "195.161.62.167",
+            "ips": [
+                "195.161.62.167"
+            ]
+        },
+        {
             "hostname": "my.mail.ru",
             "ip": "89.221.236.44",
             "ips": [
@@ -5297,6 +5756,13 @@
             "ip": "62.76.11.223",
             "ips": [
                 "62.76.11.223"
+            ]
+        },
+        {
+            "hostname": "myapelsin.ru",
+            "ip": "193.232.108.68",
+            "ips": [
+                "193.232.108.68"
             ]
         },
         {
@@ -5324,10 +5790,24 @@
             ]
         },
         {
+            "hostname": "myspar.ru",
+            "ip": "185.165.123.103",
+            "ips": [
+                "185.165.123.103"
+            ]
+        },
+        {
             "hostname": "n1.ru",
             "ip": "95.170.128.19",
             "ips": [
                 "95.170.128.19"
+            ]
+        },
+        {
+            "hostname": "nalchik.ru",
+            "ip": "178.210.74.11",
+            "ips": [
+                "178.210.74.11"
             ]
         },
         {
@@ -5367,6 +5847,13 @@
             "ip": "62.122.170.171",
             "ips": [
                 "62.122.170.171"
+            ]
+        },
+        {
+            "hostname": "nationalclearingcentre.ru",
+            "ip": "85.118.181.6",
+            "ips": [
+                "85.118.181.6"
             ]
         },
         {
@@ -5430,6 +5917,27 @@
             ]
         },
         {
+            "hostname": "nico-bank.ru",
+            "ip": "91.215.42.53",
+            "ips": [
+                "91.215.42.53"
+            ]
+        },
+        {
+            "hostname": "nipbank.ru",
+            "ip": "91.218.110.80",
+            "ips": [
+                "91.218.110.80"
+            ]
+        },
+        {
+            "hostname": "nkcbank.ru",
+            "ip": "85.118.181.6",
+            "ips": [
+                "85.118.181.6"
+            ]
+        },
+        {
             "hostname": "nkr.ru",
             "ip": "62.122.170.171",
             "ips": [
@@ -5448,6 +5956,20 @@
             "ip": "45.155.105.30",
             "ips": [
                 "45.155.105.30"
+            ]
+        },
+        {
+            "hostname": "nn.ru",
+            "ip": "195.19.220.12",
+            "ips": [
+                "195.19.220.12"
+            ]
+        },
+        {
+            "hostname": "noosferabank.ru",
+            "ip": "185.215.4.12",
+            "ips": [
+                "185.215.4.12"
             ]
         },
         {
@@ -5472,6 +5994,20 @@
             ]
         },
         {
+            "hostname": "norvikbank.ru",
+            "ip": "95.181.181.57",
+            "ips": [
+                "95.181.181.57"
+            ]
+        },
+        {
+            "hostname": "notik.ru",
+            "ip": "164.138.100.243",
+            "ips": [
+                "164.138.100.243"
+            ]
+        },
+        {
             "hostname": "novatek.ru",
             "ip": "31.31.199.181",
             "ips": [
@@ -5486,11 +6022,25 @@
             ]
         },
         {
+            "hostname": "novobank.ru",
+            "ip": "178.177.3.22",
+            "ips": [
+                "178.177.3.22"
+            ]
+        },
+        {
             "hostname": "novofon.ru",
             "ip": "37.139.38.178",
             "ips": [
                 "37.139.38.178",
                 "37.139.38.212"
+            ]
+        },
+        {
+            "hostname": "novosibirsk.ru",
+            "ip": "89.251.96.76",
+            "ips": [
+                "89.251.96.76"
             ]
         },
         {
@@ -5508,10 +6058,31 @@
             ]
         },
         {
+            "hostname": "ns-bank.ru",
+            "ip": "212.109.197.151",
+            "ips": [
+                "212.109.197.151"
+            ]
+        },
+        {
             "hostname": "nsd.ru",
             "ip": "85.118.181.77",
             "ips": [
                 "85.118.181.77"
+            ]
+        },
+        {
+            "hostname": "nsk.ru",
+            "ip": "89.251.96.76",
+            "ips": [
+                "89.251.96.76"
+            ]
+        },
+        {
+            "hostname": "nskbl.ru",
+            "ip": "109.232.248.72",
+            "ips": [
+                "109.232.248.72"
             ]
         },
         {
@@ -5580,6 +6151,13 @@
             ]
         },
         {
+            "hostname": "okbank.ru",
+            "ip": "185.71.64.153",
+            "ips": [
+                "185.71.64.153"
+            ]
+        },
+        {
             "hostname": "okey.ru",
             "ip": "194.67.71.158",
             "ips": [
@@ -5602,6 +6180,20 @@
             ]
         },
         {
+            "hostname": "oms.karelia.ru",
+            "ip": "77.222.57.5",
+            "ips": [
+                "77.222.57.5"
+            ]
+        },
+        {
+            "hostname": "omsk.ru",
+            "ip": "217.151.17.30",
+            "ips": [
+                "217.151.17.30"
+            ]
+        },
+        {
             "hostname": "onclinic.ru",
             "ip": "185.71.67.23",
             "ips": [
@@ -5621,6 +6213,13 @@
             "ips": [
                 "195.166.180.244",
                 "213.59.197.100"
+            ]
+        },
+        {
+            "hostname": "online.nalog.gov.ru",
+            "ip": "213.24.64.4",
+            "ips": [
+                "213.24.64.4"
             ]
         },
         {
@@ -5652,6 +6251,13 @@
             ]
         },
         {
+            "hostname": "ooc-school.ru",
+            "ip": "185.105.110.4",
+            "ips": [
+                "185.105.110.4"
+            ]
+        },
+        {
             "hostname": "open-broker.ru",
             "ip": "91.197.176.106",
             "ips": [
@@ -5673,10 +6279,31 @@
             ]
         },
         {
+            "hostname": "orb.ru",
+            "ip": "193.169.35.202",
+            "ips": [
+                "193.169.35.202"
+            ]
+        },
+        {
+            "hostname": "orbank.ru",
+            "ip": "185.178.208.87",
+            "ips": [
+                "185.178.208.87"
+            ]
+        },
+        {
             "hostname": "orion.ru",
             "ip": "91.201.52.114",
             "ips": [
                 "91.201.52.114"
+            ]
+        },
+        {
+            "hostname": "ostin.com",
+            "ip": "178.248.232.245",
+            "ips": [
+                "178.248.232.245"
             ]
         },
         {
@@ -5799,9 +6426,8 @@
         },
         {
             "hostname": "piluli.ru",
-            "ip": "195.209.81.113",
+            "ip": "195.209.81.215",
             "ips": [
-                "195.209.81.113",
                 "195.209.81.215",
                 "195.209.83.135"
             ]
@@ -5822,9 +6448,9 @@
         },
         {
             "hostname": "pobeda.aero",
-            "ip": "151.236.81.32",
+            "ip": "185.31.113.248",
             "ips": [
-                "151.236.81.32",
+                "185.31.113.248",
                 "194.190.0.152"
             ]
         },
@@ -6106,6 +6732,13 @@
             ]
         },
         {
+            "hostname": "renaissance.ru",
+            "ip": "87.226.166.137",
+            "ips": [
+                "87.226.166.137"
+            ]
+        },
+        {
             "hostname": "rencredit.ru",
             "ip": "109.238.90.130",
             "ips": [
@@ -6174,6 +6807,13 @@
             "ip": "132.243.178.72",
             "ips": [
                 "132.243.178.72"
+            ]
+        },
+        {
+            "hostname": "rgsu.ru",
+            "ip": "185.19.206.84",
+            "ips": [
+                "185.19.206.84"
             ]
         },
         {
@@ -6398,9 +7038,9 @@
         },
         {
             "hostname": "rshb.ru",
-            "ip": "194.190.12.182",
+            "ip": "194.190.12.192",
             "ips": [
-                "194.190.12.182",
+                "194.190.12.192",
                 "194.190.12.47"
             ]
         },
@@ -6798,8 +7438,15 @@
         },
         {
             "hostname": "skylink.ru",
-            "ip": "78.41.111.34",
+            "ip": "212.193.152.165",
             "ips": [
+                "212.193.152.165",
+                "212.193.152.252",
+                "212.193.152.39",
+                "212.193.153.124",
+                "37.220.161.219",
+                "37.220.161.237",
+                "46.235.191.52",
                 "78.41.111.34"
             ]
         },
@@ -7110,9 +7757,13 @@
         },
         {
             "hostname": "tele2.ru",
-            "ip": "78.41.111.154",
+            "ip": "212.193.152.137",
             "ips": [
-                "78.41.111.154"
+                "212.193.152.137",
+                "212.193.152.85",
+                "37.220.161.200",
+                "37.220.161.212",
+                "46.235.190.98"
             ]
         },
         {

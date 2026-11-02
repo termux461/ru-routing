@@ -187,6 +187,38 @@ itb.ru
 k-bnk.ru
 kamkombank.ru
 kbb.ru
+# Добавлено автоматически после проверки DNS и RU IP
+koronapay.com
+koshelev-bank.ru
+kremlinbank.ru
+kubankredit.ru
+kuzbank.ru
+lanta.ru
+lk.tbank.ru
+lk.vtb.ru
+maritimebank.com
+mcbank.ru
+metallinvestbank.ru
+metib.ru
+mfk-bank.ru
+mhcb.ru
+mhcbr.ru
+moneta.ru
+mspbank.ru
+mtsdengi.ru
+mvs-bank.ru
+myapelsin.ru
+nationalclearingcentre.ru
+nico-bank.ru
+nipbank.ru
+nkcbank.ru
+noosferabank.ru
+norvikbank.ru
+novobank.ru
+ns-bank.ru
+nskbl.ru
+okbank.ru
+orbank.ru
 # 2. Госуслуги и госорганы
 arbitr.ru
 kad.arbitr.ru
@@ -348,6 +380,33 @@ khabarovsk.ru
 khakassia.ru
 khv.ru
 kirov.ru
+# Добавлено автоматически после проверки DNS и RU IP
+koenig.ru
+kostroma.ru
+krasnodar.su
+krasnoyarsk.ru
+kuban.ru
+kurgan.ru
+kursk.ru
+lipetsk.ru
+magadan.ru
+mari-el.ru
+mari.ru
+marine.ru
+mgfoms.ru
+mil.ru
+mordovia.ru
+mospat.ru
+mosreg.ru
+murmansk.ru
+nalchik.ru
+nn.ru
+novosibirsk.ru
+nsk.ru
+omsk.ru
+online.nalog.gov.ru
+ooc-school.ru
+orb.ru
 # 3. Маркетплейсы, магазины и доставка еды
 5ka.ru
 aliexpress.ru
@@ -446,6 +505,11 @@ evrasia.rest
 fix-price.com
 id.ozon.ru
 ilovesakura.ru
+# Добавлено автоматически после проверки DNS и RU IP
+lenta.tech
+myspar.ru
+notik.ru
+ostin.com
 # 4. Технологии, поиск, соцсети и ПО
 360.yandex.ru
 alice.yandex.ru
@@ -585,6 +649,8 @@ ferra.ru
 hacksoft.ru
 hardware.ru
 iguides.ru
+# Добавлено автоматически после проверки DNS и RU IP
+kod.ru
 # 5. Медиа, ТВ, стриминг и спорт
 116.ru
 161.ru
@@ -779,6 +845,9 @@ blablacar.ru
 fasten.ru
 gorodpay.ru
 greywallpass.com
+# Добавлено автоматически после проверки DNS и RU IP
+metro.spb.ru
+mos.transport.vtb.ru
 # 7. Телеком
 beeline.ru
 cloud.rt.ru
@@ -906,6 +975,9 @@ chelyabinsk-sgo-edu-74.ru
 gramotei.online
 kakpishem.ru
 kartaslov.ru
+# Добавлено автоматически после проверки DNS и RU IP
+mel.fm
+melfm.ru
 # 9. Медицина и аптеки
 366.ru
 apteka.ru
@@ -958,6 +1030,18 @@ farmlend.ru
 hello-doc.ru
 hellodoc.app
 hellodoc.ru
+# Добавлено автоматически после проверки DNS и RU IP
+klinikabudzdorov.ru
+medflex.ru
+medlock.ru
+medrocket.me
+medsi-premium.ru
+medsi.com
+medtochka.ru
+megapteka.ru
+mofoms.ru
+mosgorzdrav.ru
+oms.karelia.ru
 # 10. Недвижимость, авто, работа и услуги
 am.ru
 auto.ru

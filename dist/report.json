@@ -1,9 +1,9 @@
 {
-    "built_at": "2026-11-02T16:11:02+00:00",
+    "built_at": "2026-11-02T20:44:56+00:00",
     "mode": "services",
-    "domains_total": 987,
-    "domains_accepted": 927,
-    "subnets_total": 1108,
+    "domains_total": 1064,
+    "domains_accepted": 1006,
+    "subnets_total": 1190,
     "service_networks_total": 205,
     "skipped_domains": [
         "1c.com",
@@ -46,9 +46,7 @@
         "posylka.ru",
         "practicum.com",
         "redwings.aero",
-        "renaissance.ru",
         "reshuege.ru",
-        "rgsu.ru",
         "ru.aliexpress.com",
         "rudn.ru",
         "ruskino.ru",
@@ -93,7 +91,7 @@
         "kinorium.com": "no_approved_ipv4",
         "kupibilet.ru": "no_approved_ipv4",
         "lingualeo.com": "no_approved_ipv4",
-        "logsis.ru": "no_a_record",
+        "logsis.ru": "dns_error",
         "lokomotiv.info": "no_approved_ipv4",
         "mironline.ru": "no_a_record",
         "mkb.ru": "no_approved_ipv4",
@@ -108,9 +106,7 @@
         "posylka.ru": "no_approved_ipv4",
         "practicum.com": "no_approved_ipv4",
         "redwings.aero": "no_approved_ipv4",
-        "renaissance.ru": "dns_error",
         "reshuege.ru": "no_approved_ipv4",
-        "rgsu.ru": "dns_error",
         "ru.aliexpress.com": "no_approved_ipv4",
         "rudn.ru": "no_approved_ipv4",
         "ruskino.ru": "no_approved_ipv4",
@@ -139,78 +135,78 @@
         ],
         "abbyy.com": [
             "40.88.236.169",
-            "64.239.109.129",
-            "64.239.123.129"
+            "64.239.123.129",
+            "64.239.109.129"
         ],
         "aif.ru": [
             "91.214.119.200",
             "91.214.119.234"
         ],
         "aliexpress.ru": [
-            "47.246.133.147",
             "47.246.133.148",
-            "47.246.133.142",
-            "47.246.133.144",
             "47.246.133.143",
             "47.246.133.141",
+            "47.246.133.147",
+            "47.246.133.142",
+            "47.246.133.144",
             "47.246.133.150",
             "47.246.133.149"
         ],
         "amediateka.ru": [
-            "52.85.40.71",
-            "52.85.40.85",
-            "52.85.40.107",
-            "52.85.40.31"
+            "18.155.202.27",
+            "18.155.202.108",
+            "18.155.202.122",
+            "18.155.202.120"
         ],
         "autodoc.ru": [
             "37.230.209.135"
         ],
         "autoscout24.ru": [
-            "99.86.77.24",
-            "99.86.77.25",
-            "99.86.77.71",
-            "99.86.77.68",
-            "3.171.22.50",
-            "3.171.22.42",
-            "3.171.22.41",
-            "3.171.22.104"
+            "18.155.202.49",
+            "18.155.202.53",
+            "18.155.202.70",
+            "18.155.202.107",
+            "13.226.38.42",
+            "13.226.38.61",
+            "13.226.38.90",
+            "13.226.38.74"
         ],
         "aviasales.ru": [
-            "3.168.40.44",
-            "3.168.40.101",
-            "3.168.40.8",
-            "3.168.40.75"
+            "52.85.151.118",
+            "52.85.151.103",
+            "52.85.151.71",
+            "52.85.151.66"
         ],
         "azimuth.aero": [
             "172.67.151.6",
             "104.21.90.19"
         ],
         "bookmate.com": [
+            "104.26.0.110",
             "172.67.74.137",
-            "104.26.1.110",
-            "104.26.0.110"
+            "104.26.1.110"
         ],
         "codeforces.com": [
+            "104.26.7.164",
             "104.26.6.164",
-            "172.67.68.254",
-            "104.26.7.164"
+            "172.67.68.254"
         ],
         "cyberleninka.ru": [
+            "104.26.11.2",
             "104.26.10.2",
-            "172.67.70.180",
-            "104.26.11.2"
+            "172.67.70.180"
         ],
         "doktor.ru": [
-            "104.21.10.217",
-            "172.67.146.202"
+            "172.67.146.202",
+            "104.21.10.217"
         ],
         "e-olymp.com": [
-            "63.180.222.6",
-            "63.189.18.28"
+            "63.189.18.28",
+            "63.180.222.6"
         ],
         "finance.ozon.ru": [
-            "194.9.211.64",
             "194.9.211.128",
+            "194.9.211.64",
             "194.9.211.96"
         ],
         "fix-price.com": [
@@ -225,14 +221,14 @@
             "186.2.163.182"
         ],
         "gdeposylka.ru": [
-            "104.25.107.6",
             "104.25.106.6",
+            "104.25.107.6",
             "172.67.80.113"
         ],
         "gismeteo.ru": [
-            "31.172.76.59",
-            "31.172.76.60",
             "31.172.76.57",
+            "31.172.76.60",
+            "31.172.76.59",
             "31.172.76.58"
         ],
         "gq.ru": [
@@ -250,13 +246,13 @@
             "104.26.0.213"
         ],
         "hotellook.ru": [
-            "188.42.139.156"
+            "188.42.57.116"
         ],
         "indriver.com": [
-            "143.204.204.87",
-            "143.204.204.12",
-            "143.204.204.108",
-            "143.204.204.91"
+            "65.8.180.49",
+            "65.8.180.129",
+            "65.8.180.20",
+            "65.8.180.126"
         ],
         "joom.com": [
             "34.49.252.71"
@@ -272,12 +268,12 @@
             "52.212.68.201"
         ],
         "kupibilet.ru": [
-            "63.32.156.254",
-            "52.208.127.195"
+            "52.208.127.195",
+            "63.32.156.254"
         ],
         "lingualeo.com": [
-            "18.197.130.198",
             "52.29.45.169",
+            "18.197.130.198",
             "18.185.14.176"
         ],
         "lokomotiv.info": [
@@ -290,9 +286,9 @@
             "93.92.113.12"
         ],
         "multiurok.ru": [
+            "104.26.9.176",
             "104.26.8.176",
-            "172.67.71.240",
-            "104.26.9.176"
+            "172.67.71.240"
         ],
         "nhl.ru": [
             "46.36.220.250"
@@ -307,35 +303,35 @@
             "185.86.95.57"
         ],
         "petersburgedu.ru": [
-            "46.243.177.103",
             "46.243.177.102",
+            "46.243.177.103",
             "46.243.177.26"
         ],
         "pgu.spb.ru": [
-            "104.21.38.185",
-            "172.67.137.92"
+            "172.67.137.92",
+            "104.21.38.185"
         ],
         "posylka.ru": [
             "50.114.102.115"
         ],
         "practicum.com": [
-            "104.26.15.39",
+            "172.67.74.88",
             "104.26.14.39",
-            "172.67.74.88"
+            "104.26.15.39"
         ],
         "redwings.aero": [
             "74.81.89.98",
-            "172.67.131.129",
-            "104.21.10.143"
+            "104.21.10.143",
+            "172.67.131.129"
         ],
         "reshuege.ru": [
             "104.21.8.157",
             "172.67.130.140"
         ],
         "ru.aliexpress.com": [
-            "2.21.9.228",
-            "2.21.9.232",
-            "47.89.80.37"
+            "23.212.62.214",
+            "23.212.62.196",
+            "47.89.80.131"
         ],
         "rudn.ru": [
             "37.18.93.135"
@@ -363,6 +359,7 @@
             "13.248.169.48"
         ],
         "svetofor.com": [
+            "64.190.63.111",
             "64.190.63.222"
         ],
         "tinkoff-mobile.ru": [
@@ -372,28 +369,27 @@
             "216.40.34.41"
         ],
         "tmall.ru": [
-            "47.246.133.89",
-            "47.246.133.88",
             "47.246.133.87",
             "47.246.133.86",
-            "47.246.133.23"
+            "47.246.133.89",
+            "47.246.133.88"
         ],
         "track24.ru": [
             "212.233.76.133",
-            "172.67.69.55",
+            "104.26.8.89",
             "104.26.9.89",
-            "104.26.8.89"
+            "172.67.69.55"
         ],
         "trip.ru": [
             "185.157.223.250"
         ],
         "uchitelya.com": [
-            "172.67.139.83",
-            "104.21.38.218"
+            "104.21.38.218",
+            "172.67.139.83"
         ],
         "videouroki.net": [
-            "104.26.8.107",
             "172.67.72.113",
+            "104.26.8.107",
             "104.26.9.107"
         ],
         "vipnet.ru": [
@@ -407,26 +403,13 @@
         ]
     },
     "dns_errors": {
-        "renaissance.ru": {
-            "renaissance.ru": "DNS status 2",
-            "www.renaissance.ru": "DNS status 2"
-        },
-        "beget.com": {
-            "www.beget.com": "DNS status 2"
+        "logsis.ru": {
+            "logsis.ru": "DNS status 2",
+            "www.logsis.ru": "DNS status 2"
         },
         "postamat.ru": {
             "postamat.ru": "DNS status 2",
             "www.postamat.ru": "DNS status 2"
-        },
-        "er-telecom.ru": {
-            "er-telecom.ru": "DNS status 2"
-        },
-        "rgsu.ru": {
-            "rgsu.ru": "DNS status 2",
-            "www.rgsu.ru": "DNS status 2"
-        },
-        "gosapteka.ru": {
-            "gosapteka.ru": "DNS status 2"
         }
     },
     "note": "RU registration is not proof of hosting location or exclusive ownership; shared IPs can bypass unrelated sites.",
@@ -641,138 +624,237 @@
     "sources": {
         "country": "https://www.ipdeny.com/ipblocks/data/aggregated/ru-aggregated.zone",
         "announcements": "https://stat.ripe.net/data/announced-prefixes/data.json",
-        "domain_source_sha256": "5644e84a1cd5e10da515c994ec97307afd1d851d6e52c8378e367f1b99262e0b"
+        "domain_source_sha256": "6ceb376defff41a8574aca334f7db47b099886a68d8dbc7b516a74362aa8350a"
     },
     "changes": {
         "previous_available": true,
         "added": [
-            "beget.com",
-            "er-telecom.ru",
-            "gosapteka.ru"
+            "klinikabudzdorov.ru",
+            "kod.ru",
+            "koenig.ru",
+            "koronapay.com",
+            "koshelev-bank.ru",
+            "kostroma.ru",
+            "krasnodar.su",
+            "krasnoyarsk.ru",
+            "kremlinbank.ru",
+            "kuban.ru",
+            "kubankredit.ru",
+            "kurgan.ru",
+            "kursk.ru",
+            "kuzbank.ru",
+            "lanta.ru",
+            "lenta.tech",
+            "lipetsk.ru",
+            "lk.tbank.ru",
+            "lk.vtb.ru",
+            "magadan.ru",
+            "mari-el.ru",
+            "mari.ru",
+            "marine.ru",
+            "maritimebank.com",
+            "mcbank.ru",
+            "medflex.ru",
+            "medlock.ru",
+            "medrocket.me",
+            "medsi-premium.ru",
+            "medsi.com",
+            "medtochka.ru",
+            "megapteka.ru",
+            "mel.fm",
+            "melfm.ru",
+            "metallinvestbank.ru",
+            "metib.ru",
+            "metro.spb.ru",
+            "mfk-bank.ru",
+            "mgfoms.ru",
+            "mhcb.ru",
+            "mhcbr.ru",
+            "mil.ru",
+            "mofoms.ru",
+            "moneta.ru",
+            "mordovia.ru",
+            "mos.transport.vtb.ru",
+            "mosgorzdrav.ru",
+            "mospat.ru",
+            "mosreg.ru",
+            "mspbank.ru",
+            "mtsdengi.ru",
+            "murmansk.ru",
+            "mvs-bank.ru",
+            "myapelsin.ru",
+            "myspar.ru",
+            "nalchik.ru",
+            "nationalclearingcentre.ru",
+            "nico-bank.ru",
+            "nipbank.ru",
+            "nkcbank.ru",
+            "nn.ru",
+            "noosferabank.ru",
+            "norvikbank.ru",
+            "notik.ru",
+            "novobank.ru",
+            "novosibirsk.ru",
+            "ns-bank.ru",
+            "nsk.ru",
+            "nskbl.ru",
+            "okbank.ru",
+            "oms.karelia.ru",
+            "omsk.ru",
+            "online.nalog.gov.ru",
+            "ooc-school.ru",
+            "orb.ru",
+            "orbank.ru",
+            "ostin.com",
+            "renaissance.ru",
+            "rgsu.ru"
         ],
         "removed": [],
         "changed_ips": {
-            "cdn.sberbank.ru": {
+            "amediateka.ru": {
                 "before": [
-                    "151.236.89.229"
+                    "212.193.155.190",
+                    "212.193.157.85",
+                    "46.235.189.169",
+                    "46.235.189.170"
                 ],
                 "after": [
-                    "91.231.236.245"
+                    "212.193.152.57",
+                    "212.193.153.218",
+                    "212.193.155.190",
+                    "212.193.157.85",
+                    "46.235.190.60"
                 ]
             },
-            "finstarbank.ru": {
+            "cdn.sberbank.ru": {
                 "before": [
-                    "178.248.239.14",
-                    "89.169.38.100"
+                    "91.231.236.245"
                 ],
                 "after": [
-                    "89.169.38.100"
+                    "151.236.65.237"
+                ]
+            },
+            "gosapteka.ru": {
+                "before": [
+                    "45.130.41.22"
+                ],
+                "after": [
+                    "155.212.191.205",
+                    "45.130.41.22"
                 ]
             },
             "id.mos.ru": {
                 "before": [
-                    "212.11.155.136"
+                    "212.11.155.134"
                 ],
                 "after": [
-                    "212.11.155.134"
+                    "212.11.155.135"
                 ]
             },
             "id.vtb.ru": {
                 "before": [
-                    "185.179.146.34"
+                    "185.179.144.34"
                 ],
                 "after": [
-                    "185.179.144.34"
+                    "185.179.146.34"
                 ]
             },
             "img.mail.ru": {
                 "before": [
-                    "217.69.139.100"
+                    "94.100.180.101"
                 ],
                 "after": [
-                    "94.100.180.101"
+                    "217.69.139.100"
                 ]
             },
-            "kari.com": {
+            "investfunds.ru": {
                 "before": [
-                    "178.20.233.196",
-                    "212.193.152.97",
-                    "212.193.157.209",
-                    "93.93.91.107"
+                    "195.209.86.111",
+                    "195.209.87.105",
+                    "195.209.89.131",
+                    "217.65.2.92",
+                    "217.65.2.93"
                 ],
                 "after": [
-                    "178.20.233.196",
-                    "212.193.147.201",
-                    "212.193.147.203"
+                    "195.209.86.111",
+                    "195.209.89.131",
+                    "217.65.2.92",
+                    "217.65.2.93"
                 ]
             },
             "login.mos.ru": {
                 "before": [
-                    "94.79.51.135"
+                    "94.79.51.137"
                 ],
                 "after": [
-                    "94.79.51.137"
+                    "94.79.51.135"
                 ]
             },
             "mos.ru": {
                 "before": [
+                    "212.11.155.134"
+                ],
+                "after": [
                     "212.11.155.134",
                     "94.79.51.135"
-                ],
-                "after": [
-                    "212.11.155.134"
-                ]
-            },
-            "online.vtb.ru": {
-                "before": [
-                    "185.179.146.43"
-                ],
-                "after": [
-                    "185.179.144.43"
-                ]
-            },
-            "pgu.mos.ru": {
-                "before": [
-                    "212.11.155.165",
-                    "212.11.155.166",
-                    "212.11.155.167"
-                ],
-                "after": [
-                    "212.11.155.165",
-                    "212.11.155.166",
-                    "212.11.155.167",
-                    "212.45.30.108",
-                    "37.230.149.156"
                 ]
             },
             "piluli.ru": {
                 "before": [
+                    "195.209.81.113",
                     "195.209.81.215",
                     "195.209.83.135"
                 ],
                 "after": [
-                    "195.209.81.113",
                     "195.209.81.215",
                     "195.209.83.135"
                 ]
             },
             "pobeda.aero": {
                 "before": [
-                    "185.31.113.248",
+                    "151.236.81.32",
                     "194.190.0.152"
                 ],
                 "after": [
-                    "151.236.81.32",
+                    "185.31.113.248",
                     "194.190.0.152"
                 ]
             },
-            "rosstat.gov.ru": {
+            "rshb.ru": {
                 "before": [
-                    "194.226.89.60",
-                    "5.129.245.34"
+                    "194.190.12.182",
+                    "194.190.12.47"
                 ],
                 "after": [
-                    "5.129.245.34"
+                    "194.190.12.192",
+                    "194.190.12.47"
+                ]
+            },
+            "skylink.ru": {
+                "before": [
+                    "78.41.111.34"
+                ],
+                "after": [
+                    "212.193.152.165",
+                    "212.193.152.252",
+                    "212.193.152.39",
+                    "212.193.153.124",
+                    "37.220.161.219",
+                    "37.220.161.237",
+                    "46.235.191.52",
+                    "78.41.111.34"
+                ]
+            },
+            "tele2.ru": {
+                "before": [
+                    "78.41.111.154"
+                ],
+                "after": [
+                    "212.193.152.137",
+                    "212.193.152.85",
+                    "37.220.161.200",
+                    "37.220.161.212",
+                    "46.235.190.98"
                 ]
             }
         }
