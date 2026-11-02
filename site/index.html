@@ -58,7 +58,7 @@
     .secondary:hover { border-color: var(--accent); }
     .categories { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 22px; }
     .category { display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 8px 2px; cursor: pointer; }
-    .category span { min-width: 0; }
+    .category span { min-width: 0; overflow-wrap: anywhere; }
     .category small { font-size: 14px; white-space: nowrap; }
     fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
     .format-option { display: flex; align-items: flex-start; gap: 10px; min-height: 44px; padding: 7px 2px; cursor: pointer; }
@@ -85,310 +85,175 @@
       .categories { grid-template-columns: 1fr; }
       footer span { display: block; margin: 6px 0 0; }
     }
+      .service-list { max-height: 420px; overflow-y: auto; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .selected-list { overflow-wrap: anywhere; }
+    details { margin: 18px 0; }
+    summary { cursor: pointer; min-height: 44px; padding: 9px 0; font-weight: 600; }
+    summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
   </style>
 </head>
 <body>
 <main>
-  <h1>RU Routing</h1>
-  <p class="intro">Выберите сервисы и направление маршрутизации, затем скачайте список для своего клиента.</p>
-  <section aria-labelledby="mode-title">
-    <h2 id="mode-title">Режим</h2>
-    <fieldset aria-labelledby="mode-title">
-      <label class="format-option"><input type="radio" name="mode" value="vpn" checked><span>Выбранные сервисы через VPN<small>Telegram, YouTube и другие; остальное — напрямую</small></span></label>
-      <label class="format-option"><input type="radio" name="mode" value="direct"><span>Российские сервисы напрямую<small>Остальное — через VPN при соответствующей настройке</small></span></label>
-    </fieldset>
-    <p class="muted">Выберите тот же режим в Amnezia перед импортом. Эти два списка решают разные задачи.</p>
-  </section>
+  <h1>Сервисы через VPN</h1>
+  <p>Выберите сайты и приложения, для которых нужен VPN. В Amnezia остальные соединения пойдут напрямую, если выбран соответствующий режим.</p>
+  <p id="catalog-status" class="status" role="status">Загружаю каталог…</p>
+  <p id="catalog-error" role="alert" hidden><span id="catalog-error-reason"></span> <a href="https://github.com/termux461/ru-routing">Открыть репозиторий</a>.</p>
 
-  <section aria-labelledby="categories-title">
-    <h2 id="categories-title">Сервисы через VPN</h2>
-    <p id="category-description" class="muted">Выберите сервисы. Telegram включает официальные IPv4-подсети.</p>
+  <section aria-labelledby="services-title">
+    <h2 id="services-title">Сервисы</h2>
+    <label class="control-label" for="service-group">Группа</label>
+    <select id="service-group" disabled><option value="">Загружаю…</option></select>
+    <label class="control-label" for="service-search">Найти сервис в группе</label>
+    <input id="service-search" type="search" placeholder="Например, telegram.org" disabled>
     <div class="toolbar">
-      <button class="secondary" id="all" type="button">Выбрать все</button>
-      <button class="secondary" id="none" type="button">Очистить</button>
+      <button class="secondary" id="select-group" type="button" disabled>Выбрать видимые</button>
+      <button class="secondary" id="clear-all" type="button">Очистить выбор</button>
     </div>
-    <p id="catalog-status" class="status" role="status">Загружаю каталог…</p>
-    <p id="catalog-error" class="error" role="alert" hidden><span id="catalog-error-reason"></span> <a href="https://github.com/termux461/ru-routing">Открыть репозиторий</a>.</p>
-    <div id="categories" class="categories" aria-labelledby="categories-title"></div>
+    <div id="services" class="categories service-list" aria-live="polite"></div>
+    <p id="selected-count" class="selected-list" role="status">Выбрано сервисов: 0</p>
+    <p class="muted">Можно выбрать несколько сервисов из разных групп. По умолчанию выбран Telegram.</p>
   </section>
 
   <section aria-labelledby="format-title">
     <h2 id="format-title">Формат</h2>
     <fieldset aria-labelledby="format-title">
-      <label class="format-option"><input type="radio" name="format" value="amnezia" checked><span><span class="mono">Amnezia JSON</span><small>Для Amnezia VPN, файл JSON</small></span></label>
-      <label class="format-option"><input type="radio" name="format" value="sing"><span><span class="mono">sing-box</span><small>Набор правил, файл JSON</small></span></label>
-      <label class="format-option"><input type="radio" name="format" value="clash"><span><span class="mono">Clash / Mihomo YAML</span><small>Набор правил для Clash и Mihomo</small></span></label>
-      <label class="format-option"><input type="radio" name="format" value="cidr"><span><span class="mono">IPv4 txt</span><small>Текстовый список адресов IPv4</small></span></label>
+      <label class="format-option"><input type="radio" name="format" value="amnezia" checked><span><span class="mono">Amnezia JSON</span><small>Адреса и подсети для Amnezia VPN</small></span></label>
+      <label class="format-option"><input type="radio" name="format" value="sing"><span><span class="mono">sing-box JSON</span><small>Source rule-set с доменами и IPv4</small></span></label>
+      <label class="format-option"><input type="radio" name="format" value="clash"><span><span class="mono">Clash / Mihomo YAML</span><small>Classical rule-provider</small></span></label>
+      <label class="format-option"><input type="radio" name="format" value="cidr"><span><span class="mono">IPv4 txt</span><small>Адреса и подсети построчно</small></span></label>
+      <label class="format-option"><input type="radio" name="format" value="json"><span><span class="mono">IPv4 JSON</span><small>Массив адресов и подсетей</small></span></label>
+      <label class="format-option"><input type="radio" name="format" value="comma"><span><span class="mono">IPv4 CSV</span><small>Адреса и подсети через запятую</small></span></label>
+      <label class="format-option"><input type="radio" name="format" value="mikrotik"><span><span class="mono">MikroTik RSC</span><small>Добавление адресов в address-list; маршруты нужно настроить отдельно</small></span></label>
+      <label class="format-option"><input type="radio" name="format" value="ipset"><span><span class="mono">ipset restore</span><small>Создание набора IPv4-сетей</small></span></label>
     </fieldset>
-    <button class="primary" id="download" type="button" disabled>Скачать</button>
-    <p id="scope-note" class="muted">В список входят найденные IPv4-адреса сервисов и официальные IPv4-подсети Telegram. IP-адреса могут меняться.</p>
+    <div class="toolbar"><button class="secondary" id="preview" type="button" disabled>Проверить размер</button><button class="primary" id="download" type="button" disabled>Скачать</button></div>
+    <p id="output-status" class="status" role="status"></p>
+    <p class="disclaimer">Подсети могут включать общие CDN и другие сайты. Большой список маршрутов может не подойти телефону. Это все допустимые публичные IPv4 и подсети, которые вернул источник при последнем обновлении, а не гарантия всех адресов сервиса. Частные и служебные диапазоны исключены.</p>
   </section>
 
   <section aria-labelledby="upload-title">
-    <h2 id="upload-title">Загрузить свой список</h2>
-    <p>Можно загрузить <a id="full-list-link" href="https://github.com/termux461/ru-routing/blob/main/dist/vpn-list.json">готовый список текущего режима</a> или выбрать свой JSON-файл. Обрабатываются только известные правила текущего каталога; полные подсети российского списка при этом не сохраняются. Файл остаётся в браузере.</p>
+    <h2 id="upload-title">Добавить свой файл</h2>
+    <p>Можно добавить адреса и домены с IP из своего Amnezia JSON к выбранным сервисам. Файл обрабатывается в браузере.</p>
     <label class="upload-label" for="upload">Файл Amnezia JSON</label>
-    <input id="upload" type="file" accept=".json,application/json" disabled>
-    <p id="message" class="status" role="status"></p>
+    <input id="upload" type="file" accept=".json,application/json">
+    <p id="upload-status" class="status" role="status"></p>
   </section>
 
-  <section aria-labelledby="portals-title">
-    <h2 id="portals-title">Больше сервисов и форматов — IPList</h2>
-    <p>Выберите портал или целую группу. Файл формирует внешний сервис <a href="https://iplist.opencck.org/ru/">IPList</a>; выбранные параметры отправляются ему напрямую.</p>
-    <p id="portal-status" class="muted" role="status">Загружаю список порталов…</p>
+  <details>
+    <summary>Другие форматы и IPv6 через IPList</summary>
+    <p>Выберите один портал или всю группу. Файл формирует внешний <a href="https://iplist.opencck.org/ru/">IPList</a>; запрос откроется на его сайте.</p>
     <form id="portal-form" action="https://iplist.opencck.org/" method="get" target="_blank">
-      <label class="control-label" for="portal-group">Группа</label>
-      <select id="portal-group" name="group" required disabled><option value="">Выберите группу</option></select>
-      <label class="control-label" for="portal-search">Найти портал в группе</label>
-      <input id="portal-search" type="search" placeholder="Например, youtube.com" disabled>
-      <label class="control-label" for="portal-site">Портал</label>
-      <select id="portal-site" name="site" disabled><option value="">Все порталы группы</option></select>
-      <label class="control-label" for="portal-format">Формат файла</label>
-      <select id="portal-format" name="format">
-        <option value="json">JSON</option><option value="text">Текст, по одному в строке</option><option value="comma">Текст через запятую</option>
-        <option value="singbox">sing-box JSON</option><option value="srs">sing-box SRS</option><option value="clashx">ClashX</option><option value="amnezia">Amnezia</option>
-        <option value="mikrotik">MikroTik RouterOS</option><option value="ipset">dnsmasq ipset</option><option value="nfset">dnsmasq nftset</option><option value="kvas">Keenetic KVAS</option>
-        <option value="bat">Keenetic routes BAT</option><option value="wildcard">Keenetic DNS wildcard</option><option value="switchy">SwitchyOmega RuleList</option><option value="pac">PAC</option>
-        <option value="geoip">V2Ray GeoIP DAT</option><option value="geosite">V2Ray GeoSite DAT</option>
-      </select>
-      <label class="control-label" for="portal-data">Данные</label>
-      <select id="portal-data" name="data"><option value="ip4">Отдельные IPv4</option><option value="cidr4">Подсети IPv4</option><option value="domains">Домены</option><option value="ip6">Отдельные IPv6</option><option value="cidr6">Подсети IPv6</option></select>
-      <label class="control-label" for="exclude-ip">Исключить один IPv4 (необязательно)</label>
-      <input id="exclude-ip" type="search" name="exclude[ip4]" placeholder="Например, 1.1.1.1">
-      <label class="control-label" for="exclude-domain">Исключить один домен (необязательно)</label>
-      <input id="exclude-domain" type="search" name="exclude[domain]" placeholder="Например, example.com">
+      <label class="control-label" for="portal-group">Группа</label><select id="portal-group" name="group" required disabled><option value="">Выберите группу</option></select>
+      <label class="control-label" for="portal-site">Портал</label><select id="portal-site" name="site" disabled><option value="">Все порталы группы</option></select>
+      <label class="control-label" for="portal-format">Формат</label><select id="portal-format" name="format"><option value="json">JSON</option><option value="text">Текст</option><option value="comma">Через запятую</option><option value="singbox">sing-box JSON</option><option value="srs">sing-box SRS</option><option value="clashx">ClashX</option><option value="amnezia">Amnezia</option><option value="mikrotik">MikroTik</option><option value="ipset">dnsmasq ipset</option><option value="nfset">dnsmasq nftset</option><option value="kvas">Keenetic KVAS</option><option value="bat">Keenetic BAT</option><option value="wildcard">Keenetic wildcard</option><option value="switchy">SwitchyOmega</option><option value="pac">PAC</option><option value="geoip">V2Ray GeoIP</option><option value="geosite">V2Ray GeoSite</option></select>
+      <label class="control-label" for="portal-data">Данные</label><select id="portal-data" name="data"><option value="ip4">Отдельные IPv4</option><option value="cidr4">Подсети IPv4</option><option value="domains">Домены</option><option value="ip6">Отдельные IPv6</option><option value="cidr6">Подсети IPv6</option></select>
       <input type="hidden" name="version" value="3"><input type="hidden" name="filesave" value="1">
-      <button class="secondary" id="portal-submit" type="submit" disabled>Получить файл IPList</button>
-      <p id="portal-message" class="muted" role="status"></p>
+      <button class="secondary" id="portal-submit" type="submit" disabled>Получить файл IPList</button><p id="portal-message" class="status" role="status"></p>
     </form>
-    <p class="disclaimer">Данные IPList могут содержать общие IP и очень широкие подсети. Они могут затронуть другие сервисы или быть слишком большими для телефона. Скрипты MikroTik и BAT могут менять маршруты или удалять записи — проверьте содержимое перед запуском. Amnezia-файлы IPList могут содержать пустое поле IP; совместимость зависит от версии клиента.</p>
-    <p><a href="https://github.com/rekryt/iplist">Исходный проект IPList</a> · <a href="https://github.com/rekryt/iplist/blob/master/LICENSE">Лицензия MIT</a></p>
-  </section>
-
-  <section aria-labelledby="reference-title">
-    <h2 id="reference-title">Готовые списки российских сервисов</h2>
-    <p>Внешние файлы <a href="https://github.com/lib4u/amnezia-tunneling-ru">amnezia-tunneling-ru</a> предназначены для режима <strong>«адреса из списка не должны открываться через VPN»</strong>:</p>
-    <ul>
-      <li><a href="https://github.com/lib4u/amnezia-tunneling-ru/releases/download/latest/amnezia-ip-lite.json">IP-список Lite</a> — меньше подсетей.</li>
-      <li><a href="https://github.com/lib4u/amnezia-tunneling-ru/releases/download/latest/amnezia-ip.json">Полный IP-список</a> — очень много маршрутов, может не подойти телефону.</li>
-      <li><a href="https://github.com/lib4u/amnezia-tunneling-ru/releases/download/latest/amnezia.json">Список доменов</a> — некоторые клиенты не определяют IP при импорте.</li>
-    </ul>
-    <p class="muted">Это отдельные файлы стороннего проекта. Их данные и совместимость мы не проверяем при каждой сборке; отдельные общие IP могут затронуть другие сайты.</p>
-  </section>
-
-  <section aria-labelledby="report-title">
-    <h2 id="report-title">Не попали в список</h2>
-    <p>Домены текущего каталога, для которых сборка не нашла подходящий IPv4-адрес или получила ошибку DNS.</p>
-    <p id="report-status" class="muted" role="status">Загружаю отчёт…</p>
-    <label for="report-filter">Найти домен</label>
-    <input id="report-filter" type="search" placeholder="Например, youtube.com">
-    <div id="skipped-list" aria-live="polite"></div>
-  </section>
+    <p class="muted">Не все форматы работают со всеми типами данных. IPv6 и отдельные файлы IPList могут не поддерживаться вашей версией Amnezia. Скрипты стороннего сервиса могут удалять записи или менять маршруты — проверяйте их перед запуском.</p>
+  </details>
 
   <section aria-labelledby="help-title">
     <h2 id="help-title">Как подключить</h2>
     <ol>
-      <li>Выберите категории и формат вашего клиента, затем скачайте файл.</li>
-      <li id="mode-instruction">В Amnezia отключите VPN, включите раздельное туннелирование сайтов, выберите режим «сайты из списка должны открываться через VPN» и импортируйте JSON.</li>
-      <li>Подключите VPN и проверьте свой IP на нужном сервисе. Выберите «Заменить список», чтобы удалить прежние правила этого режима. После обновления файла импортируйте его повторно.</li>
+      <li>Выберите сервисы, проверьте размер и скачайте Amnezia JSON.</li>
+      <li>Отключите VPN в Amnezia, включите раздельное туннелирование сайтов и выберите <strong>«Сайты из списка должны открываться через VPN»</strong>.</li>
+      <li>Импортируйте JSON. «Заменить список» удалит прежние записи этого режима. Подключите VPN и проверьте нужные приложения.</li>
+      <li>После обновления данных скачайте файл и импортируйте его повторно: Amnezia не обновляет импорт автоматически.</li>
     </ol>
-    <p>Если нужный сервис не открывается, <a href="https://github.com/termux461/ru-routing/issues">напишите в issues</a>.</p>
-    <p class="disclaimer">При прямом подключении сервисы видят ваш обычный IP. Один IP могут использовать несколько сайтов, поэтому правило может затронуть и другие сайты. Для YouTube и других CDN часть адресов меняется динамически; список не гарантирует работу всех приложений и IPv6.</p>
+    <p>Если что-то не работает, <a href="https://github.com/termux461/ru-routing/issues">напишите в issues</a>.</p>
+    <p class="muted">Для Telegram добавлены официальные IPv4-подсети. Сервис может использовать меняющиеся адреса, общие CDN и IPv6, поэтому полная работа всех приложений не гарантируется. Остальной трафик при выбранном режиме идёт напрямую и видит ваш обычный IP.</p>
   </section>
 </main>
-<footer><a href="https://github.com/termux461/ru-routing">GitHub</a><span id="catalog-date">Дата обновления каталога пока неизвестна</span></footer>
+<footer><a href="https://github.com/termux461/ru-routing">GitHub</a><span id="catalog-date">Дата обновления пока неизвестна</span></footer>
 <script>
 'use strict';
-let data, entries = [];
-let currentMode = 'vpn', loadSequence = 0;
-const $ = selector => document.querySelector(selector);
-const msg = value => { $('#message').textContent = value; };
-const countLabel = (count, one, few, many) => {
-  const n = count % 100;
-  return count + ' ' + (n >= 11 && n <= 14 ? many : n % 10 === 1 ? one : n % 10 >= 2 && n % 10 <= 4 ? few : many);
-};
-const isIpv4 = value => { if (typeof value !== 'string') return false; const parts = value.split('/'); if (parts.length > 2 || (parts.length === 2 && (!/^(?:[0-9]|[12][0-9]|3[0-2])$/.test(parts[1])))) return false; const octets = parts[0].split('.'); return octets.length === 4 && octets.every(octet => /^(0|[1-9][0-9]{0,2})$/.test(octet) && Number(octet) <= 255); };
-const valid = x => x && typeof x.hostname === 'string' && (/^[a-z0-9.-]+$/i.test(x.hostname) || isIpv4(x.hostname)) && Array.isArray(x.ips) && x.ips.length > 0 && x.ips.every(isIpv4);
-
-function render() {
-  const grid = $('#categories');
-  grid.replaceChildren();
-  data.categories.forEach((category, index) => {
-    const count = entries.filter(entry => data.domain_categories[entry.hostname] === category.id).length;
-    const label = document.createElement('label');
-    label.className = 'category';
-    const input = document.createElement('input');
-    input.type = 'checkbox';
-    input.id = 'category-' + index;
-    input.value = category.id;
-    input.checked = currentMode === 'vpn' || ['banks', 'government'].includes(category.id);
-    label.htmlFor = input.id;
-    const title = document.createElement('span');
-    title.textContent = category.name;
-    const amount = document.createElement('small');
-    amount.textContent = count;
-    label.append(input, title, amount);
-    grid.append(label);
-  });
-  $('#catalog-status').textContent = 'В каталоге: ' + countLabel(entries.length, 'правило', 'правила', 'правил') + '.';
-  $('#catalog-date').textContent = 'Каталог обновлён: ' + new Date(data.built_at).toLocaleString('ru-RU');
+const $=selector=>document.querySelector(selector);
+const sourceBase='https://raw.githubusercontent.com/termux461/ru-routing/main/dist/';
+const labels={ai:'ИИ',anime:'Аниме',art:'Творчество',casino:'Азартные игры',discord:'Discord',education:'Образование',finance:'Финансы',games:'Игры',hosting:'Хостинг',jetbrains:'JetBrains',messengers:'Мессенджеры',music:'Музыка',news:'Новости',porn:'Для взрослых',shop:'Магазины',socials:'Соцсети',tools:'Инструменты',torrent:'Торренты',video:'Видео',youtube:'YouTube'};
+let manifest=null, currentGroup='', selected=new Set(), snapshots=new Map(), extras={routes:[],domains:[]}, selectionVersion=0;
+function ipRange(value) {
+  if(typeof value!=='string') return null;
+  const p=value.split('/');if(p.length>2 || (p.length===2 && !/^(?:[0-9]|[12][0-9]|3[0-2])$/.test(p[1])))return null;
+  const oct=p[0].split('.');if(oct.length!==4||!oct.every(x=>/^(0|[1-9][0-9]{0,2})$/.test(x)&&Number(x)<=255))return null;
+  const bits=p.length===2?Number(p[1]):32, num=oct.reduce((n,x)=>n*256+Number(x),0), size=2**(32-bits), start=Math.floor(num/size)*size;
+  return {start,end:start+size-1,prefix:bits,text:[24,16,8,0].map(shift=>Math.floor(start/2**shift)%256).join('.')+'/'+bits};
 }
-
-async function init() {
-  const seq = ++loadSequence;
-  const catalog = currentMode === 'vpn' ? 'vpn-catalog.json' : 'catalog.json';
-  $('#download').disabled = true; $('#upload').disabled = true; $('#catalog-error').hidden = true;
-  $('#catalog-status').textContent = 'Загружаю каталог…'; $('#categories').replaceChildren(); data = null; entries = [];
-  try {
-    let response;
-    try {
-      response = await fetch('https://raw.githubusercontent.com/termux461/ru-routing/main/dist/' + catalog, {cache: 'no-cache'});
-      if (!response.ok) throw Error('HTTP ' + response.status);
-    } catch {
-      response = await fetch('../dist/' + catalog, {cache: 'no-cache'});
-      if (!response.ok) throw Error('HTTP ' + response.status);
-    }
-    const loaded = await response.json();
-    if (seq !== loadSequence) return;
-    data = loaded;
-    if (!Array.isArray(data.entries) || !Array.isArray(data.categories) || !data.domain_categories) throw Error('неверный формат каталога');
-    entries = data.entries.filter(valid);
-    render();
-    $('#download').disabled = false;
-    $('#upload').disabled = false;
-  } catch (error) {
-    if (seq !== loadSequence) return;
-    $('#catalog-status').textContent = '';
-    $('#catalog-error-reason').textContent = 'Не удалось загрузить каталог: ' + error.message + '.';
-    $('#catalog-error').hidden = false;
+const reserved=['0.0.0.0/8','10.0.0.0/8','100.64.0.0/10','127.0.0.0/8','169.254.0.0/16','172.16.0.0/12','192.0.0.0/24','192.0.2.0/24','192.168.0.0/16','198.18.0.0/15','198.51.100.0/24','203.0.113.0/24','224.0.0.0/3'].map(ipRange);
+function publicRoute(value){const r=ipRange(value);if(!r||r.prefix===0||reserved.some(x=>r.start<=x.end&&r.end>=x.start))return null;return r;}
+function minimize(values) {
+  const ranges=values.map(publicRoute).filter(Boolean).sort((a,b)=>a.start-b.start||b.end-a.end), result=[];let end=-1;
+  for(const r of ranges){if(r.end<=end)continue;result.push(r.text);end=r.end;}
+  return result;
+}
+function hostname(value){return typeof value==='string'&&value.length<=253&&value.includes('.')&&!value.includes('..')&&value.split('.').every(x=>/^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/i.test(x));}
+async function readJson(file){let r;try{r=await fetch(sourceBase+file,{cache:'no-cache'});if(!r.ok)throw Error('HTTP '+r.status)}catch{r=await fetch('../dist/'+file,{cache:'no-cache'});if(!r.ok)throw Error('HTTP '+r.status)}return r.json();}
+function key(group,id){return group+'|'+id;}
+function updateSelected(){selectionVersion++;const values=[...selected].map(x=>x.split('|')[1]);$('#selected-count').textContent='Выбрано сервисов: '+values.length+(values.length?' — '+values.join(', '):'');$('#output-status').textContent='';}
+function renderServices(){
+  const group=manifest.groups.find(g=>g.id===currentGroup), search=$('#service-search').value.trim().toLowerCase(), list=$('#services');list.replaceChildren();
+  if(!group)return;
+  for(const item of group.items.filter(x=>x.id.toLowerCase().includes(search))){
+    const label=document.createElement('label');label.className='category';const input=document.createElement('input');input.type='checkbox';input.checked=selected.has(key(group.id,item.id));input.disabled=item.missing>0||item.routes===0;
+    input.value=key(group.id,item.id);input.addEventListener('change',()=>{if(input.checked)selected.add(key(group.id,item.id));else selected.delete(key(group.id,item.id));updateSelected()});
+    const name=document.createElement('span');name.textContent=item.id;const count=document.createElement('small');count.textContent=item.missing?'нет части данных':item.routes+' маршрутов';label.append(input,name,count);list.append(label);
   }
+  if(!list.childElementCount)list.textContent='Ничего не найдено.';
 }
-
-$('#all').onclick = () => document.querySelectorAll('.category input').forEach(input => { input.checked = true; });
-$('#none').onclick = () => document.querySelectorAll('.category input').forEach(input => { input.checked = false; });
-$('#upload').onchange = async event => {
-  try {
-    const file = event.target.files[0];
-    if (!file) return;
-    if (file.size > 5000000) throw Error('Файл слишком большой');
-    const parsed = JSON.parse(await file.text());
-    if (!Array.isArray(parsed)) throw Error('Нужен JSON-список Amnezia');
-    const known = parsed.filter(entry => valid(entry) && data.domain_categories[entry.hostname]);
-    if (!known.length) throw Error('Известные домены не найдены');
-    entries = known;
-    render();
-    msg('Загружено правил: ' + known.length + ' (' + file.name + ').');
-  } catch (error) { msg(error.message); }
-};
-
-$('#download').onclick = () => {
-  if (!data) return;
-  const selected = new Set([...document.querySelectorAll('.category input:checked')].map(input => input.value));
-  const rows = entries.filter(entry => selected.has(data.domain_categories[entry.hostname]));
-  if (!rows.length) { msg('Выберите сервисы с адресами.'); return; }
-  const domains = [...new Set(rows.map(entry => entry.hostname).filter(host => !host.includes('/')))].sort();
-  const ips = [...new Set(rows.flatMap(entry => entry.ips.map(ip => ip.includes('/') ? ip : ip + '/32')))].sort();
-  const format = document.querySelector('input[name="format"]:checked').value;
-  let content, mime, extension;
-  if (format === 'amnezia') {
-    content = JSON.stringify(rows, null, 2) + '\n'; mime = 'application/json'; extension = 'json';
-  } else if (format === 'sing') {
-    content = JSON.stringify({version: 3, rules: [{domain_suffix: domains, ip_cidr: ips}]}, null, 2) + '\n'; mime = 'application/json'; extension = 'json';
-  } else if (format === 'clash') {
-    content = 'payload:\n' + domains.map(domain => "  - 'DOMAIN-SUFFIX," + domain + "'\n").join('') + ips.map(ip => "  - 'IP-CIDR," + ip + ",no-resolve'\n").join(''); mime = 'text/yaml'; extension = 'yaml';
-  } else {
-    content = ips.join('\n') + '\n'; mime = 'text/plain'; extension = 'txt';
-  }
-  const url = URL.createObjectURL(new Blob([content], {type: mime}));
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = (currentMode === 'vpn' ? 'vpn-only-' : 'ru-direct-') + format + '.' + extension;
-  link.click();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-  msg('Подготовлено: ' + countLabel(rows.length, 'правило', 'правила', 'правил') + ' и ' + countLabel(ips.length, 'адрес', 'адреса', 'адресов') + '.');
-};
-
-const explanations = {dns_error: 'Ошибка DNS: повторим при следующей сборке', no_approved_ipv4: 'IPv4 не найден в разрешённых диапазонах', no_a_record: 'Нет ответа IPv4'};
-let skippedReport = null, reportSequence = 0;
-function showSkipped() {
-  const list = $('#skipped-list');
-  list.replaceChildren();
-  if (!skippedReport) return;
-  const search = $('#report-filter').value.trim().toLowerCase();
-  const combined = {...(skippedReport.skip_reasons || {})};
-  const items = Object.entries(combined).filter(([host]) => host.includes(search));
-  if (!items.length) { list.textContent = 'Нет совпадений'; return; }
-  for (const [host, reason] of items) {
-    const row = document.createElement('div');
-    row.className = 'report-row';
-    const name = document.createElement('span');
-    name.className = 'domain';
-    name.textContent = host;
-    const why = document.createElement('span');
-    why.className = 'muted';
-    why.textContent = explanations[reason] || 'Не включён: ' + reason;
-    row.append(name, why);
-    list.append(row);
-  }
+async function snapshot(group){
+  if(!/^[a-z0-9_-]+$/.test(group))throw Error('Некорректная группа');
+  if(snapshots.has(group))return snapshots.get(group);
+  const result=await readJson('full-'+group+'.json');if(result.version!==1||result.group!==group||!result.sites||typeof result.sites!=='object')throw Error('Некорректные данные группы '+group);
+  snapshots.set(group,result);return result;
 }
-$('#report-filter').addEventListener('input', showSkipped);
-async function loadReport() {
-  const seq = ++reportSequence;
-  const file = currentMode === 'vpn' ? 'vpn-report.json' : 'report.json';
-  skippedReport = null; $('#skipped-list').replaceChildren(); $('#report-status').textContent = 'Загружаю отчёт…';
-  try {
-    const response = await fetch('https://raw.githubusercontent.com/termux461/ru-routing/main/dist/' + file, {cache: 'no-cache'});
-    if (!response.ok) throw Error('HTTP ' + response.status);
-    const report = await response.json(); if (seq !== reportSequence) return;
-    if (!report.skip_reasons || typeof report.skip_reasons !== 'object') throw Error('нет данных');
-    skippedReport = report;
-    $('#report-status').textContent = 'Пропущено: ' + Object.keys(report.skip_reasons).length + ' · проверено ' + new Date(report.built_at).toLocaleString('ru-RU');
-    showSkipped();
-  } catch (error) { if (seq === reportSequence) $('#report-status').textContent = 'Не удалось загрузить отчёт: ' + error.message + '. Откройте ' + file + ' на GitHub.'; }
+async function collect(){
+  const version=selectionVersion;
+  if(!selected.size&&!extras.routes.length)throw Error('Выберите хотя бы один сервис или загрузите файл.');
+  const values=[...selected].map(x=>{const [group,id]=x.split('|');return {group,id}}), groups=[...new Set(values.map(x=>x.group))];
+  $('#output-status').textContent='Загружаю адреса выбранных сервисов…';
+  const loaded=await Promise.all(groups.map(async group=>[group,await snapshot(group)])), byGroup=Object.fromEntries(loaded);
+  if(version!==selectionVersion)throw Error('Выбор изменился во время загрузки; повторите.');
+  const routes=[...extras.routes],domains=[...extras.domains];let rejected=0;
+  for(const {group,id} of values){const row=byGroup[group]?.sites[id];if(!row||!Array.isArray(row.routes)||!Array.isArray(row.domains)||row.missing_sources?.length)throw Error('Неполные данные '+id+'; повторите позже.');if(!row.routes.length)throw Error('Нет IPv4-адресов для '+id+'.');routes.push(...row.routes);domains.push(...row.domains);rejected+=Number(row.rejected)||0;}
+  // Independent official Telegram subnets are already included in its snapshot.
+  const result=minimize(routes), names=[...new Set(domains.filter(hostname))].sort();
+  if(!result.length)throw Error('Не найдено публичных IPv4-адресов.');
+  const wide=result.filter(x=>Number(x.split('/')[1])<16);
+  return {routes:result,domains:names,wide,rejected};
 }
-document.querySelectorAll('input[name="mode"]').forEach(input => input.addEventListener('change', () => {
-  currentMode = input.value;
-  const vpn = currentMode === 'vpn';
-  $('#categories-title').textContent = vpn ? 'Сервисы через VPN' : 'Российские сервисы напрямую';
-  $('#category-description').textContent = vpn ? 'Выберите сервисы. Telegram включает официальные IPv4-подсети.' : 'Выберите категории. По умолчанию отмечены банки и госуслуги.';
-  $('#scope-note').textContent = vpn ? 'В список входят найденные IPv4-адреса сервисов и официальные IPv4-подсети Telegram. IP-адреса могут меняться.' : 'Список категорий содержит отдельные IP доменов; общие подсети компаний не включаются.';
-  $('#full-list-link').href = 'https://github.com/termux461/ru-routing/blob/main/dist/' + (vpn ? 'vpn-list.json' : 'tunneling-list.json');
-  $('#mode-instruction').textContent = vpn ? 'В Amnezia отключите VPN, включите раздельное туннелирование сайтов, выберите режим «сайты из списка должны открываться через VPN» и импортируйте JSON.' : 'В Amnezia отключите VPN, включите раздельное туннелирование сайтов, выберите режим «сайты из списка не должны открываться через VPN» и импортируйте JSON.';
-  msg(''); $('#upload').value = ''; init(); loadReport();
-}));
-
-const labels = {ai:'ИИ',anime:'Аниме',art:'Творчество',casino:'Азартные игры',discord:'Discord',education:'Образование',finance:'Финансы',games:'Игры',hosting:'Хостинг',jetbrains:'JetBrains',messengers:'Мессенджеры',music:'Музыка',news:'Новости',social:'Соцсети',streaming:'Видео и стриминг',vpn:'VPN',youtube:'YouTube'};
-let portalGroups=[];
-function fillSites() {
-  const group=portalGroups.find(x=>x.id===$('#portal-group').value); const selected=$('#portal-site').value; const query=$('#portal-search').value.trim().toLowerCase();
-  $('#portal-site').replaceChildren(new Option('Все порталы группы', ''));
-  for (const name of group?.sites||[]) if (name.toLowerCase().includes(query)) $('#portal-site').add(new Option(name,name));
-  if ([...$('#portal-site').options].some(option=>option.value===selected)) $('#portal-site').value=selected;
-  $('#portal-site').disabled=!group; $('#portal-search').disabled=!group;
-}
-$('#portal-group').addEventListener('change',()=>{$('#portal-search').value='';fillSites()});
-$('#portal-search').addEventListener('input',fillSites);
-const domainFormats = new Set(['geosite','wildcard','switchy','pac','ipset','nfset']);
-const ipFormats = new Set(['geoip','mikrotik','clashx','kvas','bat','amnezia']);
-$('#portal-format').addEventListener('change',()=>{const fmt=$('#portal-format').value;if(domainFormats.has(fmt))$('#portal-data').value='domains';else if(ipFormats.has(fmt) && $('#portal-data').value==='domains')$('#portal-data').value='ip4'});
-$('#portal-form').addEventListener('submit',event=>{
-  const fmt=$('#portal-format').value, kind=$('#portal-data').value;
-  if ($('#portal-search').value.trim() && !$('#portal-site').value) { event.preventDefault(); $('#portal-message').textContent='Выберите найденный портал или очистите поиск для всей группы.'; return; }
-  if ((domainFormats.has(fmt) && kind!=='domains') || (ipFormats.has(fmt) && kind==='domains') || (fmt==='amnezia' && (kind==='ip6'||kind==='cidr6'))) {
-    event.preventDefault(); $('#portal-message').textContent='Для выбранного формата измените тип данных: доменные форматы используют домены, IP-форматы — адреса или подсети. Amnezia — IPv4.';return;
-  }
-  $('#portal-message').textContent='Запрос открыт в IPList. Если файл не скачался, проверьте сообщение сервиса.';
-});
-(async()=>{try{
-  let response;try{response=await fetch('https://raw.githubusercontent.com/termux461/ru-routing/main/dist/portals.json',{cache:'no-cache'});if(!response.ok)throw Error('HTTP '+response.status)}catch{response=await fetch('../dist/portals.json',{cache:'no-cache'});if(!response.ok)throw Error('HTTP '+response.status)}
-  const index=await response.json();if(!Array.isArray(index.groups)||!index.groups.length)throw Error('пустой индекс');
-  portalGroups=index.groups.filter(g=>typeof g.id==='string' && Array.isArray(g.sites));
-  for(const group of portalGroups) $('#portal-group').add(new Option((labels[group.id]||group.id)+' ('+group.sites.length+')',group.id));
-  $('#portal-group').disabled=false;$('#portal-submit').disabled=false;
-  $('#portal-status').textContent='Доступно порталов: '+index.count+'; групп: '+portalGroups.length+'. Индекс: '+new Date(index.generated_at).toLocaleString('ru-RU')+'.';
-}catch(e){$('#portal-status').textContent='Не удалось загрузить индекс порталов: '+e.message+'. Можно открыть IPList напрямую.'}})();
-
-loadReport();
+function summary(data){return 'Маршрутов: '+data.routes.length+'; доменов: '+data.domains.length+'. Широких подсетей крупнее /16: '+data.wide.length+'. Отфильтровано служебных или некорректных записей источника: '+data.rejected+'.'+(data.wide.length?' Примеры: '+data.wide.slice(0,4).join(', ')+'. Эти сети могут охватывать другие сайты.':'');}
+$('#preview').onclick=async()=>{try{$('#preview').disabled=true;const data=await collect();$('#output-status').textContent=summary(data);}catch(e){$('#output-status').textContent=e.message}finally{$('#preview').disabled=false}};
+$('#download').onclick=async()=>{try{
+  $('#download').disabled=true;const data=await collect(),format=document.querySelector('input[name="format"]:checked').value;let content,type,ext;
+  if(format==='amnezia'){content=JSON.stringify(data.routes.map(route=>({hostname:route,ip:route,ips:[route]})),null,2)+'\n';type='application/json';ext='json';}
+  else if(format==='sing'){content=JSON.stringify({version:3,rules:[{domain_suffix:data.domains,ip_cidr:data.routes}]},null,2)+'\n';type='application/json';ext='json';}
+  else if(format==='clash'){content='payload:\n'+data.domains.map(d=>"  - 'DOMAIN-SUFFIX,"+d+"'\n").join('')+data.routes.map(r=>"  - 'IP-CIDR,"+r+",no-resolve'\n").join('');type='text/yaml';ext='yaml';}
+  else if(format==='json'){content=JSON.stringify(data.routes,null,2)+'\n';type='application/json';ext='json';}
+  else if(format==='comma'){content=data.routes.join(', ')+'\n';type='text/plain';ext='txt';}
+  else if(format==='mikrotik'){content=data.routes.map(r=>'/ip firewall address-list add list=vpn-sites address='+r).join('\n')+'\n';type='text/plain';ext='rsc';}
+  else if(format==='ipset'){content='create vpn_sites hash:net family inet -exist\n'+data.routes.map(r=>'add vpn_sites '+r+' -exist').join('\n')+'\n';type='text/plain';ext='txt';}
+  else {content=data.routes.join('\n')+'\n';type='text/plain';ext='txt';}
+  const url=URL.createObjectURL(new Blob([content],{type})), a=document.createElement('a');a.href=url;a.download='vpn-sites-'+format+'.'+ext;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);$('#output-status').textContent=summary(data);
+}catch(e){$('#output-status').textContent=e.message}finally{$('#download').disabled=false}};
+$('#service-group').onchange=e=>{currentGroup=e.target.value;$('#service-search').value='';renderServices()};
+$('#service-search').oninput=renderServices;
+$('#select-group').onclick=()=>{document.querySelectorAll('#services input:not(:disabled)').forEach(x=>{x.checked=true;x.dispatchEvent(new Event('change'))});};
+$('#clear-all').onclick=()=>{selected.clear();renderServices();updateSelected()};
+$('#upload').onchange=async e=>{extras={routes:[],domains:[]};selectionVersion++;$('#output-status').textContent='';try{const f=e.target.files[0];if(!f){$('#upload-status').textContent='';return;}if(f.size>5000000)throw Error('Файл больше 5 МБ.');const parsed=JSON.parse(await f.text());if(!Array.isArray(parsed))throw Error('Нужен JSON-список Amnezia.');const routes=[],domains=[];let skipped=0;for(const row of parsed){if(!row||typeof row!=='object'){skipped++;continue}const raw=[];if(typeof row.hostname==='string'&&ipRange(row.hostname))raw.push(row.hostname);if(Array.isArray(row.ips))raw.push(...row.ips);if(typeof row.ip==='string'&&row.ip)raw.push(row.ip);const ok=raw.map(publicRoute).filter(Boolean);if(!ok.length){skipped++;continue}routes.push(...ok.map(r=>r.text));if(hostname(row.hostname))domains.push(row.hostname)}if(!routes.length)throw Error('В файле нет допустимых публичных IPv4.');extras={routes,domains};selectionVersion++;$('#upload-status').textContent='Добавлено адресов и подсетей: '+routes.length+'. Пропущено записей: '+skipped+'.';$('#output-status').textContent='';}catch(err){$('#upload-status').textContent=err.message}};
+async function init(){try{
+  manifest=await readJson('full-manifest.json');if(manifest.version!==1||!Array.isArray(manifest.groups)||!manifest.groups.length)throw Error('некорректный каталог');
+  for(const g of manifest.groups)if(!/^[a-z0-9_-]+$/.test(g.id)||!Array.isArray(g.items))throw Error('некорректная группа');
+  $('#service-group').replaceChildren();$('#portal-group').replaceChildren(new Option('Выберите группу',''));
+  for(const group of manifest.groups){$('#service-group').add(new Option((labels[group.id]||group.id)+' ('+group.items.length+')',group.id));$('#portal-group').add(new Option((labels[group.id]||group.id)+' ('+group.items.length+')',group.id));}
+  currentGroup=manifest.groups.some(g=>g.id==='messengers')?'messengers':manifest.groups[0].id;$('#service-group').value=currentGroup;
+  if(manifest.groups.find(g=>g.id==='messengers')?.items.some(x=>x.id==='telegram.org'&&!x.missing&&x.routes))selected.add(key('messengers','telegram.org'));
+  $('#service-group').disabled=false;$('#service-search').disabled=false;$('#select-group').disabled=false;$('#portal-group').disabled=false;$('#portal-submit').disabled=false;$('#preview').disabled=false;$('#download').disabled=false;
+  $('#catalog-status').textContent='Доступно сервисов: '+manifest.sites_total+'; групп: '+manifest.groups.length+'.';$('#catalog-date').textContent='Данные обновлены: '+new Date(manifest.built_at).toLocaleString('ru-RU');renderServices();updateSelected();
+}catch(e){$('#catalog-status').textContent='';$('#catalog-error-reason').textContent='Не удалось загрузить список: '+e.message+'.';$('#catalog-error').hidden=false}}
+const domainFormats=new Set(['geosite','wildcard','switchy','pac','ipset','nfset']), ipFormats=new Set(['geoip','mikrotik','clashx','kvas','bat','amnezia']);
+$('#portal-group').onchange=()=>{const g=manifest.groups.find(x=>x.id===$('#portal-group').value),s=$('#portal-site');s.replaceChildren(new Option('Все порталы группы',''));if(g)for(const item of g.items)s.add(new Option(item.id,item.id));s.disabled=!g};
+$('#portal-format').onchange=()=>{const f=$('#portal-format').value;if(domainFormats.has(f))$('#portal-data').value='domains';else if(ipFormats.has(f)&&$('#portal-data').value==='domains')$('#portal-data').value='ip4'};
+$('#portal-form').onsubmit=e=>{const f=$('#portal-format').value,d=$('#portal-data').value;if((domainFormats.has(f)&&d!=='domains')||(ipFormats.has(f)&&d==='domains')||(f==='amnezia'&&['ip6','cidr6'].includes(d))){e.preventDefault();$('#portal-message').textContent='Выберите совместимый тип данных; Amnezia здесь поддерживает только IPv4.';return}$('#portal-message').textContent='Запрос открыт на сайте IPList.';};
 init();
 </script>
 </body>
