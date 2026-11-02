@@ -1,0 +1,3 @@
+payload:
+  - 'DOMAIN-SUFFIX,rsb.ru'
+  - 'IP-CIDR,185.71.67.233/32,no-resolve'

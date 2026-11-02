@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "rules": [
+        {
+            "domain_suffix": [
+                "rsb.ru"
+            ],
+            "ip_cidr": [
+                "185.71.67.233/32"
+            ]
+        }
+    ]
+}
