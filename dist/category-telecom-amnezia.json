@@ -29,6 +29,13 @@
         ]
     },
     {
+        "hostname": "er-telecom.ru",
+        "ip": "45.130.41.212",
+        "ips": [
+            "45.130.41.212"
+        ]
+    },
+    {
         "hostname": "mango-office.ru",
         "ip": "178.248.236.69",
         "ips": [
