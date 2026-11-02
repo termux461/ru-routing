@@ -117,4 +117,14 @@ check(str_contains($exports['category-banks-cidr.txt'],'77.88.1.1/32') && !str_c
 check(count(json_decode($exports['category-banks-amnezia.json'],true))===1, 'category Amnezia contains matching domain');
 $diff=\RuRouting\reportChanges($sample,[['hostname'=>'a.ru','ips'=>['77.88.1.2']],['hostname'=>'b.ru','ips'=>['77.88.1.3']]]);
 check($diff['added']===['b.ru'] && isset($diff['changed_ips']['a.ru']), 'changes identify new domains and changed IPs');
+$upstream = "# 1. Banks\nnew-bank.ru\n# 2. Government\nnew.gov.ru\nhttps://invalid/path\n";
+$found = \RuRouting\upstreamCategories($upstream);
+check($found === ['new-bank.ru'=>'banks', 'new.gov.ru'=>'government'], 'upstream categories and malformed hosts');
+$initial = "# 1. Banks\nold.ru\n# 2. Gov\nexisting.gov.ru\n# Дополнения\nextra.ru\n";
+$merged = \RuRouting\addDiscovered($initial, $found);
+$grouped = \RuRouting\readCategories($merged);
+check($grouped['new-bank.ru']==='banks' && $grouped['new.gov.ru']==='government' && $grouped['old.ru']==='banks' && $grouped['extra.ru']==='other', 'automatic additions in correct category');
+check(\RuRouting\addDiscovered($merged,$found)===$merged, 'automatic additions are idempotent');
+check(rejects(fn()=>\RuRouting\addDiscovered($initial,['evil.ru'=>'unknown'])), 'unknown category rejected');
+check(rejects(fn()=>\RuRouting\addDiscovered("# 1. Banks\nold.ru\n",['new.gov.ru'=>'government'])), 'missing target category rejected');
 echo "OK: $checks checks\n";

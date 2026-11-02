@@ -17,6 +17,46 @@ function readCategories(string $source): array {
     }
     return $out;
 }
+/** Parse only explicitly categorized, syntactically valid hosts from the fixed upstream. */
+function upstreamCategories(string $source): array {
+    $keys=array_keys(categoryNames()); $current=null; $out=[];
+    foreach (preg_split('/\r\n|\n|\r/', $source) as $line) {
+        if (preg_match('/^#\s*(\d+)\./u', $line, $m)) { $current=$keys[(int)$m[1]-1] ?? null; continue; }
+        $name=trim(explode('#',$line,2)[0]); if ($current===null || $name==='') continue;
+        try { $host=domain($name); } catch (\Throwable) { continue; }
+        $out[$host] ??= $current;
+    }
+    return $out;
+}
+
+/** Insert verified candidates under their category; existing entries are never removed. */
+function addDiscovered(string $source, array $new): string {
+    $keys=array_keys(categoryNames()); $known=readCategories($source); $groups=[];
+    foreach ($new as $host=>$category) {
+        $host=domain($host);
+        if (isset($known[$host])) continue;
+        if (!in_array($category, array_slice($keys,0,11), true)) throw new RuntimeException('Неизвестная категория кандидата');
+        $groups[$category][]=$host;
+    }
+    if (!$groups) return $source;
+    $lines=preg_split('/\r\n|\n|\r/', rtrim($source, "\r\n")); $out=[]; $current=null; $seen=[];
+    $flush=function() use (&$current,&$groups,&$out,&$seen) {
+        if ($current!==null && isset($groups[$current])) {
+            sort($groups[$current],SORT_STRING);
+            $out[]='# Добавлено автоматически после проверки DNS и RU IP';
+            foreach(array_unique($groups[$current]) as $host) $out[]=$host;
+            $seen[$current]=true;
+        }
+    };
+    foreach($lines as $line) {
+        if (preg_match('/^#\s*(\d+)\./u',$line,$m)) { $flush(); $current=$keys[(int)$m[1]-1] ?? null; }
+        elseif (str_starts_with($line,'# Дополнения')) { $flush(); $current=null; }
+        $out[]=$line;
+    }
+    $flush();
+    if (array_diff(array_keys($groups),array_keys($seen))) throw new RuntimeException('Не найдены секции для новых доменов.');
+    return implode("\n",$out)."\n";
+}
 function jsonFile(mixed $v): string { return json_encode($v, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES|JSON_THROW_ON_ERROR)."\n"; }
 function catalogExports(array $entries, array $categories, array $report): array {
     $groups=array_fill_keys(array_keys(categoryNames()),[]); $all=[];

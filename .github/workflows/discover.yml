@@ -1,18 +1,20 @@
 name: Discover new service domains
 on:
   schedule:
-    - cron: '37 5 * * *'
+    - cron: '11 * * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['bin/discover.php', 'src/Catalog.php', '.github/workflows/discover.yml']
 permissions:
   contents: write
-  pull-requests: write
 concurrency:
-  group: discover-domains
+  group: routing-lists
   cancel-in-progress: false
 jobs:
   discover:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: shivammathur/setup-php@v2
@@ -22,12 +24,24 @@ jobs:
           coverage: none
       - run: php tests/run.php
       - run: php bin/discover.php
-      - uses: peter-evans/create-pull-request@v7
-        if: ${{ hashFiles('CANDIDATES.md') != '' }}
-        with:
-          branch: automation/domain-candidates
-          delete-branch: true
-          add-paths: CANDIDATES.md
-          commit-message: 'chore: review newly discovered domains'
-          title: 'Проверить новые домены российских сервисов'
-          body: 'Автоматически найдены кандидаты. Проверьте принадлежность и доступность сервисов и вручную добавьте подходящие домены в нужные категории sources/domains.txt. IPdeny и DNS не гарантируют, что весь общий IP безопасно направить напрямую.'
+      - name: Check for new domains
+        id: changes
+        run: |
+          if git diff --quiet -- sources/domains.txt; then
+            echo 'found=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'found=true' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Build and verify updated lists
+        if: steps.changes.outputs.found == 'true'
+        run: |
+          php bin/build.php
+          php tests/artifacts.php
+      - name: Commit catalog and lists
+        if: steps.changes.outputs.found == 'true'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add sources/domains.txt dist/
+          git commit -m 'chore: add discovered service domains'
+          git push origin HEAD:main
