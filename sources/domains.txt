@@ -153,6 +153,40 @@ cmrbank.ru
 coalmetbank.ru
 commerzbank.ru
 creditural.ru
+# Добавлено автоматически после проверки DNS и RU IP
+databank.ru
+dbmoscow.ru
+dbo-dengi.online
+derzhava.ru
+deutsche-bank.ru
+deutschebank.ru
+efbank.ru
+emb.ru
+energobank.ru
+energotransbank.com
+evrofinance.ru
+finambank.ru
+finance.ozon.ru
+finstarbank.ru
+forabank.ru
+forshtadt.ru
+gazprombank.investments
+gaztransbank.ru
+gebank.ru
+genbank.ru
+halvacard.ru
+home.bank
+hva.im
+ibamoscow.ru
+id.vtb.ru
+in-bank.ru
+ingobank.ru
+investpay.ru
+isnbank.ru
+itb.ru
+k-bnk.ru
+kamkombank.ru
+kbb.ru
 # 2. Госуслуги и госорганы
 arbitr.ru
 kad.arbitr.ru
@@ -289,6 +323,31 @@ chukotka.ru
 chuvashia.ru
 cikrf.ru
 crimea.ru
+# Добавлено автоматически после проверки DNS и RU IP
+dagestan.ru
+ebs.ru
+edu-74.ru
+edu22.info
+ekburg.ru
+gov.ru
+grfc.ru
+grozny.ru
+id.mos.ru
+irk.ru
+irkutsk.ru
+ivanovo.ru
+izbirkom.ru
+izhevsk.ru
+jamal.ru
+jar.ru
+kaluga.ru
+karelia.ru
+kchgov.ru
+kemerovo.ru
+khabarovsk.ru
+khakassia.ru
+khv.ru
+kirov.ru
 # 3. Маркетплейсы, магазины и доставка еды
 5ka.ru
 aliexpress.ru
@@ -378,6 +437,15 @@ x5.ru
 api.ozon.ru
 cdn.ozon.ru
 coolera.ru
+# Добавлено автоматически после проверки DNS и RU IP
+doctorhead.ru
+dodois.io
+dodopizza.com
+dostaevsky.ru
+evrasia.rest
+fix-price.com
+id.ozon.ru
+ilovesakura.ru
 # 4. Технологии, поиск, соцсети и ПО
 360.yandex.ru
 alice.yandex.ru
@@ -512,6 +580,11 @@ yadro.ru
 cnconf.ru
 cnews.ru
 cnewsforum.ru
+# Добавлено автоматически после проверки DNS и RU IP
+ferra.ru
+hacksoft.ru
+hardware.ru
+iguides.ru
 # 5. Медиа, ТВ, стриминг и спорт
 116.ru
 161.ru
@@ -702,6 +775,10 @@ arenda.yandex.ru
 avtovokzaly.ru
 bilet.nspk.ru
 blablacar.ru
+# Добавлено автоматически после проверки DNS и RU IP
+fasten.ru
+gorodpay.ru
+greywallpass.com
 # 7. Телеком
 beeline.ru
 cloud.rt.ru
@@ -825,6 +902,10 @@ lyceum.yandex.ru
 # Добавлено автоматически после проверки DNS и RU IP
 altaiobr04.ru
 chelyabinsk-sgo-edu-74.ru
+# Добавлено автоматически после проверки DNS и RU IP
+gramotei.online
+kakpishem.ru
+kartaslov.ru
 # 9. Медицина и аптеки
 366.ru
 apteka.ru
@@ -870,6 +951,13 @@ zdravcity.ru
 apteka-april.ru
 aptekiplus.ru
 b17.ru
+# Добавлено автоматически после проверки DNS и RU IP
+emias.mos.ru
+emias.ru
+farmlend.ru
+hello-doc.ru
+hellodoc.app
+hellodoc.ru
 # 10. Недвижимость, авто, работа и услуги
 am.ru
 auto.ru
