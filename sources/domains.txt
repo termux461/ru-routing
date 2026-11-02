@@ -104,6 +104,55 @@ yoomoney.ru
 zenit.ru
 e-disclosure.ru
 
+# Добавлено автоматически после проверки DNS и RU IP
+abr.ru
+agroros.ru
+ai-bank.ru
+akcept.ru
+akibank.ru
+alefbank.com
+alfabank.st
+api.tbank.ru
+api.vtb.ru
+apkbank.ru
+aresbank.ru
+asia-pay.ru
+atb.su
+autofinancebank.ru
+autokreditbank.ru
+avangard.ru
+aversbank.ru
+bancaintesa.ru
+bank-arzamas.ru
+bank-hlynov.ru
+bank.yandex.ru
+bank131.ru
+bankermak.ru
+bankofkazan.ru
+bankperm.ru
+bankstavr.ru
+bankvl.ru
+bbr.ru
+bcs-bank.ru
+best2pay.net
+blanc.ru
+bm-bank.ru
+bmwbank.ru
+boc.ru
+broker.ru
+bystrobank.ru
+cdn.sberbank.ru
+cdn.tbank.ru
+cdn.vtb.ru
+centrinvest.ru
+chelindbank.ru
+chelinvest.ru
+cibank.ru
+cifra-bank.ru
+cmrbank.ru
+coalmetbank.ru
+commerzbank.ru
+creditural.ru
 # 2. Госуслуги и госорганы
 arbitr.ru
 kad.arbitr.ru
@@ -223,6 +272,23 @@ tektorg.ru
 zakazrf.ru
 etp.zakazrf.ru
 
+# Добавлено автоматически после проверки DNS и RU IP
+adygeya.ru
+altai.ru
+amur.ru
+astrakhan.ru
+bashkiria.ru
+bir.ru
+bryansk.ru
+cap.ru
+cbg.ru
+chel.ru
+chelyabinsk.ru
+chita.ru
+chukotka.ru
+chuvashia.ru
+cikrf.ru
+crimea.ru
 # 3. Маркетплейсы, магазины и доставка еды
 5ka.ru
 aliexpress.ru
@@ -308,6 +374,10 @@ seller.wildberries.ru
 wbstatic.net
 x5.ru
 
+# Добавлено автоматически после проверки DNS и RU IP
+api.ozon.ru
+cdn.ozon.ru
+coolera.ru
 # 4. Технологии, поиск, соцсети и ПО
 360.yandex.ru
 alice.yandex.ru
@@ -437,6 +507,11 @@ usergate.com
 vipnet.ru
 yadro.ru
 
+# Добавлено автоматически после проверки DNS и RU IP
+3dnews.ru
+cnconf.ru
+cnews.ru
+cnewsforum.ru
 # 5. Медиа, ТВ, стриминг и спорт
 116.ru
 161.ru
@@ -622,6 +697,11 @@ shiptor.ru
 track24.ru
 trackitonline.ru
 
+# Добавлено автоматически после проверки DNS и RU IP
+arenda.yandex.ru
+avtovokzaly.ru
+bilet.nspk.ru
+blablacar.ru
 # 7. Телеком
 beeline.ru
 cloud.rt.ru
@@ -742,6 +822,9 @@ vuzopedia.ru
 yaklass.ru
 lyceum.yandex.ru
 
+# Добавлено автоматически после проверки DNS и RU IP
+altaiobr04.ru
+chelyabinsk-sgo-edu-74.ru
 # 9. Медицина и аптеки
 366.ru
 apteka.ru
@@ -783,6 +866,10 @@ takzdorovo.ru
 vidal.ru
 zdravcity.ru
 
+# Добавлено автоматически после проверки DNS и RU IP
+apteka-april.ru
+aptekiplus.ru
+b17.ru
 # 10. Недвижимость, авто, работа и услуги
 am.ru
 auto.ru

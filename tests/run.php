@@ -98,15 +98,21 @@ check(true, 'exact 30 percent boundary allowed');
 $calls = 0;
 $request = function($urls) use (&$calls) {
     $calls++;
-    if ($calls === 1) { return [[], array_fill_keys(array_keys($urls), 'timeout')]; }
+    if ($calls === 1) return [[], array_fill_keys(array_keys($urls), 'timeout')];
     check(str_starts_with(reset($urls), 'https://cloudflare-dns.com/'), 'fallback uses secondary DoH');
-    return [array_fill_keys(array_keys($urls), '{"Status":0,"Answer":[{"type":1,"data":"77.88.1.1"}]}'), []];
+    $responses=[];foreach($urls as $host=>$url) {
+        $question=substr(\RuRouting\dnsWireQuery($host),12);
+        $responses[$host]=pack('nnnnnn',0,0x8180,1,1,0,0).$question."\xc0\x0c".pack('nnNn',1,1,60,4).inet_pton('77.88.1.1');
+    }
+    return [$responses, []];
 };
 [$result, $errors] = resolveMany(['ya.ru'], $request);
-check($calls === 2 && $result['ya.ru'] === ['77.88.1.1'] && !$errors, 'fallback recovers transport errors and merges www');
-$calls = 0;
-resolveMany(['absent.ru'], function($urls) use (&$calls) { $calls++; return [array_fill_keys(array_keys($urls), '{"Status":3}'), []]; });
-check($calls === 1, 'NXDOMAIN is not retried');
+check($calls === 2 && $result['ya.ru'] === ['77.88.1.1'] && !$errors, 'wire-format fallback and www');
+check(rejects(fn()=>\RuRouting\parseWireDns('bad','ya.ru')), 'truncated wire response rejected');
+$wireQ=substr(\RuRouting\dnsWireQuery('ya.ru'),12);
+$wire=pack('nnnnnn',0,0x8180,1,1,0,0).$wireQ."\xc0\x0c".pack('nnNn',1,1,60,4).inet_pton('77.88.1.1');
+check(\RuRouting\parseWireDns($wire,'ya.ru')===['77.88.1.1'], 'wire DNS A record');
+check(rejects(fn()=>\RuRouting\parseWireDns($wire,'other.ru')), 'wire DNS question must match');
 check(rejects(fn() => resolveMany(['a.ru', 'b.ru'], fn($urls) => [[], array_fill_keys(array_keys($urls), 'timeout')])), 'mass DNS failure aborts');
 $categories = \RuRouting\readCategories("# 1. Banks\na.ru\n# 2. Government\nb.ru\n# Дополнения\nc.ru\n");
 check($categories === ['a.ru'=>'banks','b.ru'=>'government','c.ru'=>'other'], 'categories follow sections');
@@ -127,4 +133,10 @@ check($grouped['new-bank.ru']==='banks' && $grouped['new.gov.ru']==='government'
 check(\RuRouting\addDiscovered($merged,$found)===$merged, 'automatic additions are idempotent');
 check(rejects(fn()=>\RuRouting\addDiscovered($initial,['evil.ru'=>'unknown'])), 'unknown category rejected');
 check(rejects(fn()=>\RuRouting\addDiscovered("# 1. Banks\nold.ru\n",['new.gov.ru'=>'government'])), 'missing target category rejected');
+$candidates=\RuRouting\curatedDomains("full:a.ru\ndomain:b.ru\ninclude:foo\nregexp:.*\nplain.ru @cn\nru\n",'banks');
+check($candidates === ['a.ru'=>'banks','b.ru'=>'banks'], 'only explicit vetted hostnames without conditional attributes');
+$queue=['a.ru'=>'banks','b.ru'=>'banks','c.ru'=>'banks','d.ru'=>'banks'];
+check(array_keys(\RuRouting\candidateWindow($queue,'b.ru',2))===['c.ru','d.ru'], 'queue advances beyond rejected candidates');
+check(array_keys(\RuRouting\candidateWindow($queue,'d.ru',2))===['a.ru','b.ru'], 'queue wraps');
+check(\RuRouting\candidateWindow([], '', 2)===[], 'empty candidate queue');
 echo "OK: $checks checks\n";

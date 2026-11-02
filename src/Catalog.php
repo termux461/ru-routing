@@ -88,3 +88,28 @@ function reportChanges(array $previous, array $current): array {
     foreach (array_intersect_key($new,$old) as $host=>$ips) if ($ips!==$old[$host]) $changed[$host]=['before'=>$old[$host],'after'=>$ips];
     return ['previous_available'=>(bool)$previous,'added'=>array_values(array_diff(array_keys($new),array_keys($old))), 'removed'=>array_values(array_diff(array_keys($old),array_keys($new))), 'changed_ips'=>$changed];
 }
+
+/** Only explicit hostnames from curated geosite lists; never expand includes, regex or country-wide suffixes. */
+function curatedDomains(string $source, string $category): array {
+    if (!isset(categoryNames()[$category])) throw new RuntimeException('Неизвестная категория');
+    $out=[];
+    foreach (preg_split('/\r\n|\n|\r/', $source) as $line) {
+        $line=trim(explode('#',$line,2)[0]);
+        if ($line==='' || str_contains($line,'@')) continue;
+        if (str_starts_with($line,'full:')) $line=substr($line,5);
+        elseif (str_starts_with($line,'domain:')) $line=substr($line,7);
+        elseif (str_contains($line,':')) continue;
+        try { $host=domain($line); } catch (\Throwable) { continue; }
+        $out[$host]=$category;
+    }
+    return $out;
+}
+/** Lexicographic cursor means failed domains cannot permanently block later candidates. */
+function candidateWindow(array $candidates, string $cursor, int $size=100): array {
+    if ($size<1 || $size>500) throw new RuntimeException('Недопустимый размер очереди');
+    ksort($candidates,SORT_STRING); if (!$candidates) return [];
+    $keys=array_keys($candidates); $start=0;
+    if ($cursor!=='') { $start=count($keys); foreach($keys as $i=>$key) if(strcmp($key,$cursor)>0) { $start=$i; break; } if($start===count($keys)) $start=0; }
+    $selected=[]; for($i=0;$i<min($size,count($keys));$i++) { $key=$keys[($start+$i)%count($keys)]; $selected[$key]=$candidates[$key]; }
+    return $selected;
+}

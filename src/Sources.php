@@ -7,7 +7,7 @@ use RuntimeException;
 use Throwable;
 
 /** Bounded concurrency. Each response has its own HTTP/transport validation. */
-function fetchMany(array $urls, int $concurrency = 12): array
+function fetchMany(array $urls, int $concurrency = 12, string $accept = 'application/dns-json, application/json;q=0.9'): array
 {
     if (!extension_loaded('curl') || $concurrency < 1 || $concurrency > 32) {
         throw new RuntimeException('Нужно PHP curl; параллелизм от 1 до 32.');
@@ -25,7 +25,7 @@ function fetchMany(array $urls, int $concurrency = 12): array
                 curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => true, CURLOPT_CONNECTTIMEOUT => 10,
                     CURLOPT_TIMEOUT => 25, CURLOPT_FOLLOWLOCATION => false,
                     CURLOPT_PROTOCOLS => CURLPROTO_HTTPS, CURLOPT_USERAGENT => 'ru-routing-php/2.0',
-                    CURLOPT_HTTPHEADER => ['Accept: application/dns-json, application/json;q=0.9']]);
+                    CURLOPT_HTTPHEADER => ['Accept: ' . $accept]]);
                 $active[spl_object_id($ch)] = [$key, $ch];
                 curl_multi_add_handle($mh, $ch);
             }
@@ -79,40 +79,67 @@ function dnsNames(array $domains): array
     return $names;
 }
 
-function resolveMany(array $domains, ?callable $request = null): array
-{
+/** RFC 8484 GET query, encoded without a transport-specific DNS library. */
+function dnsWireQuery(string $host): string {
+    $host=domain($host); $q=''; foreach(explode('.', $host) as $part) { if(strlen($part)>63) throw new RuntimeException('DNS label too long'); $q.=chr(strlen($part)).$part; }
+    return pack('nnnnnn',0,0x0100,1,0,0,0).$q."\0".pack('nn',1,1);
+}
+function skipWireName(string $body,int &$offset): void {
+    $size=strlen($body); $labels=0;
+    while(true) {
+        if($offset >= $size || ++$labels>128) throw new RuntimeException('Некорректное DNS-имя');
+        $n=ord($body[$offset++]);
+        if($n===0) return;
+        if(($n & 0xc0)===0xc0) { if($offset >= $size || ((($n & 0x3f)<<8)|ord($body[$offset])) >= $size) throw new RuntimeException('Некорректный DNS-указатель'); $offset++; return; }
+        if(($n & 0xc0)!==0 || $n>63 || $offset+$n>$size) throw new RuntimeException('Некорректная DNS-метка');
+        $offset+=$n;
+    }
+}
+function parseWireDns(string $body, string $host): array {
+    if(strlen($body)<12 || strlen($body)>65535) throw new RuntimeException('Некорректный DNS-ответ');
+    $h=unpack('nid/nflags/nqd/nan/nns/nar',substr($body,0,12));
+    if($h['id']!==0 || !($h['flags'] & 0x8000) || ($h['flags'] & 0x0200) || $h['qd']!==1 || $h['an']>1000) throw new RuntimeException('Некорректный DNS-заголовок');
+    $rcode=$h['flags'] & 15; if($rcode!==0 && $rcode!==3) throw new RuntimeException('DNS status '.$rcode);
+    $q=dnsWireQuery($host); $question=substr($q,12);
+    if(substr($body,12,strlen($question))!==$question) throw new RuntimeException('DNS question mismatch');
+    $offset=12+strlen($question); $ips=[];
+    for($i=0;$i<$h['an'];$i++) {
+        skipWireName($body,$offset); if($offset+10>strlen($body)) throw new RuntimeException('Обрезанный DNS-ответ');
+        $row=unpack('ntype/nclass/Nttl/nlen',substr($body,$offset,10));$offset+=10;
+        if($offset+$row['len']>strlen($body)) throw new RuntimeException('Обрезанный DNS-адрес');
+        if($row['type']===1 && $row['class']===1 && $row['len']===4) { $ip=inet_ntop(substr($body,$offset,4)); if($ip!==false && ipv4($ip)) $ips[]=$ip; }
+        $offset+=$row['len'];
+    }
+    return array_values(array_unique($ips));
+}
+function resolveMany(array $domains, ?callable $request = null): array {
     $request ??= __NAMESPACE__ . '\\fetchMany';
-    $groups = dnsNames($domains);
-    $pending = [];
-    foreach ($groups as $names) { foreach ($names as $host) { $pending[$host] = true; } }
-    $answers = $errors = [];
-    // Retry transient DNS/transport errors with an independent resolver.
-    foreach (['https://dns.google/resolve?', 'https://cloudflare-dns.com/dns-query?'] as $endpoint) {
-        $urls = [];
-        foreach ($pending as $host => $_) { $urls[$host] = $endpoint . http_build_query(['name' => $host, 'type' => 'A']); }
-        [$bodies, $transportErrors] = $request($urls);
-        foreach ($pending as $host => $_) {
+    $groups=dnsNames($domains); $pending=[];
+    foreach($groups as $names) foreach($names as $host) $pending[$host]=true;
+    $answers=$errors=$successful=[];
+    $providers=[['https://dns.google/resolve?',false],['https://cloudflare-dns.com/dns-query?',true],['https://dns.adguard-dns.com/dns-query?',true]];
+    foreach($providers as [$endpoint,$wire]) {
+        $urls=[];foreach($pending as $host=>$_) {
+            $urls[$host]=$endpoint.($wire ? 'dns='.rtrim(strtr(base64_encode(dnsWireQuery($host)),'+/','-_'),'=') : http_build_query(['name'=>$host,'type'=>'A']));
+        }
+        if(!$urls) break;
+        [$bodies,$transportErrors]=$wire ? $request($urls,12,'application/dns-message') : $request($urls);
+        foreach($pending as $host=>$_) {
             try {
-                if (isset($transportErrors[$host])) { throw new RuntimeException($transportErrors[$host]); }
-                $answers[$host] = parseDns($bodies[$host]);
-                unset($pending[$host], $errors[$host]);
-            } catch (Throwable $error) { $errors[$host] = $error->getMessage(); }
+                if(isset($transportErrors[$host])) throw new RuntimeException($transportErrors[$host]);
+                $ips=$wire ? parseWireDns($bodies[$host],$host) : parseDns($bodies[$host]);
+                $successful[$host]=true; $answers[$host]=$ips; unset($errors[$host]);
+                if($ips) unset($pending[$host]);
+            } catch(Throwable $e) { if(!isset($successful[$host])) $errors[$host]=$e->getMessage(); }
         }
-        if (!$pending) { break; }
     }
-    if (count($errors) > max(3, (int)floor((count($answers) + count($errors)) * 0.05))) {
-        throw new RuntimeException('Более 5% DNS-запросов завершились ошибкой. Сборка отменена.');
+    if(count($errors)>max(3,(int)floor((count($answers)+count($errors))*0.05))) throw new RuntimeException('Более 5% DNS-запросов завершились ошибкой. Сборка отменена.');
+    $combined=$domainErrors=[];
+    foreach($groups as $host=>$names) {
+        $ips=[];foreach($names as $name) { $ips=array_merge($ips,$answers[$name]??[]); if(isset($errors[$name])) $domainErrors[$host][$name]=$errors[$name]; }
+        $combined[$host]=array_values(array_unique($ips));
     }
-    $combined = $domainErrors = [];
-    foreach ($groups as $host => $names) {
-        $ips = [];
-        foreach ($names as $name) {
-            $ips = array_merge($ips, $answers[$name] ?? []);
-            if (isset($errors[$name])) { $domainErrors[$host][$name] = $errors[$name]; }
-        }
-        $combined[$host] = array_values(array_unique($ips));
-    }
-    return [$combined, $domainErrors];
+    return [$combined,$domainErrors];
 }
 
 function asns(array $values): array

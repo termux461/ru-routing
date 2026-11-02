@@ -8,3 +8,5 @@ AS197068   # Curator (бывший Qrator)
 AS200449   # Qrator Labs CZ
 AS209671   # Qrator Labs CZ
 AS211112   # Qrator Technologies
+AS8901 # Mosgortelecom: только адреса выбранных доменов, не вся сеть
+AS62268 # Electronic Moscow: только адреса выбранных доменов, не вся сеть
