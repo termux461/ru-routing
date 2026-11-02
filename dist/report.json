@@ -1,9 +1,9 @@
 {
-    "built_at": "2026-11-01T22:56:02+00:00",
+    "built_at": "2026-11-02T02:38:14+00:00",
     "mode": "services",
     "domains_total": 826,
-    "domains_accepted": 767,
-    "subnets_total": 951,
+    "domains_accepted": 761,
+    "subnets_total": 944,
     "service_networks_total": 205,
     "skipped_domains": [
         "1c.com",
@@ -14,13 +14,16 @@
         "autoscout24.ru",
         "aviasales.ru",
         "azimuth.aero",
+        "beget.com",
         "bookmate.com",
         "codeforces.com",
         "cyberleninka.ru",
         "doktor.ru",
         "e-olymp.com",
+        "er-telecom.ru",
         "fom.ru",
         "gismeteo.ru",
+        "gosapteka.ru",
         "gq.ru",
         "group-ib.ru",
         "hexlet.io",
@@ -31,6 +34,7 @@
         "kinorium.com",
         "kupibilet.ru",
         "lingualeo.com",
+        "logsis.ru",
         "lokomotiv.info",
         "mironline.ru",
         "mkb.ru",
@@ -46,7 +50,9 @@
         "posylka.ru",
         "practicum.com",
         "redwings.aero",
+        "renaissance.ru",
         "reshuege.ru",
+        "rgsu.ru",
         "rostehnadzor.ru",
         "ru.aliexpress.com",
         "rudn.ru",
@@ -75,13 +81,16 @@
         "autoscout24.ru": "no_approved_ipv4",
         "aviasales.ru": "no_approved_ipv4",
         "azimuth.aero": "no_approved_ipv4",
+        "beget.com": "dns_error",
         "bookmate.com": "no_approved_ipv4",
         "codeforces.com": "no_approved_ipv4",
         "cyberleninka.ru": "no_approved_ipv4",
         "doktor.ru": "no_approved_ipv4",
         "e-olymp.com": "no_approved_ipv4",
+        "er-telecom.ru": "dns_error",
         "fom.ru": "no_approved_ipv4",
         "gismeteo.ru": "no_approved_ipv4",
+        "gosapteka.ru": "dns_error",
         "gq.ru": "no_approved_ipv4",
         "group-ib.ru": "no_approved_ipv4",
         "hexlet.io": "no_approved_ipv4",
@@ -92,6 +101,7 @@
         "kinorium.com": "no_approved_ipv4",
         "kupibilet.ru": "no_approved_ipv4",
         "lingualeo.com": "no_approved_ipv4",
+        "logsis.ru": "dns_error",
         "lokomotiv.info": "no_approved_ipv4",
         "mironline.ru": "no_a_record",
         "mkb.ru": "no_approved_ipv4",
@@ -107,7 +117,9 @@
         "posylka.ru": "no_approved_ipv4",
         "practicum.com": "no_approved_ipv4",
         "redwings.aero": "no_approved_ipv4",
+        "renaissance.ru": "dns_error",
         "reshuege.ru": "no_approved_ipv4",
+        "rgsu.ru": "dns_error",
         "rostehnadzor.ru": "dns_error",
         "ru.aliexpress.com": "no_approved_ipv4",
         "rudn.ru": "no_approved_ipv4",
@@ -132,66 +144,66 @@
             "18.184.212.59"
         ],
         "360tv.ru": [
-            "104.21.6.187",
-            "172.67.135.45"
+            "172.67.135.45",
+            "104.21.6.187"
         ],
         "abbyy.com": [
             "40.88.236.169",
-            "64.239.109.129",
-            "64.239.123.129"
+            "64.239.109.65",
+            "64.239.123.65"
         ],
         "aif.ru": [
             "91.214.119.234",
             "91.214.119.200"
         ],
         "aliexpress.ru": [
-            "47.246.133.147",
-            "47.246.133.143",
-            "47.246.133.142",
             "47.246.133.144",
             "47.246.133.148",
+            "47.246.133.143",
+            "47.246.133.147",
             "47.246.133.141",
-            "47.246.133.149",
-            "47.246.133.150"
+            "47.246.133.142",
+            "47.246.133.150",
+            "47.246.133.149"
         ],
         "amediateka.ru": [
-            "143.204.160.8",
-            "143.204.160.28",
-            "143.204.160.92",
-            "143.204.160.25"
+            "3.167.69.83",
+            "3.167.69.76",
+            "3.167.69.64",
+            "3.167.69.120"
         ],
         "autodoc.ru": [
             "37.230.209.135"
         ],
         "autoscout24.ru": [
-            "3.165.160.98",
-            "3.165.160.48",
-            "3.165.160.52",
-            "3.165.160.9",
-            "18.172.170.53",
-            "18.172.170.50",
-            "18.172.170.27",
-            "18.172.170.35"
+            "18.160.41.49",
+            "18.160.41.88",
+            "18.160.41.5",
+            "18.160.41.74",
+            "13.35.78.84",
+            "13.35.78.124",
+            "13.35.78.25",
+            "13.35.78.120"
         ],
         "aviasales.ru": [
-            "18.238.238.83",
-            "18.238.238.89",
-            "18.238.238.11",
-            "18.238.238.7"
+            "52.85.193.64",
+            "52.85.193.77",
+            "52.85.193.114",
+            "52.85.193.121"
         ],
         "azimuth.aero": [
-            "172.67.151.6",
-            "104.21.90.19"
+            "104.21.90.19",
+            "172.67.151.6"
         ],
         "bookmate.com": [
             "104.26.1.110",
-            "104.26.0.110",
-            "172.67.74.137"
+            "172.67.74.137",
+            "104.26.0.110"
         ],
         "codeforces.com": [
-            "104.26.7.164",
             "104.26.6.164",
-            "172.67.68.254"
+            "172.67.68.254",
+            "104.26.7.164"
         ],
         "cyberleninka.ru": [
             "172.67.70.180",
@@ -199,8 +211,8 @@
             "104.26.11.2"
         ],
         "doktor.ru": [
-            "104.21.10.217",
-            "172.67.146.202"
+            "172.67.146.202",
+            "104.21.10.217"
         ],
         "e-olymp.com": [
             "63.180.222.6",
@@ -220,15 +232,15 @@
         ],
         "gismeteo.ru": [
             "31.172.76.58",
-            "31.172.76.60",
             "31.172.76.57",
-            "31.172.76.59"
+            "31.172.76.59",
+            "31.172.76.60"
         ],
         "gq.ru": [
             "151.101.64.239",
-            "151.101.128.239",
+            "151.101.0.239",
             "151.101.192.239",
-            "151.101.0.239"
+            "151.101.128.239"
         ],
         "group-ib.ru": [
             "95.217.24.6"
@@ -239,13 +251,13 @@
             "172.67.73.203"
         ],
         "hotellook.ru": [
-            "188.42.128.156"
+            "188.42.57.108"
         ],
         "indriver.com": [
-            "143.204.160.3",
-            "143.204.160.14",
-            "143.204.160.35",
-            "143.204.160.84"
+            "18.160.18.49",
+            "18.160.18.76",
+            "18.160.18.124",
+            "18.160.18.86"
         ],
         "joom.com": [
             "34.49.252.71"
@@ -261,13 +273,13 @@
             "52.212.68.201"
         ],
         "kupibilet.ru": [
-            "63.32.156.254",
-            "52.208.127.195"
+            "52.208.127.195",
+            "63.32.156.254"
         ],
         "lingualeo.com": [
-            "18.156.132.54",
-            "3.122.74.121",
-            "18.158.78.117"
+            "18.158.78.117",
+            "18.197.130.198",
+            "18.185.14.176"
         ],
         "lokomotiv.info": [
             "194.67.203.180"
@@ -279,9 +291,9 @@
             "93.92.113.12"
         ],
         "multiurok.ru": [
+            "172.67.71.240",
             "104.26.9.176",
-            "104.26.8.176",
-            "172.67.71.240"
+            "104.26.8.176"
         ],
         "nhl.ru": [
             "46.36.220.250"
@@ -311,25 +323,23 @@
             "50.114.102.115"
         ],
         "practicum.com": [
+            "172.67.74.88",
             "104.26.14.39",
-            "104.26.15.39",
-            "172.67.74.88"
+            "104.26.15.39"
         ],
         "redwings.aero": [
             "74.81.89.98",
-            "172.67.131.129",
-            "104.21.10.143"
+            "104.21.10.143",
+            "172.67.131.129"
         ],
         "reshuege.ru": [
-            "172.67.130.140",
-            "104.21.8.157"
+            "104.21.8.157",
+            "172.67.130.140"
         ],
         "ru.aliexpress.com": [
-            "23.216.147.131",
-            "23.216.147.135",
-            "23.216.147.132",
-            "23.216.147.140",
-            "47.89.80.37"
+            "23.196.3.135",
+            "23.196.3.132",
+            "47.89.80.209"
         ],
         "rudn.ru": [
             "37.18.93.135"
@@ -345,16 +355,16 @@
             "66.235.200.146"
         ],
         "smartavia.com": [
-            "54.243.117.197",
-            "13.223.25.84"
+            "13.223.25.84",
+            "54.243.117.197"
         ],
         "snob.ru": [
             "172.67.180.17",
             "104.21.96.124"
         ],
         "soc.fund": [
-            "76.223.54.146",
-            "13.248.169.48"
+            "13.248.169.48",
+            "76.223.54.146"
         ],
         "svetofor.com": [
             "64.190.63.222"
@@ -366,23 +376,23 @@
             "216.40.34.41"
         ],
         "tmall.ru": [
-            "47.246.133.89",
-            "47.246.133.86",
             "47.246.133.87",
-            "47.246.133.88"
+            "47.246.133.88",
+            "47.246.133.86",
+            "47.246.133.89"
         ],
         "track24.ru": [
             "212.233.76.133",
-            "104.26.8.89",
             "104.26.9.89",
+            "104.26.8.89",
             "172.67.69.55"
         ],
         "trip.ru": [
             "185.157.223.250"
         ],
         "uchitelya.com": [
-            "104.21.38.218",
-            "172.67.139.83"
+            "172.67.139.83",
+            "104.21.38.218"
         ],
         "videouroki.net": [
             "104.26.8.107",
@@ -400,6 +410,10 @@
         ]
     },
     "dns_errors": {
+        "renaissance.ru": {
+            "renaissance.ru": "HTTP 400; ",
+            "www.renaissance.ru": "HTTP 400; "
+        },
         "rostehnadzor.ru": {
             "rostehnadzor.ru": "HTTP 400; ",
             "www.rostehnadzor.ru": "HTTP 400; "
@@ -408,9 +422,29 @@
             "okey.ru": "HTTP 400; ",
             "www.okey.ru": "HTTP 400; "
         },
+        "beget.com": {
+            "beget.com": "HTTP 400; ",
+            "www.beget.com": "HTTP 400; "
+        },
+        "logsis.ru": {
+            "logsis.ru": "HTTP 400; ",
+            "www.logsis.ru": "HTTP 400; "
+        },
         "postamat.ru": {
             "postamat.ru": "HTTP 400; ",
             "www.postamat.ru": "HTTP 400; "
+        },
+        "er-telecom.ru": {
+            "er-telecom.ru": "HTTP 400; ",
+            "www.er-telecom.ru": "HTTP 400; "
+        },
+        "rgsu.ru": {
+            "rgsu.ru": "HTTP 400; ",
+            "www.rgsu.ru": "HTTP 400; "
+        },
+        "gosapteka.ru": {
+            "gosapteka.ru": "HTTP 400; ",
+            "www.gosapteka.ru": "HTTP 400; "
         }
     },
     "note": "RU registration is not proof of hosting location or exclusive ownership; shared IPs can bypass unrelated sites.",
