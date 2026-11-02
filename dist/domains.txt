@@ -336,7 +336,6 @@ lknpd.nalog.ru
 lkul.nalog.ru
 locker.ru
 lockobank.ru
-login.mos.ru
 login.vk.com
 lot-online.ru
 lsgeotar.ru
@@ -395,7 +394,6 @@ moex.com
 moex.ru
 more.tv
 morflot.ru
-mos.ru
 move.ru
 mpei.ru
 msu.ru
@@ -474,7 +472,6 @@ pecom.ru
 perekrestok.ru
 pfr.gov.ru
 pfrf.ru
-pgu.mos.ru
 pickpoint.ru
 pikabu.ru
 piluli.ru
