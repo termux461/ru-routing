@@ -1,0 +1,1321 @@
+{
+    "version": 1,
+    "built_at": "2026-11-02T21:50:37+00:00",
+    "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
+    "source": "https://iplist.opencck.org/",
+    "source_fields": [
+        "ip4",
+        "cidr4",
+        "domains"
+    ],
+    "groups": [
+        {
+            "id": "ai",
+            "sites": 17,
+            "available": 17,
+            "rules": 665,
+            "items": [
+                {
+                    "id": "aistudio.google.com",
+                    "routes": 10,
+                    "missing": 0
+                },
+                {
+                    "id": "canva.com",
+                    "routes": 24,
+                    "missing": 0
+                },
+                {
+                    "id": "chatgpt.com",
+                    "routes": 47,
+                    "missing": 0
+                },
+                {
+                    "id": "claude.ai",
+                    "routes": 64,
+                    "missing": 0
+                },
+                {
+                    "id": "copilot",
+                    "routes": 155,
+                    "missing": 0
+                },
+                {
+                    "id": "cursor.com",
+                    "routes": 68,
+                    "missing": 0
+                },
+                {
+                    "id": "deepl.com",
+                    "routes": 44,
+                    "missing": 0
+                },
+                {
+                    "id": "deepseek.com",
+                    "routes": 12,
+                    "missing": 0
+                },
+                {
+                    "id": "elevenlabs.io",
+                    "routes": 10,
+                    "missing": 0
+                },
+                {
+                    "id": "grammarly.com",
+                    "routes": 47,
+                    "missing": 0
+                },
+                {
+                    "id": "grok.com",
+                    "routes": 25,
+                    "missing": 0
+                },
+                {
+                    "id": "kilo.ai",
+                    "routes": 25,
+                    "missing": 0
+                },
+                {
+                    "id": "meta.ai",
+                    "routes": 10,
+                    "missing": 0
+                },
+                {
+                    "id": "notebooklm.google",
+                    "routes": 11,
+                    "missing": 0
+                },
+                {
+                    "id": "perplexity.ai",
+                    "routes": 96,
+                    "missing": 0
+                },
+                {
+                    "id": "pollo.ai",
+                    "routes": 7,
+                    "missing": 0
+                },
+                {
+                    "id": "stitch.withgoogle.com",
+                    "routes": 10,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "anime",
+            "sites": 18,
+            "available": 18,
+            "rules": 469,
+            "items": [
+                {
+                    "id": "amedia.site",
+                    "routes": 1,
+                    "missing": 0
+                },
+                {
+                    "id": "anidub.pro",
+                    "routes": 4,
+                    "missing": 0
+                },
+                {
+                    "id": "anilibria.tv",
+                    "routes": 11,
+                    "missing": 0
+                },
+                {
+                    "id": "animego.org",
+                    "routes": 6,
+                    "missing": 0
+                },
+                {
+                    "id": "animevost.org",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "bato.to",
+                    "routes": 13,
+                    "missing": 0
+                },
+                {
+                    "id": "crunchyroll.com",
+                    "routes": 25,
+                    "missing": 0
+                },
+                {
+                    "id": "hentailib.me",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "jut.su",
+                    "routes": 203,
+                    "missing": 0
+                },
+                {
+                    "id": "kara.su",
+                    "routes": 3,
+                    "missing": 0
+                },
+                {
+                    "id": "kodik.info",
+                    "routes": 14,
+                    "missing": 0
+                },
+                {
+                    "id": "mangahub.ru",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "mangapark.net",
+                    "routes": 2,
+                    "missing": 0
+                },
+                {
+                    "id": "myanimelist.net",
+                    "routes": 144,
+                    "missing": 0
+                },
+                {
+                    "id": "nyaa.land",
+                    "routes": 3,
+                    "missing": 0
+                },
+                {
+                    "id": "nyaa.si",
+                    "routes": 2,
+                    "missing": 0
+                },
+                {
+                    "id": "shikimori.one",
+                    "routes": 4,
+                    "missing": 0
+                },
+                {
+                    "id": "yummyanime.tv",
+                    "routes": 19,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "art",
+            "sites": 13,
+            "available": 13,
+            "rules": 172,
+            "items": [
+                {
+                    "id": "archiveofourown.org",
+                    "routes": 4,
+                    "missing": 0
+                },
+                {
+                    "id": "danbooru.donmai.us",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "deviantart.com",
+                    "routes": 19,
+                    "missing": 0
+                },
+                {
+                    "id": "e621.net",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "ficbook.net",
+                    "routes": 3,
+                    "missing": 0
+                },
+                {
+                    "id": "gelbooru.com",
+                    "routes": 7,
+                    "missing": 0
+                },
+                {
+                    "id": "hentaichan.live",
+                    "routes": 62,
+                    "missing": 0
+                },
+                {
+                    "id": "infinitenovel.eu",
+                    "routes": 1,
+                    "missing": 0
+                },
+                {
+                    "id": "pixabay.com",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "pixiv.net",
+                    "routes": 38,
+                    "missing": 0
+                },
+                {
+                    "id": "rulate.ru",
+                    "routes": 8,
+                    "missing": 0
+                },
+                {
+                    "id": "vndb.org",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "younettranslate.com",
+                    "routes": 10,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "casino",
+            "sites": 3,
+            "available": 3,
+            "rules": 38,
+            "items": [
+                {
+                    "id": "7k.casino",
+                    "routes": 2,
+                    "missing": 0
+                },
+                {
+                    "id": "combotech",
+                    "routes": 6,
+                    "missing": 0
+                },
+                {
+                    "id": "vavada.com",
+                    "routes": 30,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "discord",
+            "sites": 3,
+            "available": 3,
+            "rules": 90,
+            "items": [
+                {
+                    "id": "discord.com",
+                    "routes": 80,
+                    "missing": 0
+                },
+                {
+                    "id": "discord.gg",
+                    "routes": 9,
+                    "missing": 0
+                },
+                {
+                    "id": "discord.media",
+                    "routes": 1,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "education",
+            "sites": 7,
+            "available": 7,
+            "rules": 311,
+            "items": [
+                {
+                    "id": "duolingo.com",
+                    "routes": 197,
+                    "missing": 0
+                },
+                {
+                    "id": "flibusta.is",
+                    "routes": 1,
+                    "missing": 0
+                },
+                {
+                    "id": "ieee.org",
+                    "routes": 103,
+                    "missing": 0
+                },
+                {
+                    "id": "mrakopedia.net",
+                    "routes": 3,
+                    "missing": 0
+                },
+                {
+                    "id": "refactoring.guru",
+                    "routes": 2,
+                    "missing": 0
+                },
+                {
+                    "id": "wikiart.org",
+                    "routes": 4,
+                    "missing": 0
+                },
+                {
+                    "id": "znanija.com",
+                    "routes": 1,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "finance",
+            "sites": 4,
+            "available": 4,
+            "rules": 157,
+            "items": [
+                {
+                    "id": "aave.com",
+                    "routes": 44,
+                    "missing": 0
+                },
+                {
+                    "id": "euler.finance",
+                    "routes": 20,
+                    "missing": 0
+                },
+                {
+                    "id": "morpho.org",
+                    "routes": 40,
+                    "missing": 0
+                },
+                {
+                    "id": "wise.com",
+                    "routes": 53,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "games",
+            "sites": 6,
+            "available": 6,
+            "rules": 146,
+            "items": [
+                {
+                    "id": "arma2",
+                    "routes": 1,
+                    "missing": 0
+                },
+                {
+                    "id": "chess.com",
+                    "routes": 2,
+                    "missing": 0
+                },
+                {
+                    "id": "heroes.thelazy.net",
+                    "routes": 1,
+                    "missing": 0
+                },
+                {
+                    "id": "itch.io",
+                    "routes": 113,
+                    "missing": 0
+                },
+                {
+                    "id": "modrinth.com",
+                    "routes": 22,
+                    "missing": 0
+                },
+                {
+                    "id": "nexusmods.com",
+                    "routes": 7,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "hosting",
+            "sites": 5,
+            "available": 5,
+            "rules": 359,
+            "items": [
+                {
+                    "id": "bitninja.com",
+                    "routes": 57,
+                    "missing": 0
+                },
+                {
+                    "id": "cloudlinux.com",
+                    "routes": 71,
+                    "missing": 0
+                },
+                {
+                    "id": "godaddy.com",
+                    "routes": 178,
+                    "missing": 0
+                },
+                {
+                    "id": "hetzner.com",
+                    "routes": 21,
+                    "missing": 0
+                },
+                {
+                    "id": "namecheap.com",
+                    "routes": 32,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "jetbrains",
+            "sites": 3,
+            "available": 3,
+            "rules": 128,
+            "items": [
+                {
+                    "id": "jetbrains.com",
+                    "routes": 76,
+                    "missing": 0
+                },
+                {
+                    "id": "jetbrains@cdn",
+                    "routes": 14,
+                    "missing": 0
+                },
+                {
+                    "id": "jetbrains@grazie.ai",
+                    "routes": 38,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "messengers",
+            "sites": 6,
+            "available": 6,
+            "rules": 839,
+            "items": [
+                {
+                    "id": "messenger.com",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "signal.org",
+                    "routes": 72,
+                    "missing": 0
+                },
+                {
+                    "id": "telegram.org",
+                    "routes": 56,
+                    "missing": 0
+                },
+                {
+                    "id": "viber.com",
+                    "routes": 133,
+                    "missing": 0
+                },
+                {
+                    "id": "whatsapp.com",
+                    "routes": 508,
+                    "missing": 0
+                },
+                {
+                    "id": "zello.com",
+                    "routes": 65,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "music",
+            "sites": 6,
+            "available": 6,
+            "rules": 294,
+            "items": [
+                {
+                    "id": "deezer.com",
+                    "routes": 100,
+                    "missing": 0
+                },
+                {
+                    "id": "last.fm",
+                    "routes": 18,
+                    "missing": 0
+                },
+                {
+                    "id": "musicbrainz.org",
+                    "routes": 14,
+                    "missing": 0
+                },
+                {
+                    "id": "soundcloud.com",
+                    "routes": 19,
+                    "missing": 0
+                },
+                {
+                    "id": "spotify.com",
+                    "routes": 94,
+                    "missing": 0
+                },
+                {
+                    "id": "tidal.com",
+                    "routes": 49,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "news",
+            "sites": 48,
+            "available": 48,
+            "rules": 1274,
+            "items": [
+                {
+                    "id": "agents.media",
+                    "routes": 2,
+                    "missing": 0
+                },
+                {
+                    "id": "agentura.ru",
+                    "routes": 4,
+                    "missing": 0
+                },
+                {
+                    "id": "bbc.com",
+                    "routes": 159,
+                    "missing": 0
+                },
+                {
+                    "id": "bellingcat.com",
+                    "routes": 18,
+                    "missing": 0
+                },
+                {
+                    "id": "cherta.media",
+                    "routes": 2,
+                    "missing": 0
+                },
+                {
+                    "id": "colta.ru",
+                    "routes": 2,
+                    "missing": 0
+                },
+                {
+                    "id": "currenttime.tv",
+                    "routes": 171,
+                    "missing": 0
+                },
+                {
+                    "id": "dept.one",
+                    "routes": 6,
+                    "missing": 0
+                },
+                {
+                    "id": "doxa.team",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "dw.com",
+                    "routes": 83,
+                    "missing": 0
+                },
+                {
+                    "id": "echofm.online",
+                    "routes": 6,
+                    "missing": 0
+                },
+                {
+                    "id": "ehorussia.com",
+                    "routes": 1,
+                    "missing": 0
+                },
+                {
+                    "id": "ej.ru",
+                    "routes": 1,
+                    "missing": 0
+                },
+                {
+                    "id": "euronews.com",
+                    "routes": 25,
+                    "missing": 0
+                },
+                {
+                    "id": "exler.ru",
+                    "routes": 1,
+                    "missing": 0
+                },
+                {
+                    "id": "golosameriki.com",
+                    "routes": 173,
+                    "missing": 0
+                },
+                {
+                    "id": "gordonua.com",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "gulagu.net",
+                    "routes": 10,
+                    "missing": 0
+                },
+                {
+                    "id": "holod.media",
+                    "routes": 11,
+                    "missing": 0
+                },
+                {
+                    "id": "hrw.org",
+                    "routes": 1,
+                    "missing": 0
+                },
+                {
+                    "id": "istories.media",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "kasparov.ru",
+                    "routes": 14,
+                    "missing": 0
+                },
+                {
+                    "id": "kavkaz-uzel.eu",
+                    "routes": 2,
+                    "missing": 0
+                },
+                {
+                    "id": "korrespondent.net",
+                    "routes": 8,
+                    "missing": 0
+                },
+                {
+                    "id": "krymr.com",
+                    "routes": 146,
+                    "missing": 0
+                },
+                {
+                    "id": "meduza.io",
+                    "routes": 7,
+                    "missing": 0
+                },
+                {
+                    "id": "memohrc.org",
+                    "routes": 6,
+                    "missing": 0
+                },
+                {
+                    "id": "moscowtimes.ru",
+                    "routes": 6,
+                    "missing": 0
+                },
+                {
+                    "id": "navalny.com",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "newtimes.ru",
+                    "routes": 8,
+                    "missing": 0
+                },
+                {
+                    "id": "novayagazeta.ru",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "ovd.info",
+                    "routes": 6,
+                    "missing": 0
+                },
+                {
+                    "id": "paperpaper.ru",
+                    "routes": 9,
+                    "missing": 0
+                },
+                {
+                    "id": "polit.ru",
+                    "routes": 3,
+                    "missing": 0
+                },
+                {
+                    "id": "proekt.media",
+                    "routes": 6,
+                    "missing": 0
+                },
+                {
+                    "id": "prostovpn.org",
+                    "routes": 2,
+                    "missing": 0
+                },
+                {
+                    "id": "radiosvoboda.org",
+                    "routes": 156,
+                    "missing": 0
+                },
+                {
+                    "id": "semnasem.org",
+                    "routes": 2,
+                    "missing": 0
+                },
+                {
+                    "id": "svoboda.org",
+                    "routes": 139,
+                    "missing": 0
+                },
+                {
+                    "id": "tayga.info",
+                    "routes": 3,
+                    "missing": 0
+                },
+                {
+                    "id": "the-village.ru",
+                    "routes": 1,
+                    "missing": 0
+                },
+                {
+                    "id": "theins.ru",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "thetruestory.news",
+                    "routes": 19,
+                    "missing": 0
+                },
+                {
+                    "id": "tvrain.ru",
+                    "routes": 4,
+                    "missing": 0
+                },
+                {
+                    "id": "unian.net",
+                    "routes": 6,
+                    "missing": 0
+                },
+                {
+                    "id": "verstka.media",
+                    "routes": 7,
+                    "missing": 0
+                },
+                {
+                    "id": "vot-tak.tv",
+                    "routes": 3,
+                    "missing": 0
+                },
+                {
+                    "id": "zona.media",
+                    "routes": 5,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "porn",
+            "sites": 14,
+            "available": 14,
+            "rules": 202,
+            "items": [
+                {
+                    "id": "beeg.com",
+                    "routes": 6,
+                    "missing": 0
+                },
+                {
+                    "id": "f95zone.to",
+                    "routes": 10,
+                    "missing": 0
+                },
+                {
+                    "id": "hqporner.com",
+                    "routes": 4,
+                    "missing": 0
+                },
+                {
+                    "id": "kemono.cr",
+                    "routes": 2,
+                    "missing": 0
+                },
+                {
+                    "id": "pornhub.com",
+                    "routes": 8,
+                    "missing": 0
+                },
+                {
+                    "id": "pornolab.net",
+                    "routes": 11,
+                    "missing": 0
+                },
+                {
+                    "id": "reddxxx.com",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "redgifs.com",
+                    "routes": 10,
+                    "missing": 0
+                },
+                {
+                    "id": "redtube.com",
+                    "routes": 7,
+                    "missing": 0
+                },
+                {
+                    "id": "rule34.xxx",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "xhamster.com",
+                    "routes": 43,
+                    "missing": 0
+                },
+                {
+                    "id": "xhamsterlive.com",
+                    "routes": 1,
+                    "missing": 0
+                },
+                {
+                    "id": "xnxx-ru.com",
+                    "routes": 44,
+                    "missing": 0
+                },
+                {
+                    "id": "xvideos.com",
+                    "routes": 46,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "shop",
+            "sites": 3,
+            "available": 3,
+            "rules": 966,
+            "items": [
+                {
+                    "id": "babook.org",
+                    "routes": 6,
+                    "missing": 0
+                },
+                {
+                    "id": "ralphlauren.eu",
+                    "routes": 69,
+                    "missing": 0
+                },
+                {
+                    "id": "ui.com",
+                    "routes": 891,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "socials",
+            "sites": 12,
+            "available": 12,
+            "rules": 1414,
+            "items": [
+                {
+                    "id": "4pda.to",
+                    "routes": 7,
+                    "missing": 0
+                },
+                {
+                    "id": "cwer.ws",
+                    "routes": 2,
+                    "missing": 0
+                },
+                {
+                    "id": "facebook.com",
+                    "routes": 197,
+                    "missing": 0
+                },
+                {
+                    "id": "hornet.com",
+                    "routes": 47,
+                    "missing": 0
+                },
+                {
+                    "id": "instagram.com",
+                    "routes": 122,
+                    "missing": 0
+                },
+                {
+                    "id": "linkedin.com",
+                    "routes": 121,
+                    "missing": 0
+                },
+                {
+                    "id": "patreon.com",
+                    "routes": 151,
+                    "missing": 0
+                },
+                {
+                    "id": "quora.com",
+                    "routes": 31,
+                    "missing": 0
+                },
+                {
+                    "id": "ru-board.com",
+                    "routes": 1,
+                    "missing": 0
+                },
+                {
+                    "id": "snapchat.com",
+                    "routes": 117,
+                    "missing": 0
+                },
+                {
+                    "id": "tiktok.com",
+                    "routes": 604,
+                    "missing": 0
+                },
+                {
+                    "id": "x.com",
+                    "routes": 14,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "tools",
+            "sites": 33,
+            "available": 33,
+            "rules": 1596,
+            "items": [
+                {
+                    "id": "9proxy.com",
+                    "routes": 4,
+                    "missing": 0
+                },
+                {
+                    "id": "10minutemail.com",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "aida64.com",
+                    "routes": 7,
+                    "missing": 0
+                },
+                {
+                    "id": "anydesk.com",
+                    "routes": 159,
+                    "missing": 0
+                },
+                {
+                    "id": "autodesk.com",
+                    "routes": 263,
+                    "missing": 0
+                },
+                {
+                    "id": "basecamp.com",
+                    "routes": 4,
+                    "missing": 0
+                },
+                {
+                    "id": "beeble.com",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "bestchange.ru",
+                    "routes": 17,
+                    "missing": 0
+                },
+                {
+                    "id": "capcut.com",
+                    "routes": 52,
+                    "missing": 0
+                },
+                {
+                    "id": "clickup.com",
+                    "routes": 102,
+                    "missing": 0
+                },
+                {
+                    "id": "connect.garmin.com",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "fastpic.org",
+                    "routes": 9,
+                    "missing": 0
+                },
+                {
+                    "id": "fatsecret.com",
+                    "routes": 17,
+                    "missing": 0
+                },
+                {
+                    "id": "fmhy.net",
+                    "routes": 26,
+                    "missing": 0
+                },
+                {
+                    "id": "linktr.ee",
+                    "routes": 21,
+                    "missing": 0
+                },
+                {
+                    "id": "make.com",
+                    "routes": 48,
+                    "missing": 0
+                },
+                {
+                    "id": "medium.com",
+                    "routes": 1,
+                    "missing": 0
+                },
+                {
+                    "id": "miro.com",
+                    "routes": 36,
+                    "missing": 0
+                },
+                {
+                    "id": "myheritage.com",
+                    "routes": 3,
+                    "missing": 0
+                },
+                {
+                    "id": "naukri.com",
+                    "routes": 114,
+                    "missing": 0
+                },
+                {
+                    "id": "notepad-plus-plus.org",
+                    "routes": 46,
+                    "missing": 0
+                },
+                {
+                    "id": "notion.so",
+                    "routes": 193,
+                    "missing": 0
+                },
+                {
+                    "id": "proton.me",
+                    "routes": 22,
+                    "missing": 0
+                },
+                {
+                    "id": "proxy6.net",
+                    "routes": 17,
+                    "missing": 0
+                },
+                {
+                    "id": "proxyline.net",
+                    "routes": 14,
+                    "missing": 0
+                },
+                {
+                    "id": "sankakucomplex.com",
+                    "routes": 29,
+                    "missing": 0
+                },
+                {
+                    "id": "sentry.io",
+                    "routes": 33,
+                    "missing": 0
+                },
+                {
+                    "id": "strava.com",
+                    "routes": 61,
+                    "missing": 0
+                },
+                {
+                    "id": "trainingpeaks.com",
+                    "routes": 48,
+                    "missing": 0
+                },
+                {
+                    "id": "tuta.com",
+                    "routes": 4,
+                    "missing": 0
+                },
+                {
+                    "id": "whoop.com",
+                    "routes": 202,
+                    "missing": 0
+                },
+                {
+                    "id": "wikidot.com",
+                    "routes": 1,
+                    "missing": 0
+                },
+                {
+                    "id": "zapier.com",
+                    "routes": 28,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "torrent",
+            "sites": 12,
+            "available": 12,
+            "rules": 53,
+            "items": [
+                {
+                    "id": "1337x.to",
+                    "routes": 2,
+                    "missing": 0
+                },
+                {
+                    "id": "booktracker.org",
+                    "routes": 1,
+                    "missing": 0
+                },
+                {
+                    "id": "filmitorrent.net",
+                    "routes": 3,
+                    "missing": 0
+                },
+                {
+                    "id": "freetp.org",
+                    "routes": 2,
+                    "missing": 0
+                },
+                {
+                    "id": "kinozal.me",
+                    "routes": 9,
+                    "missing": 0
+                },
+                {
+                    "id": "newstudio.tv",
+                    "routes": 1,
+                    "missing": 0
+                },
+                {
+                    "id": "nnmclub.to",
+                    "routes": 3,
+                    "missing": 0
+                },
+                {
+                    "id": "rustorka.com",
+                    "routes": 18,
+                    "missing": 0
+                },
+                {
+                    "id": "rutor.info",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "rutracker.org",
+                    "routes": 5,
+                    "missing": 0
+                },
+                {
+                    "id": "thepiratebay.org",
+                    "routes": 3,
+                    "missing": 0
+                },
+                {
+                    "id": "torrent.by",
+                    "routes": 1,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "video",
+            "sites": 14,
+            "available": 14,
+            "rules": 296,
+            "items": [
+                {
+                    "id": "daramalive.life",
+                    "routes": 2,
+                    "missing": 0
+                },
+                {
+                    "id": "doramy.club",
+                    "routes": 7,
+                    "missing": 0
+                },
+                {
+                    "id": "filmix.fm",
+                    "routes": 6,
+                    "missing": 0
+                },
+                {
+                    "id": "hdrezka.ag",
+                    "routes": 46,
+                    "missing": 0
+                },
+                {
+                    "id": "kino.watch",
+                    "routes": 28,
+                    "missing": 0
+                },
+                {
+                    "id": "kinobase.org",
+                    "routes": 4,
+                    "missing": 0
+                },
+                {
+                    "id": "kinovod.pro",
+                    "routes": 6,
+                    "missing": 0
+                },
+                {
+                    "id": "kinozal.tv",
+                    "routes": 4,
+                    "missing": 0
+                },
+                {
+                    "id": "lostfilm.tv",
+                    "routes": 8,
+                    "missing": 0
+                },
+                {
+                    "id": "netflix.com",
+                    "routes": 87,
+                    "missing": 0
+                },
+                {
+                    "id": "seasonvar.ru",
+                    "routes": 18,
+                    "missing": 0
+                },
+                {
+                    "id": "stremio.com",
+                    "routes": 6,
+                    "missing": 0
+                },
+                {
+                    "id": "themoviedb.org",
+                    "routes": 57,
+                    "missing": 0
+                },
+                {
+                    "id": "zeflix.online",
+                    "routes": 17,
+                    "missing": 0
+                }
+            ]
+        },
+        {
+            "id": "youtube",
+            "sites": 2,
+            "available": 2,
+            "rules": 630,
+            "items": [
+                {
+                    "id": "revanced.app",
+                    "routes": 4,
+                    "missing": 0
+                },
+                {
+                    "id": "youtube.com",
+                    "routes": 626,
+                    "missing": 0
+                }
+            ]
+        }
+    ],
+    "sites_total": 229,
+    "rules_total": 10099,
+    "missing_sources": []
+}
