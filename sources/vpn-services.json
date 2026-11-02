@@ -1,0 +1,9 @@
+{
+  "telegram": {"name": "Telegram", "domains": ["telegram.org", "t.me", "telegram.me", "telegram.dog", "web.telegram.org", "desktop.telegram.org", "core.telegram.org"]},
+  "youtube": {"name": "YouTube", "domains": ["youtube.com", "m.youtube.com", "youtu.be", "youtube-nocookie.com", "youtubei.googleapis.com", "youtube.googleapis.com", "googlevideo.com", "ytimg.com", "i.ytimg.com", "yt3.ggpht.com", "youtubekids.com"]},
+  "meta": {"name": "Instagram и Facebook", "domains": ["instagram.com", "cdninstagram.com", "facebook.com", "m.facebook.com", "fb.com", "fbcdn.net", "graph.facebook.com", "threads.net", "threads.com"]},
+  "discord": {"name": "Discord", "domains": ["discord.com", "discord.gg", "discordapp.com", "discordapp.net", "discord.media", "discord.gift"]},
+  "twitter": {"name": "X (Twitter)", "domains": ["x.com", "twitter.com", "t.co", "twimg.com", "pbs.twimg.com", "video.twimg.com"]},
+  "openai": {"name": "ChatGPT и OpenAI", "domains": ["chatgpt.com", "openai.com", "auth.openai.com", "oaistatic.com", "oaiusercontent.com"]},
+  "tiktok": {"name": "TikTok", "domains": ["tiktok.com", "tiktokcdn.com", "tiktokv.com", "muscdn.com"]}
+}

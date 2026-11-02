@@ -1,0 +1,27 @@
+{
+    "built_at": "2026-11-02T13:51:08+00:00",
+    "mode": "selected-through-vpn",
+    "domains_total": 48,
+    "domains_accepted": 41,
+    "telegram_ipv4_networks": 9,
+    "skipped_domains": [
+        "ytimg.com",
+        "cdninstagram.com",
+        "discordapp.net",
+        "twimg.com",
+        "oaiusercontent.com",
+        "tiktokcdn.com",
+        "muscdn.com"
+    ],
+    "skip_reasons": {
+        "ytimg.com": "no_a_record",
+        "cdninstagram.com": "no_a_record",
+        "discordapp.net": "no_a_record",
+        "twimg.com": "no_a_record",
+        "oaiusercontent.com": "no_a_record",
+        "tiktokcdn.com": "no_a_record",
+        "muscdn.com": "no_a_record"
+    },
+    "dns_errors": [],
+    "telegram_source": "https://core.telegram.org/resources/cidr.txt"
+}

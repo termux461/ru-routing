@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RU Routing — список исключений для VPN</title>
+  <title>RU Routing — выбранные сайты через VPN</title>
   <style>
     :root {
       color-scheme: light dark;
@@ -87,11 +87,11 @@
 <body>
 <main>
   <h1>RU Routing</h1>
-  <p class="intro">Список российских сервисов для раздельного туннелирования: выбранные сайты открываются напрямую, остальные — по вашим правилам VPN.</p>
+  <p class="intro">Выберите сервисы, которые должны открываться через VPN. Остальные сайты будут открываться напрямую, если ваш VPN-клиент настроен в этом режиме.</p>
 
   <section aria-labelledby="categories-title">
-    <h2 id="categories-title">Категории</h2>
-    <p class="muted">Выберите нужные разделы. Можно отметить несколько.</p>
+    <h2 id="categories-title">Сервисы через VPN</h2>
+    <p class="muted">Выберите сервисы. Telegram включает официальные IPv4-подсети.</p>
     <div class="toolbar">
       <button class="secondary" id="all" type="button">Выбрать все</button>
       <button class="secondary" id="none" type="button">Очистить</button>
@@ -110,23 +110,23 @@
       <label class="format-option"><input type="radio" name="format" value="cidr"><span><span class="mono">IPv4 txt</span><small>Текстовый список адресов IPv4</small></span></label>
     </fieldset>
     <button class="primary" id="download" type="button" disabled>Скачать</button>
-    <p class="muted">В категориях — отдельные IP-адреса доменов. Полные подсети компаний есть в <a href="https://github.com/termux461/ru-routing/blob/main/dist/tunneling-list.json">общем файле</a>.</p>
+    <p class="muted">В список входят найденные IPv4-адреса сервисов и официальные IPv4-подсети Telegram. IP-адреса могут меняться.</p>
   </section>
 
   <section aria-labelledby="upload-title">
     <h2 id="upload-title">Загрузить свой список</h2>
-    <p>Каталог обновляется на GitHub. Можно скачать свежий <a href="https://github.com/termux461/ru-routing/blob/main/dist/tunneling-list.json"><code>tunneling-list.json</code></a> и загрузить его сюда. Файл обрабатывается в браузере.</p>
-    <label class="upload-label" for="upload">Файл <span class="mono">tunneling-list.json</span></label>
+    <p>Каталог обновляется на GitHub. Можно скачать свежий <a href="https://github.com/termux461/ru-routing/blob/main/dist/vpn-list.json"><code>vpn-list.json</code></a> и загрузить его сюда. Файл обрабатывается в браузере.</p>
+    <label class="upload-label" for="upload">Файл <span class="mono">vpn-list.json</span></label>
     <input id="upload" type="file" accept=".json,application/json" disabled>
     <p id="message" class="status" role="status"></p>
   </section>
 
   <section aria-labelledby="report-title">
     <h2 id="report-title">Не попали в список</h2>
-    <p>Домены, для которых сборка не нашла подходящий адрес или получила ошибку DNS.</p>
+    <p>Домены выбранных сервисов, для которых сборка не получила IPv4-адрес или получила ошибку DNS.</p>
     <p id="report-status" class="muted" role="status">Загружаю отчёт…</p>
     <label for="report-filter">Найти домен</label>
-    <input id="report-filter" type="search" placeholder="Например, mos.ru">
+    <input id="report-filter" type="search" placeholder="Например, youtube.com">
     <div id="skipped-list" aria-live="polite"></div>
   </section>
 
@@ -134,11 +134,11 @@
     <h2 id="help-title">Как подключить</h2>
     <ol>
       <li>Выберите категории и формат вашего клиента, затем скачайте файл.</li>
-      <li>В Amnezia отключите VPN, включите раздельное туннелирование сайтов, выберите режим «сайты из списка не должны открываться через VPN» и импортируйте JSON.</li>
-      <li>Подключите VPN и проверьте свой IP на нужном сервисе. После обновления списка импортируйте файл повторно.</li>
+      <li>В Amnezia отключите VPN, включите раздельное туннелирование сайтов, выберите режим «сайты из списка должны открываться через VPN» и импортируйте JSON.</li>
+      <li>Подключите VPN и проверьте свой IP на нужном сервисе. Выберите «Заменить список», чтобы удалить прежние правила этого режима. После обновления файла импортируйте его повторно.</li>
     </ol>
-    <p>Если что-то не открывается напрямую, <a href="https://github.com/termux461/ru-routing/issues">напишите в issues</a>.</p>
-    <p class="disclaimer">При прямом подключении сервисы видят ваш обычный IP. Один IP могут использовать несколько сайтов, поэтому исключение адреса может затронуть и другие сайты.</p>
+    <p>Если выбранный сервис не открывается через VPN, <a href="https://github.com/termux461/ru-routing/issues">напишите в issues</a>.</p>
+    <p class="disclaimer">Сервисы вне списка идут напрямую и видят ваш обычный IP. Один IP могут использовать несколько сайтов, поэтому правило может затронуть и другие сайты. Для YouTube и других CDN часть адресов меняется динамически; список не гарантирует работу всех приложений и IPv6.</p>
   </section>
 </main>
 <footer><a href="https://github.com/termux461/ru-routing">GitHub</a><span id="catalog-date">Дата обновления каталога пока неизвестна</span></footer>
@@ -151,7 +151,8 @@ const countLabel = (count, one, few, many) => {
   const n = count % 100;
   return count + ' ' + (n >= 11 && n <= 14 ? many : n % 10 === 1 ? one : n % 10 >= 2 && n % 10 <= 4 ? few : many);
 };
-const valid = x => x && typeof x.hostname === 'string' && /^[a-z0-9.-]+$/i.test(x.hostname) && Array.isArray(x.ips) && x.ips.every(ip => typeof ip === 'string' && /^(?:\d{1,3}\.){3}\d{1,3}$/.test(ip));
+const isIpv4 = value => { if (typeof value !== 'string') return false; const parts = value.split('/'); if (parts.length > 2 || (parts.length === 2 && (!/^(?:[0-9]|[12][0-9]|3[0-2])$/.test(parts[1])))) return false; const octets = parts[0].split('.'); return octets.length === 4 && octets.every(octet => /^(0|[1-9][0-9]{0,2})$/.test(octet) && Number(octet) <= 255); };
+const valid = x => x && typeof x.hostname === 'string' && (/^[a-z0-9.-]+$/i.test(x.hostname) || isIpv4(x.hostname)) && Array.isArray(x.ips) && x.ips.length > 0 && x.ips.every(isIpv4);
 
 function render() {
   const grid = $('#categories');
@@ -173,7 +174,7 @@ function render() {
     label.append(input, title, amount);
     grid.append(label);
   });
-  $('#catalog-status').textContent = 'В каталоге: ' + countLabel(entries.length, 'домен', 'домена', 'доменов') + '.';
+  $('#catalog-status').textContent = 'В каталоге: ' + countLabel(entries.length, 'правило', 'правила', 'правил') + '.';
   $('#catalog-date').textContent = 'Каталог обновлён: ' + new Date(data.built_at).toLocaleString('ru-RU');
 }
 
@@ -181,10 +182,10 @@ async function init() {
   try {
     let response;
     try {
-      response = await fetch('https://raw.githubusercontent.com/termux461/ru-routing/main/dist/catalog.json', {cache: 'no-cache'});
+      response = await fetch('https://raw.githubusercontent.com/termux461/ru-routing/main/dist/vpn-catalog.json', {cache: 'no-cache'});
       if (!response.ok) throw Error('HTTP ' + response.status);
     } catch {
-      response = await fetch('../dist/catalog.json', {cache: 'no-cache'});
+      response = await fetch('../dist/vpn-catalog.json', {cache: 'no-cache'});
       if (!response.ok) throw Error('HTTP ' + response.status);
     }
     data = await response.json();
@@ -213,7 +214,7 @@ $('#upload').onchange = async event => {
     if (!known.length) throw Error('Известные домены не найдены');
     entries = known;
     render();
-    msg('Загружено доменов: ' + known.length + ' (' + file.name + ').');
+    msg('Загружено правил: ' + known.length + ' (' + file.name + ').');
   } catch (error) { msg(error.message); }
 };
 
@@ -221,9 +222,9 @@ $('#download').onclick = () => {
   if (!data) return;
   const selected = new Set([...document.querySelectorAll('.category input:checked')].map(input => input.value));
   const rows = entries.filter(entry => selected.has(data.domain_categories[entry.hostname]));
-  if (!rows.length) { msg('Выберите категории с доменами.'); return; }
-  const domains = [...new Set(rows.map(entry => entry.hostname))].sort();
-  const ips = [...new Set(rows.flatMap(entry => entry.ips.map(ip => ip + '/32')))].sort();
+  if (!rows.length) { msg('Выберите сервисы с адресами.'); return; }
+  const domains = [...new Set(rows.map(entry => entry.hostname).filter(host => !host.includes('/')))].sort();
+  const ips = [...new Set(rows.flatMap(entry => entry.ips.map(ip => ip.includes('/') ? ip : ip + '/32')))].sort();
   const format = document.querySelector('input[name="format"]:checked').value;
   let content, mime, extension;
   if (format === 'amnezia') {
@@ -238,21 +239,20 @@ $('#download').onclick = () => {
   const url = URL.createObjectURL(new Blob([content], {type: mime}));
   const link = document.createElement('a');
   link.href = url;
-  link.download = 'ru-routing-' + format + '.' + extension;
+  link.download = 'vpn-only-' + format + '.' + extension;
   link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
-  msg('Подготовлено: ' + countLabel(rows.length, 'домен', 'домена', 'доменов') + ' и ' + countLabel(ips.length, 'адрес', 'адреса', 'адресов') + '.');
+  msg('Подготовлено: ' + countLabel(rows.length, 'правило', 'правила', 'правил') + ' и ' + countLabel(ips.length, 'адрес', 'адреса', 'адресов') + '.');
 };
 
 const explanations = {dns_error: 'Ошибка DNS: повторим при следующей сборке', no_approved_ipv4: 'IPv4 не найден в разрешённых диапазонах', no_a_record: 'Нет ответа IPv4'};
-let skippedReport = null, discoveryReport = null;
+let skippedReport = null;
 function showSkipped() {
   const list = $('#skipped-list');
   list.replaceChildren();
   if (!skippedReport) return;
   const search = $('#report-filter').value.trim().toLowerCase();
   const combined = {...(skippedReport.skip_reasons || {})};
-  for (const [host, reason] of Object.entries(discoveryReport?.decisions || {})) if (reason !== 'accepted' && !(host in combined)) combined[host] = reason;
   const items = Object.entries(combined).filter(([host]) => host.includes(search));
   if (!items.length) { list.textContent = 'Нет совпадений'; return; }
   for (const [host, reason] of items) {
@@ -271,13 +271,7 @@ function showSkipped() {
 $('#report-filter').addEventListener('input', showSkipped);
 (async () => {
   try {
-    const response = await fetch('https://raw.githubusercontent.com/termux461/ru-routing/main/dist/discovery.json', {cache: 'no-cache'});
-    if (response.ok) { discoveryReport = await response.json(); showSkipped(); }
-  } catch {}
-})();
-(async () => {
-  try {
-    const response = await fetch('https://raw.githubusercontent.com/termux461/ru-routing/main/dist/report.json', {cache: 'no-cache'});
+    const response = await fetch('https://raw.githubusercontent.com/termux461/ru-routing/main/dist/vpn-report.json', {cache: 'no-cache'});
     if (!response.ok) throw Error('HTTP ' + response.status);
     const report = await response.json();
     if (!report.skip_reasons || typeof report.skip_reasons !== 'object') throw Error('нет данных');
@@ -285,7 +279,7 @@ $('#report-filter').addEventListener('input', showSkipped);
     $('#report-status').textContent = 'Пропущено: ' + Object.keys(report.skip_reasons).length + ' · проверено ' + new Date(report.built_at).toLocaleString('ru-RU');
     showSkipped();
   } catch (error) {
-    $('#report-status').textContent = 'Не удалось загрузить отчёт: ' + error.message + '. Откройте dist/report.json на GitHub.';
+    $('#report-status').textContent = 'Не удалось загрузить отчёт: ' + error.message + '. Откройте dist/vpn-report.json на GitHub.';
   }
 })();
 init();
