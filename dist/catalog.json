@@ -1,29 +1,29 @@
 {
-    "built_at": "2026-11-02T10:27:41+00:00",
+    "built_at": "2026-11-02T10:42:59+00:00",
     "categories": [
         {
             "id": "banks",
             "name": "Банки и финансы",
-            "domains": 95,
-            "addresses": 102
+            "domains": 143,
+            "addresses": 158
         },
         {
             "id": "government",
             "name": "Госуслуги",
-            "domains": 110,
-            "addresses": 133
+            "domains": 130,
+            "addresses": 156
         },
         {
             "id": "shops",
             "name": "Магазины и доставка",
-            "domains": 77,
-            "addresses": 89
+            "domains": 81,
+            "addresses": 97
         },
         {
             "id": "technology",
             "name": "Технологии и соцсети",
-            "domains": 120,
-            "addresses": 136
+            "domains": 124,
+            "addresses": 138
         },
         {
             "id": "media",
@@ -34,8 +34,8 @@
         {
             "id": "travel",
             "name": "Транспорт и путешествия",
-            "domains": 53,
-            "addresses": 69
+            "domains": 57,
+            "addresses": 73
         },
         {
             "id": "telecom",
@@ -46,14 +46,14 @@
         {
             "id": "education",
             "name": "Образование",
-            "domains": 73,
-            "addresses": 84
+            "domains": 75,
+            "addresses": 87
         },
         {
             "id": "health",
             "name": "Медицина",
-            "domains": 37,
-            "addresses": 41
+            "domains": 40,
+            "addresses": 44
         },
         {
             "id": "life",
@@ -174,6 +174,54 @@
         "yoomoney.ru": "banks",
         "zenit.ru": "banks",
         "e-disclosure.ru": "banks",
+        "abr.ru": "banks",
+        "agroros.ru": "banks",
+        "ai-bank.ru": "banks",
+        "akcept.ru": "banks",
+        "akibank.ru": "banks",
+        "alefbank.com": "banks",
+        "alfabank.st": "banks",
+        "api.tbank.ru": "banks",
+        "api.vtb.ru": "banks",
+        "apkbank.ru": "banks",
+        "aresbank.ru": "banks",
+        "asia-pay.ru": "banks",
+        "atb.su": "banks",
+        "autofinancebank.ru": "banks",
+        "autokreditbank.ru": "banks",
+        "avangard.ru": "banks",
+        "aversbank.ru": "banks",
+        "bancaintesa.ru": "banks",
+        "bank-arzamas.ru": "banks",
+        "bank-hlynov.ru": "banks",
+        "bank.yandex.ru": "banks",
+        "bank131.ru": "banks",
+        "bankermak.ru": "banks",
+        "bankofkazan.ru": "banks",
+        "bankperm.ru": "banks",
+        "bankstavr.ru": "banks",
+        "bankvl.ru": "banks",
+        "bbr.ru": "banks",
+        "bcs-bank.ru": "banks",
+        "best2pay.net": "banks",
+        "blanc.ru": "banks",
+        "bm-bank.ru": "banks",
+        "bmwbank.ru": "banks",
+        "boc.ru": "banks",
+        "broker.ru": "banks",
+        "bystrobank.ru": "banks",
+        "cdn.sberbank.ru": "banks",
+        "cdn.tbank.ru": "banks",
+        "cdn.vtb.ru": "banks",
+        "centrinvest.ru": "banks",
+        "chelindbank.ru": "banks",
+        "chelinvest.ru": "banks",
+        "cibank.ru": "banks",
+        "cifra-bank.ru": "banks",
+        "cmrbank.ru": "banks",
+        "coalmetbank.ru": "banks",
+        "commerzbank.ru": "banks",
+        "creditural.ru": "banks",
         "arbitr.ru": "government",
         "kad.arbitr.ru": "government",
         "avtokod.ru": "government",
@@ -291,6 +339,22 @@
         "tektorg.ru": "government",
         "zakazrf.ru": "government",
         "etp.zakazrf.ru": "government",
+        "adygeya.ru": "government",
+        "altai.ru": "government",
+        "amur.ru": "government",
+        "astrakhan.ru": "government",
+        "bashkiria.ru": "government",
+        "bir.ru": "government",
+        "bryansk.ru": "government",
+        "cap.ru": "government",
+        "cbg.ru": "government",
+        "chel.ru": "government",
+        "chelyabinsk.ru": "government",
+        "chita.ru": "government",
+        "chukotka.ru": "government",
+        "chuvashia.ru": "government",
+        "cikrf.ru": "government",
+        "crimea.ru": "government",
         "5ka.ru": "shops",
         "aliexpress.ru": "shops",
         "ru.aliexpress.com": "shops",
@@ -374,6 +438,9 @@
         "seller.wildberries.ru": "shops",
         "wbstatic.net": "shops",
         "x5.ru": "shops",
+        "api.ozon.ru": "shops",
+        "cdn.ozon.ru": "shops",
+        "coolera.ru": "shops",
         "360.yandex.ru": "technology",
         "alice.yandex.ru": "technology",
         "browser.yandex.ru": "technology",
@@ -501,6 +568,10 @@
         "usergate.com": "technology",
         "vipnet.ru": "technology",
         "yadro.ru": "technology",
+        "3dnews.ru": "technology",
+        "cnconf.ru": "technology",
+        "cnews.ru": "technology",
+        "cnewsforum.ru": "technology",
         "116.ru": "media",
         "161.ru": "media",
         "29.ru": "media",
@@ -682,6 +753,10 @@
         "shiptor.ru": "travel",
         "track24.ru": "travel",
         "trackitonline.ru": "travel",
+        "arenda.yandex.ru": "travel",
+        "avtovokzaly.ru": "travel",
+        "bilet.nspk.ru": "travel",
+        "blablacar.ru": "travel",
         "beeline.ru": "telecom",
         "cloud.rt.ru": "telecom",
         "dom.ru": "telecom",
@@ -798,6 +873,8 @@
         "vuzopedia.ru": "education",
         "yaklass.ru": "education",
         "lyceum.yandex.ru": "education",
+        "altaiobr04.ru": "education",
+        "chelyabinsk-sgo-edu-74.ru": "education",
         "366.ru": "health",
         "apteka.ru": "health",
         "asna.ru": "health",
@@ -837,6 +914,9 @@
         "takzdorovo.ru": "health",
         "vidal.ru": "health",
         "zdravcity.ru": "health",
+        "apteka-april.ru": "health",
+        "aptekiplus.ru": "health",
+        "b17.ru": "health",
         "am.ru": "life",
         "auto.ru": "life",
         "autodoc.ru": "life",
@@ -995,6 +1075,13 @@
             ]
         },
         {
+            "hostname": "3dnews.ru",
+            "ip": "185.65.149.96",
+            "ips": [
+                "185.65.149.96"
+            ]
+        },
+        {
             "hostname": "4ege.ru",
             "ip": "185.135.83.235",
             "ips": [
@@ -1058,6 +1145,13 @@
             ]
         },
         {
+            "hostname": "abr.ru",
+            "ip": "194.226.55.16",
+            "ips": [
+                "194.226.55.16"
+            ]
+        },
+        {
             "hostname": "absolutbank.ru",
             "ip": "194.190.0.220",
             "ips": [
@@ -1084,6 +1178,13 @@
             "ip": "81.22.46.142",
             "ips": [
                 "81.22.46.142"
+            ]
+        },
+        {
+            "hostname": "adygeya.ru",
+            "ip": "178.210.74.11",
+            "ips": [
+                "178.210.74.11"
             ]
         },
         {
@@ -1114,6 +1215,21 @@
             ]
         },
         {
+            "hostname": "agroros.ru",
+            "ip": "217.65.214.239",
+            "ips": [
+                "217.65.214.239",
+                "217.65.217.156"
+            ]
+        },
+        {
+            "hostname": "ai-bank.ru",
+            "ip": "5.188.29.95",
+            "ips": [
+                "5.188.29.95"
+            ]
+        },
+        {
             "hostname": "airflot.ru",
             "ip": "185.135.83.132",
             "ips": [
@@ -1128,6 +1244,28 @@
             ]
         },
         {
+            "hostname": "akcept.ru",
+            "ip": "178.248.238.202",
+            "ips": [
+                "178.248.238.202"
+            ]
+        },
+        {
+            "hostname": "akibank.ru",
+            "ip": "109.232.248.29",
+            "ips": [
+                "109.232.248.29",
+                "217.23.180.86"
+            ]
+        },
+        {
+            "hostname": "alefbank.com",
+            "ip": "87.236.16.238",
+            "ips": [
+                "87.236.16.238"
+            ]
+        },
+        {
             "hostname": "alfa.bank",
             "ip": "217.12.104.100",
             "ips": [
@@ -1136,6 +1274,13 @@
         },
         {
             "hostname": "alfabank.ru",
+            "ip": "217.12.104.100",
+            "ips": [
+                "217.12.104.100"
+            ]
+        },
+        {
+            "hostname": "alfabank.st",
             "ip": "217.12.104.100",
             "ips": [
                 "217.12.104.100"
@@ -1171,6 +1316,20 @@
             ]
         },
         {
+            "hostname": "altai.ru",
+            "ip": "212.94.96.100",
+            "ips": [
+                "212.94.96.100"
+            ]
+        },
+        {
+            "hostname": "altaiobr04.ru",
+            "ip": "95.215.85.143",
+            "ips": [
+                "95.215.85.143"
+            ]
+        },
+        {
             "hostname": "altlinux.ru",
             "ip": "194.107.17.163",
             "ips": [
@@ -1195,6 +1354,13 @@
             ]
         },
         {
+            "hostname": "amur.ru",
+            "ip": "212.122.0.70",
+            "ips": [
+                "212.122.0.70"
+            ]
+        },
+        {
             "hostname": "anywayanyday.com",
             "ip": "185.163.159.184",
             "ips": [
@@ -1211,6 +1377,42 @@
             ]
         },
         {
+            "hostname": "api.ozon.ru",
+            "ip": "185.73.193.69",
+            "ips": [
+                "185.73.193.69",
+                "185.73.195.136"
+            ]
+        },
+        {
+            "hostname": "api.tbank.ru",
+            "ip": "178.130.128.21",
+            "ips": [
+                "178.130.128.21"
+            ]
+        },
+        {
+            "hostname": "api.vtb.ru",
+            "ip": "217.14.58.16",
+            "ips": [
+                "217.14.58.16"
+            ]
+        },
+        {
+            "hostname": "apkbank.ru",
+            "ip": "37.228.112.243",
+            "ips": [
+                "37.228.112.243"
+            ]
+        },
+        {
+            "hostname": "apteka-april.ru",
+            "ip": "185.165.123.136",
+            "ips": [
+                "185.165.123.136"
+            ]
+        },
+        {
             "hostname": "apteka.ru",
             "ip": "178.248.238.163",
             "ips": [
@@ -1219,10 +1421,31 @@
             ]
         },
         {
+            "hostname": "aptekiplus.ru",
+            "ip": "178.248.232.66",
+            "ips": [
+                "178.248.232.66"
+            ]
+        },
+        {
             "hostname": "arbitr.ru",
             "ip": "95.167.220.237",
             "ips": [
                 "95.167.220.237"
+            ]
+        },
+        {
+            "hostname": "arenda.yandex.ru",
+            "ip": "213.180.204.188",
+            "ips": [
+                "213.180.204.188"
+            ]
+        },
+        {
+            "hostname": "aresbank.ru",
+            "ip": "82.202.172.171",
+            "ips": [
+                "82.202.172.171"
             ]
         },
         {
@@ -1240,6 +1463,13 @@
             ]
         },
         {
+            "hostname": "asia-pay.ru",
+            "ip": "45.130.41.101",
+            "ips": [
+                "45.130.41.101"
+            ]
+        },
+        {
             "hostname": "asna.ru",
             "ip": "185.163.159.166",
             "ips": [
@@ -1254,6 +1484,13 @@
             ]
         },
         {
+            "hostname": "astrakhan.ru",
+            "ip": "176.100.77.144",
+            "ips": [
+                "176.100.77.144"
+            ]
+        },
+        {
             "hostname": "astral.ru",
             "ip": "185.253.34.10",
             "ips": [
@@ -1265,6 +1502,13 @@
             "ip": "185.48.238.26",
             "ips": [
                 "185.48.238.26"
+            ]
+        },
+        {
+            "hostname": "atb.su",
+            "ip": "178.248.232.151",
+            "ips": [
+                "178.248.232.151"
             ]
         },
         {
@@ -1290,10 +1534,24 @@
             ]
         },
         {
+            "hostname": "autofinancebank.ru",
+            "ip": "185.71.67.102",
+            "ips": [
+                "185.71.67.102"
+            ]
+        },
+        {
             "hostname": "autoins.ru",
             "ip": "90.156.206.245",
             "ips": [
                 "90.156.206.245"
+            ]
+        },
+        {
+            "hostname": "autokreditbank.ru",
+            "ip": "92.255.105.63",
+            "ips": [
+                "92.255.105.63"
             ]
         },
         {
@@ -1304,12 +1562,26 @@
             ]
         },
         {
+            "hostname": "avangard.ru",
+            "ip": "193.222.109.106",
+            "ips": [
+                "193.222.109.106"
+            ]
+        },
+        {
             "hostname": "avatars.mds.yandex.net",
             "ip": "87.250.247.181",
             "ips": [
                 "87.250.247.181",
                 "87.250.247.182",
                 "87.250.247.183"
+            ]
+        },
+        {
+            "hostname": "aversbank.ru",
+            "ip": "185.104.106.60",
+            "ips": [
+                "185.104.106.60"
             ]
         },
         {
@@ -1353,6 +1625,66 @@
             ]
         },
         {
+            "hostname": "avtovokzaly.ru",
+            "ip": "87.242.111.195",
+            "ips": [
+                "87.242.111.195"
+            ]
+        },
+        {
+            "hostname": "b17.ru",
+            "ip": "91.215.42.213",
+            "ips": [
+                "91.215.42.213"
+            ]
+        },
+        {
+            "hostname": "bancaintesa.ru",
+            "ip": "82.202.189.164",
+            "ips": [
+                "82.202.189.164"
+            ]
+        },
+        {
+            "hostname": "bank-arzamas.ru",
+            "ip": "78.110.50.142",
+            "ips": [
+                "78.110.50.142"
+            ]
+        },
+        {
+            "hostname": "bank-hlynov.ru",
+            "ip": "178.216.98.252",
+            "ips": [
+                "178.216.98.252",
+                "178.216.99.245",
+                "217.16.29.145",
+                "89.208.222.63"
+            ]
+        },
+        {
+            "hostname": "bank.yandex.ru",
+            "ip": "213.165.196.135",
+            "ips": [
+                "213.165.196.135",
+                "213.165.196.237"
+            ]
+        },
+        {
+            "hostname": "bank131.ru",
+            "ip": "81.161.98.142",
+            "ips": [
+                "81.161.98.142"
+            ]
+        },
+        {
+            "hostname": "bankermak.ru",
+            "ip": "93.189.228.209",
+            "ips": [
+                "93.189.228.209"
+            ]
+        },
+        {
             "hostname": "banki.ru",
             "ip": "185.71.67.241",
             "ips": [
@@ -1360,10 +1692,40 @@
             ]
         },
         {
+            "hostname": "bankofkazan.ru",
+            "ip": "82.202.191.2",
+            "ips": [
+                "82.202.191.2"
+            ]
+        },
+        {
+            "hostname": "bankperm.ru",
+            "ip": "77.246.159.21",
+            "ips": [
+                "77.246.159.21",
+                "82.202.170.102"
+            ]
+        },
+        {
             "hostname": "bankrot.fedresurs.ru",
             "ip": "46.28.18.15",
             "ips": [
                 "46.28.18.15"
+            ]
+        },
+        {
+            "hostname": "bankstavr.ru",
+            "ip": "212.96.98.162",
+            "ips": [
+                "212.96.98.162"
+            ]
+        },
+        {
+            "hostname": "bankvl.ru",
+            "ip": "185.236.65.26",
+            "ips": [
+                "185.236.65.26",
+                "213.176.242.102"
             ]
         },
         {
@@ -1378,6 +1740,27 @@
             "ip": "194.107.17.249",
             "ips": [
                 "194.107.17.249"
+            ]
+        },
+        {
+            "hostname": "bashkiria.ru",
+            "ip": "178.210.74.11",
+            "ips": [
+                "178.210.74.11"
+            ]
+        },
+        {
+            "hostname": "bbr.ru",
+            "ip": "109.232.248.78",
+            "ips": [
+                "109.232.248.78"
+            ]
+        },
+        {
+            "hostname": "bcs-bank.ru",
+            "ip": "91.206.127.208",
+            "ips": [
+                "91.206.127.208"
             ]
         },
         {
@@ -1416,6 +1799,13 @@
             ]
         },
         {
+            "hostname": "best2pay.net",
+            "ip": "91.215.41.68",
+            "ips": [
+                "91.215.41.68"
+            ]
+        },
+        {
             "hostname": "bfm.ru",
             "ip": "192.162.242.55",
             "ips": [
@@ -1439,6 +1829,13 @@
             ]
         },
         {
+            "hostname": "bilet.nspk.ru",
+            "ip": "185.170.3.61",
+            "ips": [
+                "185.170.3.61"
+            ]
+        },
+        {
             "hostname": "biletix.ru",
             "ip": "178.248.237.59",
             "ips": [
@@ -1450,6 +1847,14 @@
             "ip": "95.167.154.115",
             "ips": [
                 "95.167.154.115"
+            ]
+        },
+        {
+            "hostname": "bir.ru",
+            "ip": "178.210.74.11",
+            "ips": [
+                "178.210.74.11",
+                "81.200.144.195"
             ]
         },
         {
@@ -1467,10 +1872,46 @@
             ]
         },
         {
+            "hostname": "blablacar.ru",
+            "ip": "84.201.189.234",
+            "ips": [
+                "84.201.189.234"
+            ]
+        },
+        {
+            "hostname": "blanc.ru",
+            "ip": "158.160.120.122",
+            "ips": [
+                "158.160.120.122",
+                "178.154.225.160"
+            ]
+        },
+        {
+            "hostname": "bm-bank.ru",
+            "ip": "178.248.232.192",
+            "ips": [
+                "178.248.232.192"
+            ]
+        },
+        {
             "hostname": "bmstu.ru",
             "ip": "195.19.34.250",
             "ips": [
                 "195.19.34.250"
+            ]
+        },
+        {
+            "hostname": "bmwbank.ru",
+            "ip": "185.65.151.214",
+            "ips": [
+                "185.65.151.214"
+            ]
+        },
+        {
+            "hostname": "boc.ru",
+            "ip": "185.71.67.86",
+            "ips": [
+                "185.71.67.86"
             ]
         },
         {
@@ -1510,6 +1951,13 @@
             ]
         },
         {
+            "hostname": "broker.ru",
+            "ip": "91.206.127.208",
+            "ips": [
+                "91.206.127.208"
+            ]
+        },
+        {
             "hostname": "bronevik.com",
             "ip": "185.65.148.172",
             "ips": [
@@ -1521,6 +1969,13 @@
             "ip": "93.158.134.121",
             "ips": [
                 "93.158.134.121"
+            ]
+        },
+        {
+            "hostname": "bryansk.ru",
+            "ip": "91.107.121.47",
+            "ips": [
+                "91.107.121.47"
             ]
         },
         {
@@ -1553,10 +2008,32 @@
             ]
         },
         {
+            "hostname": "bystrobank.ru",
+            "ip": "185.41.101.5",
+            "ips": [
+                "185.41.101.5",
+                "92.61.19.254"
+            ]
+        },
+        {
+            "hostname": "cap.ru",
+            "ip": "194.226.90.15",
+            "ips": [
+                "194.226.90.15"
+            ]
+        },
+        {
             "hostname": "carprice.ru",
             "ip": "95.181.181.107",
             "ips": [
                 "95.181.181.107"
+            ]
+        },
+        {
+            "hostname": "cbg.ru",
+            "ip": "178.210.74.11",
+            "ips": [
+                "178.210.74.11"
             ]
         },
         {
@@ -1574,11 +2051,47 @@
             ]
         },
         {
+            "hostname": "cdn.ozon.ru",
+            "ip": "185.73.193.68",
+            "ips": [
+                "185.73.193.68",
+                "185.73.194.82"
+            ]
+        },
+        {
+            "hostname": "cdn.sberbank.ru",
+            "ip": "151.236.81.37",
+            "ips": [
+                "151.236.81.37"
+            ]
+        },
+        {
+            "hostname": "cdn.tbank.ru",
+            "ip": "193.17.93.194",
+            "ips": [
+                "193.17.93.194"
+            ]
+        },
+        {
+            "hostname": "cdn.vtb.ru",
+            "ip": "178.176.128.128",
+            "ips": [
+                "178.176.128.128"
+            ]
+        },
+        {
             "hostname": "cdn1.ozone.ru",
             "ip": "185.73.193.119",
             "ips": [
                 "185.73.193.119",
                 "185.73.195.116"
+            ]
+        },
+        {
+            "hostname": "centrinvest.ru",
+            "ip": "45.155.92.19",
+            "ips": [
+                "45.155.92.19"
             ]
         },
         {
@@ -1591,6 +2104,50 @@
             ]
         },
         {
+            "hostname": "chel.ru",
+            "ip": "195.19.220.45",
+            "ips": [
+                "195.19.220.45",
+                "195.226.222.207"
+            ]
+        },
+        {
+            "hostname": "chelindbank.ru",
+            "ip": "194.33.94.5",
+            "ips": [
+                "194.33.94.5"
+            ]
+        },
+        {
+            "hostname": "chelinvest.ru",
+            "ip": "193.105.39.118",
+            "ips": [
+                "193.105.39.118"
+            ]
+        },
+        {
+            "hostname": "chelyabinsk-sgo-edu-74.ru",
+            "ip": "31.177.76.32",
+            "ips": [
+                "31.177.76.32",
+                "31.177.80.32"
+            ]
+        },
+        {
+            "hostname": "chelyabinsk.ru",
+            "ip": "195.19.220.45",
+            "ips": [
+                "195.19.220.45"
+            ]
+        },
+        {
+            "hostname": "chita.ru",
+            "ip": "195.19.220.46",
+            "ips": [
+                "195.19.220.46"
+            ]
+        },
+        {
             "hostname": "chizhik.ru",
             "ip": "185.158.112.158",
             "ips": [
@@ -1598,10 +2155,46 @@
             ]
         },
         {
+            "hostname": "chukotka.ru",
+            "ip": "185.147.81.199",
+            "ips": [
+                "185.147.81.199"
+            ]
+        },
+        {
+            "hostname": "chuvashia.ru",
+            "ip": "195.16.62.67",
+            "ips": [
+                "195.16.62.67"
+            ]
+        },
+        {
             "hostname": "cian.ru",
             "ip": "51.250.123.126",
             "ips": [
                 "51.250.123.126"
+            ]
+        },
+        {
+            "hostname": "cibank.ru",
+            "ip": "89.253.238.30",
+            "ips": [
+                "89.253.238.30"
+            ]
+        },
+        {
+            "hostname": "cifra-bank.ru",
+            "ip": "155.212.235.176",
+            "ips": [
+                "155.212.235.176",
+                "185.71.67.124"
+            ]
+        },
+        {
+            "hostname": "cikrf.ru",
+            "ip": "5.143.246.137",
+            "ips": [
+                "5.143.246.137"
             ]
         },
         {
@@ -1655,6 +2248,41 @@
             ]
         },
         {
+            "hostname": "cmrbank.ru",
+            "ip": "195.19.6.44",
+            "ips": [
+                "195.19.6.44"
+            ]
+        },
+        {
+            "hostname": "cnconf.ru",
+            "ip": "89.108.90.34",
+            "ips": [
+                "89.108.90.34"
+            ]
+        },
+        {
+            "hostname": "cnews.ru",
+            "ip": "89.108.90.34",
+            "ips": [
+                "89.108.90.34"
+            ]
+        },
+        {
+            "hostname": "cnewsforum.ru",
+            "ip": "89.108.90.34",
+            "ips": [
+                "89.108.90.34"
+            ]
+        },
+        {
+            "hostname": "coalmetbank.ru",
+            "ip": "92.53.121.234",
+            "ips": [
+                "92.53.121.234"
+            ]
+        },
+        {
             "hostname": "codeby.school",
             "ip": "95.129.236.192",
             "ips": [
@@ -1666,6 +2294,13 @@
             "ip": "89.108.122.195",
             "ips": [
                 "89.108.122.195"
+            ]
+        },
+        {
+            "hostname": "commerzbank.ru",
+            "ip": "79.174.77.35",
+            "ips": [
+                "79.174.77.35"
             ]
         },
         {
@@ -1684,6 +2319,16 @@
             ]
         },
         {
+            "hostname": "coolera.ru",
+            "ip": "90.156.201.47",
+            "ips": [
+                "90.156.201.47",
+                "90.156.201.60",
+                "90.156.201.66",
+                "90.156.201.84"
+            ]
+        },
+        {
             "hostname": "council.gov.ru",
             "ip": "95.173.132.28",
             "ips": [
@@ -1697,6 +2342,20 @@
             "ip": "195.14.106.70",
             "ips": [
                 "195.14.106.70"
+            ]
+        },
+        {
+            "hostname": "creditural.ru",
+            "ip": "185.71.64.128",
+            "ips": [
+                "185.71.64.128"
+            ]
+        },
+        {
+            "hostname": "crimea.ru",
+            "ip": "78.110.50.145",
+            "ips": [
+                "78.110.50.145"
             ]
         },
         {
@@ -3388,6 +4047,13 @@
             ]
         },
         {
+            "hostname": "login.mos.ru",
+            "ip": "94.79.51.135",
+            "ips": [
+                "94.79.51.135"
+            ]
+        },
+        {
             "hostname": "login.vk.com",
             "ip": "93.186.237.1",
             "ips": [
@@ -3815,6 +4481,13 @@
             ]
         },
         {
+            "hostname": "mos.ru",
+            "ip": "212.11.155.134",
+            "ips": [
+                "212.11.155.134"
+            ]
+        },
+        {
             "hostname": "move.ru",
             "ip": "185.71.67.80",
             "ips": [
@@ -4210,6 +4883,14 @@
             ]
         },
         {
+            "hostname": "okey.ru",
+            "ip": "194.67.71.158",
+            "ips": [
+                "194.67.71.158",
+                "194.67.71.193"
+            ]
+        },
+        {
             "hostname": "okko.tv",
             "ip": "185.169.155.118",
             "ips": [
@@ -4392,6 +5073,17 @@
             "ip": "195.161.52.80",
             "ips": [
                 "195.161.52.80"
+            ]
+        },
+        {
+            "hostname": "pgu.mos.ru",
+            "ip": "212.11.155.165",
+            "ips": [
+                "212.11.155.165",
+                "212.11.155.166",
+                "212.11.155.167",
+                "212.45.30.108",
+                "37.230.149.156"
             ]
         },
         {
@@ -4963,6 +5655,14 @@
             "ip": "185.163.159.23",
             "ips": [
                 "185.163.159.23"
+            ]
+        },
+        {
+            "hostname": "rostehnadzor.ru",
+            "ip": "194.67.71.15",
+            "ips": [
+                "194.67.71.15",
+                "194.67.71.162"
             ]
         },
         {
