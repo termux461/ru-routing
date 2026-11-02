@@ -1,0 +1,33 @@
+name: Discover new service domains
+on:
+  schedule:
+    - cron: '37 5 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: discover-domains
+  cancel-in-progress: false
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: curl
+          coverage: none
+      - run: php tests/run.php
+      - run: php bin/discover.php
+      - uses: peter-evans/create-pull-request@v7
+        if: ${{ hashFiles('CANDIDATES.md') != '' }}
+        with:
+          branch: automation/domain-candidates
+          delete-branch: true
+          add-paths: CANDIDATES.md
+          commit-message: 'chore: review newly discovered domains'
+          title: 'Проверить новые домены российских сервисов'
+          body: 'Автоматически найдены кандидаты. Проверьте принадлежность и доступность сервисов и вручную добавьте подходящие домены в нужные категории sources/domains.txt. IPdeny и DNS не гарантируют, что весь общий IP безопасно направить напрямую.'

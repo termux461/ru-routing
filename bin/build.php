@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 require dirname(__DIR__) . '/src/Routing.php';
 require dirname(__DIR__) . '/src/Sources.php';
+require dirname(__DIR__) . '/src/Catalog.php';
 
 use RuRouting\Networks;
 use function RuRouting\{lines, fetch, build, domain, resolveMany, loadAsnNetworks, checkRegression};
@@ -58,7 +59,11 @@ try {
         $previous = json_decode($read($root . '/dist/report.json'), true, 512, JSON_THROW_ON_ERROR);
         checkRegression($previous, $report);
     }
+    $oldEntries = is_file($root . '/dist/tunneling-list.json') ? json_decode($read($root . '/dist/tunneling-list.json'), true, 512, JSON_THROW_ON_ERROR) : [];
+    $newEntries = json_decode($files['tunneling-list.json'], true, 512, JSON_THROW_ON_ERROR);
+    $report['changes'] = \RuRouting\reportChanges($oldEntries, $newEntries);
     $files['report.json'] = json_encode($report, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR) . "\n";
+    $files += \RuRouting\catalogExports($newEntries, \RuRouting\readCategories($read($root . '/sources/domains.txt')), $report);
     $stage = $root . '/.build-' . bin2hex(random_bytes(6));
     if (!mkdir($stage, 0755)) {
         throw new RuntimeException('Не удалось создать временную папку.');

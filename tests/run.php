@@ -2,6 +2,7 @@
 declare(strict_types=1);
 require dirname(__DIR__) . '/src/Routing.php';
 require dirname(__DIR__) . '/src/Sources.php';
+require dirname(__DIR__) . '/src/Catalog.php';
 
 use RuRouting\Networks;
 use function RuRouting\{lines, domain, cidr, build, parseDns, dnsNames, asns, parsePrefixes, ipv4, checkRegression, resolveMany};
@@ -107,4 +108,13 @@ $calls = 0;
 resolveMany(['absent.ru'], function($urls) use (&$calls) { $calls++; return [array_fill_keys(array_keys($urls), '{"Status":3}'), []]; });
 check($calls === 1, 'NXDOMAIN is not retried');
 check(rejects(fn() => resolveMany(['a.ru', 'b.ru'], fn($urls) => [[], array_fill_keys(array_keys($urls), 'timeout')])), 'mass DNS failure aborts');
+$categories = \RuRouting\readCategories("# 1. Banks\na.ru\n# 2. Government\nb.ru\n# Дополнения\nc.ru\n");
+check($categories === ['a.ru'=>'banks','b.ru'=>'government','c.ru'=>'other'], 'categories follow sections');
+check(rejects(fn() => \RuRouting\readCategories("# 1. Banks\na.ru\n# 2. Govt\na.ru\n")), 'cross-category duplicates rejected');
+$sample = [['hostname'=>'a.ru','ip'=>'77.88.1.1','ips'=>['77.88.1.1']], ['hostname'=>'77.88.0.0/18','ip'=>'77.88.0.0/18','ips'=>['77.88.0.0/18']]];
+$exports = \RuRouting\catalogExports($sample, ['a.ru'=>'banks'], ['built_at'=>'2026-01-01']);
+check(str_contains($exports['category-banks-cidr.txt'],'77.88.1.1/32') && !str_contains($exports['category-banks-cidr.txt'],'77.88.0.0/18'), 'category excludes unrelated shared networks');
+check(count(json_decode($exports['category-banks-amnezia.json'],true))===1, 'category Amnezia contains matching domain');
+$diff=\RuRouting\reportChanges($sample,[['hostname'=>'a.ru','ips'=>['77.88.1.2']],['hostname'=>'b.ru','ips'=>['77.88.1.3']]]);
+check($diff['added']===['b.ru'] && isset($diff['changed_ips']['a.ru']), 'changes identify new domains and changed IPs');
 echo "OK: $checks checks\n";

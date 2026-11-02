@@ -39,3 +39,19 @@ $clash = file_get_contents($root . '/dist/clash.yaml');
 foreach ($hosts as $host) { $check(str_contains($clash, "'DOMAIN-SUFFIX,$host'"), 'Missing Clash domain'); }
 foreach ($subnets as $net) { $check(str_contains($clash, "'IP-CIDR,$net,no-resolve'"), 'Missing Clash network'); }
 echo 'OK: exports agree for ' . count($hosts) . ' domains and ' . count($subnets) . " networks\n";
+
+$catalog = $json('catalog.json');
+$check(count($catalog['entries']) === count($hosts), 'Catalog domain count mismatch');
+foreach ($catalog['categories'] as $category) {
+    $id = $category['id'];
+    $check((bool)preg_match('/^[a-z]+$/D', $id), 'Invalid category id');
+    $categoryEntries = $json("category-$id-amnezia.json");
+    $categorySing = $json("category-$id-sing-box.json");
+    $check(count($categoryEntries) === $category['domains'], 'Category count mismatch');
+    foreach ($categoryEntries as $entry) {
+        $check(($catalog['domain_categories'][$entry['hostname']] ?? null) === $id, 'Wrong category');
+        foreach ($entry['ips'] as $ip) $check(in_array($ip.'/32', $categorySing['rules'][0]['ip_cidr'], true), 'Missing category IP');
+    }
+    $check(is_file($root."/dist/category-$id-clash.yaml") && is_file($root."/dist/category-$id-cidr.txt"), 'Missing category formats');
+}
+echo "OK: category outputs verified\n";
