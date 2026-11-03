@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-03T03:29:51+00:00",
+    "built_at": "2026-11-03T11:59:37+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -106,7 +106,7 @@
             "id": "anime",
             "sites": 18,
             "available": 18,
-            "rules": 469,
+            "rules": 470,
             "items": [
                 {
                     "id": "amedia.site",
@@ -135,7 +135,7 @@
                 },
                 {
                     "id": "bato.to",
-                    "routes": 13,
+                    "routes": 14,
                     "missing": 0
                 },
                 {
@@ -1222,7 +1222,7 @@
             "id": "video",
             "sites": 14,
             "available": 14,
-            "rules": 296,
+            "rules": 297,
             "items": [
                 {
                     "id": "daramalive.life",
@@ -1271,7 +1271,7 @@
                 },
                 {
                     "id": "netflix.com",
-                    "routes": 87,
+                    "routes": 88,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10099,
+    "rules_total": 10101,
     "missing_sources": []
 }
