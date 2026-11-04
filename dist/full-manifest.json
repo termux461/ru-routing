@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-04T07:32:25+00:00",
+    "built_at": "2026-11-04T16:23:30+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -890,7 +890,7 @@
             "id": "shop",
             "sites": 3,
             "available": 3,
-            "rules": 968,
+            "rules": 970,
             "items": [
                 {
                     "id": "babook.org",
@@ -899,12 +899,12 @@
                 },
                 {
                     "id": "ralphlauren.eu",
-                    "routes": 69,
+                    "routes": 70,
                     "missing": 0
                 },
                 {
                     "id": "ui.com",
-                    "routes": 893,
+                    "routes": 894,
                     "missing": 0
                 }
             ]
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10105,
+    "rules_total": 10107,
     "missing_sources": []
 }
