@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-03T19:33:07+00:00",
+    "built_at": "2026-11-04T00:39:21+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -13,7 +13,7 @@
             "id": "ai",
             "sites": 17,
             "available": 17,
-            "rules": 665,
+            "rules": 666,
             "items": [
                 {
                     "id": "aistudio.google.com",
@@ -37,7 +37,7 @@
                 },
                 {
                     "id": "copilot",
-                    "routes": 155,
+                    "routes": 156,
                     "missing": 0
                 },
                 {
@@ -890,7 +890,7 @@
             "id": "shop",
             "sites": 3,
             "available": 3,
-            "rules": 967,
+            "rules": 968,
             "items": [
                 {
                     "id": "babook.org",
@@ -904,7 +904,7 @@
                 },
                 {
                     "id": "ui.com",
-                    "routes": 892,
+                    "routes": 893,
                     "missing": 0
                 }
             ]
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10102,
+    "rules_total": 10104,
     "missing_sources": []
 }
