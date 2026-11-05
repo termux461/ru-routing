@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-05T12:27:53+00:00",
+    "built_at": "2026-11-05T20:42:06+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -13,7 +13,7 @@
             "id": "ai",
             "sites": 17,
             "available": 17,
-            "rules": 667,
+            "rules": 668,
             "items": [
                 {
                     "id": "aistudio.google.com",
@@ -77,7 +77,7 @@
                 },
                 {
                     "id": "meta.ai",
-                    "routes": 10,
+                    "routes": 11,
                     "missing": 0
                 },
                 {
@@ -981,7 +981,7 @@
             "id": "tools",
             "sites": 33,
             "available": 33,
-            "rules": 1596,
+            "rules": 1597,
             "items": [
                 {
                     "id": "9proxy.com",
@@ -1045,7 +1045,7 @@
                 },
                 {
                     "id": "fatsecret.com",
-                    "routes": 17,
+                    "routes": 18,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10112,
+    "rules_total": 10114,
     "missing_sources": []
 }
