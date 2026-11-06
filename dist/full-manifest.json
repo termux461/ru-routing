@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-06T01:36:22+00:00",
+    "built_at": "2026-11-06T09:28:49+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -488,7 +488,7 @@
             "id": "messengers",
             "sites": 6,
             "available": 6,
-            "rules": 839,
+            "rules": 840,
             "items": [
                 {
                     "id": "messenger.com",
@@ -507,7 +507,7 @@
                 },
                 {
                     "id": "viber.com",
-                    "routes": 133,
+                    "routes": 134,
                     "missing": 0
                 },
                 {
@@ -890,7 +890,7 @@
             "id": "shop",
             "sites": 3,
             "available": 3,
-            "rules": 972,
+            "rules": 973,
             "items": [
                 {
                     "id": "babook.org",
@@ -904,7 +904,7 @@
                 },
                 {
                     "id": "ui.com",
-                    "routes": 895,
+                    "routes": 896,
                     "missing": 0
                 }
             ]
@@ -913,7 +913,7 @@
             "id": "socials",
             "sites": 12,
             "available": 12,
-            "rules": 1415,
+            "rules": 1418,
             "items": [
                 {
                     "id": "4pda.to",
@@ -947,7 +947,7 @@
                 },
                 {
                     "id": "patreon.com",
-                    "routes": 151,
+                    "routes": 154,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10114,
+    "rules_total": 10119,
     "missing_sources": []
 }
