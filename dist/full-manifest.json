@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-06T23:14:19+00:00",
+    "built_at": "2026-11-07T02:54:27+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -465,11 +465,11 @@
             "id": "jetbrains",
             "sites": 3,
             "available": 3,
-            "rules": 128,
+            "rules": 129,
             "items": [
                 {
                     "id": "jetbrains.com",
-                    "routes": 76,
+                    "routes": 77,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10122,
+    "rules_total": 10123,
     "missing_sources": []
 }
