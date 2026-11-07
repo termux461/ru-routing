@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-07T10:22:09+00:00",
+    "built_at": "2026-11-07T16:52:51+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -488,7 +488,7 @@
             "id": "messengers",
             "sites": 6,
             "available": 6,
-            "rules": 840,
+            "rules": 841,
             "items": [
                 {
                     "id": "messenger.com",
@@ -502,7 +502,7 @@
                 },
                 {
                     "id": "telegram.org",
-                    "routes": 56,
+                    "routes": 57,
                     "missing": 0
                 },
                 {
@@ -526,7 +526,7 @@
             "id": "music",
             "sites": 6,
             "available": 6,
-            "rules": 294,
+            "rules": 295,
             "items": [
                 {
                     "id": "deezer.com",
@@ -540,7 +540,7 @@
                 },
                 {
                     "id": "musicbrainz.org",
-                    "routes": 14,
+                    "routes": 15,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10127,
+    "rules_total": 10129,
     "missing_sources": []
 }
