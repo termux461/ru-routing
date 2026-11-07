@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-07T02:54:27+00:00",
+    "built_at": "2026-11-07T10:22:09+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -432,7 +432,7 @@
             "id": "hosting",
             "sites": 5,
             "available": 5,
-            "rules": 360,
+            "rules": 361,
             "items": [
                 {
                     "id": "bitninja.com",
@@ -446,7 +446,7 @@
                 },
                 {
                     "id": "godaddy.com",
-                    "routes": 179,
+                    "routes": 180,
                     "missing": 0
                 },
                 {
@@ -564,7 +564,7 @@
             "id": "news",
             "sites": 48,
             "available": 48,
-            "rules": 1274,
+            "rules": 1275,
             "items": [
                 {
                     "id": "agents.media",
@@ -613,7 +613,7 @@
                 },
                 {
                     "id": "dw.com",
-                    "routes": 83,
+                    "routes": 84,
                     "missing": 0
                 },
                 {
@@ -890,7 +890,7 @@
             "id": "shop",
             "sites": 3,
             "available": 3,
-            "rules": 974,
+            "rules": 975,
             "items": [
                 {
                     "id": "babook.org",
@@ -899,7 +899,7 @@
                 },
                 {
                     "id": "ralphlauren.eu",
-                    "routes": 71,
+                    "routes": 72,
                     "missing": 0
                 },
                 {
@@ -981,7 +981,7 @@
             "id": "tools",
             "sites": 33,
             "available": 33,
-            "rules": 1597,
+            "rules": 1598,
             "items": [
                 {
                     "id": "9proxy.com",
@@ -1030,7 +1030,7 @@
                 },
                 {
                     "id": "clickup.com",
-                    "routes": 102,
+                    "routes": 103,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10123,
+    "rules_total": 10127,
     "missing_sources": []
 }
