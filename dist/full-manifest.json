@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-08T07:27:06+00:00",
+    "built_at": "2026-11-08T15:19:16+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -13,7 +13,7 @@
             "id": "ai",
             "sites": 17,
             "available": 17,
-            "rules": 668,
+            "rules": 669,
             "items": [
                 {
                     "id": "aistudio.google.com",
@@ -87,7 +87,7 @@
                 },
                 {
                     "id": "perplexity.ai",
-                    "routes": 97,
+                    "routes": 98,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10131,
+    "rules_total": 10132,
     "missing_sources": []
 }
