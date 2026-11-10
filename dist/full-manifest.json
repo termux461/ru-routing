@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-08T20:32:17+00:00",
+    "built_at": "2026-11-10T23:27:43+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -13,7 +13,7 @@
             "id": "ai",
             "sites": 17,
             "available": 17,
-            "rules": 669,
+            "rules": 670,
             "items": [
                 {
                     "id": "aistudio.google.com",
@@ -37,7 +37,7 @@
                 },
                 {
                     "id": "copilot",
-                    "routes": 156,
+                    "routes": 157,
                     "missing": 0
                 },
                 {
@@ -323,11 +323,11 @@
             "id": "education",
             "sites": 7,
             "available": 7,
-            "rules": 311,
+            "rules": 312,
             "items": [
                 {
                     "id": "duolingo.com",
-                    "routes": 197,
+                    "routes": 198,
                     "missing": 0
                 },
                 {
@@ -366,7 +366,7 @@
             "id": "finance",
             "sites": 4,
             "available": 4,
-            "rules": 157,
+            "rules": 158,
             "items": [
                 {
                     "id": "aave.com",
@@ -375,7 +375,7 @@
                 },
                 {
                     "id": "euler.finance",
-                    "routes": 20,
+                    "routes": 21,
                     "missing": 0
                 },
                 {
@@ -432,11 +432,11 @@
             "id": "hosting",
             "sites": 5,
             "available": 5,
-            "rules": 361,
+            "rules": 363,
             "items": [
                 {
                     "id": "bitninja.com",
-                    "routes": 57,
+                    "routes": 59,
                     "missing": 0
                 },
                 {
@@ -564,7 +564,7 @@
             "id": "news",
             "sites": 48,
             "available": 48,
-            "rules": 1275,
+            "rules": 1276,
             "items": [
                 {
                     "id": "agents.media",
@@ -598,7 +598,7 @@
                 },
                 {
                     "id": "currenttime.tv",
-                    "routes": 171,
+                    "routes": 172,
                     "missing": 0
                 },
                 {
@@ -890,7 +890,7 @@
             "id": "shop",
             "sites": 3,
             "available": 3,
-            "rules": 977,
+            "rules": 989,
             "items": [
                 {
                     "id": "babook.org",
@@ -904,7 +904,7 @@
                 },
                 {
                     "id": "ui.com",
-                    "routes": 898,
+                    "routes": 910,
                     "missing": 0
                 }
             ]
@@ -913,7 +913,7 @@
             "id": "socials",
             "sites": 12,
             "available": 12,
-            "rules": 1420,
+            "rules": 1421,
             "items": [
                 {
                     "id": "4pda.to",
@@ -967,7 +967,7 @@
                 },
                 {
                     "id": "tiktok.com",
-                    "routes": 605,
+                    "routes": 606,
                     "missing": 0
                 },
                 {
@@ -981,7 +981,7 @@
             "id": "tools",
             "sites": 33,
             "available": 33,
-            "rules": 1599,
+            "rules": 1602,
             "items": [
                 {
                     "id": "9proxy.com",
@@ -1100,7 +1100,7 @@
                 },
                 {
                     "id": "proxy6.net",
-                    "routes": 17,
+                    "routes": 20,
                     "missing": 0
                 },
                 {
@@ -1222,7 +1222,7 @@
             "id": "video",
             "sites": 14,
             "available": 14,
-            "rules": 297,
+            "rules": 298,
             "items": [
                 {
                     "id": "daramalive.life",
@@ -1286,7 +1286,7 @@
                 },
                 {
                     "id": "themoviedb.org",
-                    "routes": 57,
+                    "routes": 58,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10133,
+    "rules_total": 10156,
     "missing_sources": []
 }
