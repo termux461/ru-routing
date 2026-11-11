@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-10T23:27:43+00:00",
+    "built_at": "2026-11-11T06:36:42+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -13,7 +13,7 @@
             "id": "ai",
             "sites": 17,
             "available": 17,
-            "rules": 670,
+            "rules": 671,
             "items": [
                 {
                     "id": "aistudio.google.com",
@@ -42,7 +42,7 @@
                 },
                 {
                     "id": "cursor.com",
-                    "routes": 68,
+                    "routes": 69,
                     "missing": 0
                 },
                 {
@@ -890,7 +890,7 @@
             "id": "shop",
             "sites": 3,
             "available": 3,
-            "rules": 989,
+            "rules": 990,
             "items": [
                 {
                     "id": "babook.org",
@@ -904,7 +904,7 @@
                 },
                 {
                     "id": "ui.com",
-                    "routes": 910,
+                    "routes": 911,
                     "missing": 0
                 }
             ]
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10156,
+    "rules_total": 10158,
     "missing_sources": []
 }
