@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-12T03:51:53+00:00",
+    "built_at": "2026-11-12T12:50:38+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -106,11 +106,11 @@
             "id": "anime",
             "sites": 18,
             "available": 18,
-            "rules": 471,
+            "rules": 472,
             "items": [
                 {
                     "id": "amedia.site",
-                    "routes": 1,
+                    "routes": 2,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10160,
+    "rules_total": 10161,
     "missing_sources": []
 }
