@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-11T22:44:39+00:00",
+    "built_at": "2026-11-12T03:51:53+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -432,11 +432,11 @@
             "id": "hosting",
             "sites": 5,
             "available": 5,
-            "rules": 363,
+            "rules": 364,
             "items": [
                 {
                     "id": "bitninja.com",
-                    "routes": 59,
+                    "routes": 60,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10159,
+    "rules_total": 10160,
     "missing_sources": []
 }
