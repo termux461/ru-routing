@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-13T09:38:39+00:00",
+    "built_at": "2026-11-13T17:49:07+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -913,7 +913,7 @@
             "id": "socials",
             "sites": 12,
             "available": 12,
-            "rules": 1421,
+            "rules": 1422,
             "items": [
                 {
                     "id": "4pda.to",
@@ -967,7 +967,7 @@
                 },
                 {
                     "id": "tiktok.com",
-                    "routes": 606,
+                    "routes": 607,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10166,
+    "rules_total": 10167,
     "missing_sources": []
 }
