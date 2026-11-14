@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-14T14:14:45+00:00",
+    "built_at": "2026-11-14T19:14:56+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -890,7 +890,7 @@
             "id": "shop",
             "sites": 3,
             "available": 3,
-            "rules": 994,
+            "rules": 995,
             "items": [
                 {
                     "id": "babook.org",
@@ -904,7 +904,7 @@
                 },
                 {
                     "id": "ui.com",
-                    "routes": 915,
+                    "routes": 916,
                     "missing": 0
                 }
             ]
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10169,
+    "rules_total": 10170,
     "missing_sources": []
 }
