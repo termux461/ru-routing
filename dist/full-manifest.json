@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-14T06:35:42+00:00",
+    "built_at": "2026-11-14T14:14:45+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -981,7 +981,7 @@
             "id": "tools",
             "sites": 33,
             "available": 33,
-            "rules": 1603,
+            "rules": 1604,
             "items": [
                 {
                     "id": "9proxy.com",
@@ -1030,7 +1030,7 @@
                 },
                 {
                     "id": "clickup.com",
-                    "routes": 104,
+                    "routes": 105,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10168,
+    "rules_total": 10169,
     "missing_sources": []
 }
