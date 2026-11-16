@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-16T11:34:16+00:00",
+    "built_at": "2026-11-16T22:14:04+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -106,7 +106,7 @@
             "id": "anime",
             "sites": 18,
             "available": 18,
-            "rules": 472,
+            "rules": 473,
             "items": [
                 {
                     "id": "amedia.site",
@@ -145,7 +145,7 @@
                 },
                 {
                     "id": "hentailib.me",
-                    "routes": 5,
+                    "routes": 6,
                     "missing": 0
                 },
                 {
@@ -890,7 +890,7 @@
             "id": "shop",
             "sites": 3,
             "available": 3,
-            "rules": 996,
+            "rules": 998,
             "items": [
                 {
                     "id": "babook.org",
@@ -904,7 +904,7 @@
                 },
                 {
                     "id": "ui.com",
-                    "routes": 917,
+                    "routes": 919,
                     "missing": 0
                 }
             ]
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10171,
+    "rules_total": 10174,
     "missing_sources": []
 }
