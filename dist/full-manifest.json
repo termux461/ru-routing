@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-17T14:33:11+00:00",
+    "built_at": "2026-11-17T22:57:05+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -913,7 +913,7 @@
             "id": "socials",
             "sites": 12,
             "available": 12,
-            "rules": 1423,
+            "rules": 1424,
             "items": [
                 {
                     "id": "4pda.to",
@@ -927,7 +927,7 @@
                 },
                 {
                     "id": "facebook.com",
-                    "routes": 199,
+                    "routes": 200,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10177,
+    "rules_total": 10178,
     "missing_sources": []
 }
