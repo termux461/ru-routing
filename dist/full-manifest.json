@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-17T04:35:39+00:00",
+    "built_at": "2026-11-17T14:33:11+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -106,7 +106,7 @@
             "id": "anime",
             "sites": 18,
             "available": 18,
-            "rules": 473,
+            "rules": 474,
             "items": [
                 {
                     "id": "amedia.site",
@@ -175,7 +175,7 @@
                 },
                 {
                     "id": "myanimelist.net",
-                    "routes": 144,
+                    "routes": 145,
                     "missing": 0
                 },
                 {
@@ -890,7 +890,7 @@
             "id": "shop",
             "sites": 3,
             "available": 3,
-            "rules": 998,
+            "rules": 1000,
             "items": [
                 {
                     "id": "babook.org",
@@ -904,7 +904,7 @@
                 },
                 {
                     "id": "ui.com",
-                    "routes": 919,
+                    "routes": 921,
                     "missing": 0
                 }
             ]
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10174,
+    "rules_total": 10177,
     "missing_sources": []
 }
