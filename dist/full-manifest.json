@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-18T14:09:10+00:00",
+    "built_at": "2026-11-18T22:02:28+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -564,7 +564,7 @@
             "id": "news",
             "sites": 48,
             "available": 48,
-            "rules": 1276,
+            "rules": 1277,
             "items": [
                 {
                     "id": "agents.media",
@@ -688,7 +688,7 @@
                 },
                 {
                     "id": "krymr.com",
-                    "routes": 146,
+                    "routes": 147,
                     "missing": 0
                 },
                 {
@@ -890,7 +890,7 @@
             "id": "shop",
             "sites": 3,
             "available": 3,
-            "rules": 1001,
+            "rules": 1002,
             "items": [
                 {
                     "id": "babook.org",
@@ -899,7 +899,7 @@
                 },
                 {
                     "id": "ralphlauren.eu",
-                    "routes": 73,
+                    "routes": 74,
                     "missing": 0
                 },
                 {
@@ -913,7 +913,7 @@
             "id": "socials",
             "sites": 12,
             "available": 12,
-            "rules": 1424,
+            "rules": 1425,
             "items": [
                 {
                     "id": "4pda.to",
@@ -942,7 +942,7 @@
                 },
                 {
                     "id": "linkedin.com",
-                    "routes": 121,
+                    "routes": 122,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10180,
+    "rules_total": 10183,
     "missing_sources": []
 }
