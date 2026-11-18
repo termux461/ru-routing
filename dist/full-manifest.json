@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-18T04:29:00+00:00",
+    "built_at": "2026-11-18T14:09:10+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -981,7 +981,7 @@
             "id": "tools",
             "sites": 33,
             "available": 33,
-            "rules": 1604,
+            "rules": 1605,
             "items": [
                 {
                     "id": "9proxy.com",
@@ -1025,7 +1025,7 @@
                 },
                 {
                     "id": "capcut.com",
-                    "routes": 52,
+                    "routes": 53,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10179,
+    "rules_total": 10180,
     "missing_sources": []
 }
