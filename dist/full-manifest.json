@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-18T22:02:28+00:00",
+    "built_at": "2026-11-19T03:36:11+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -106,7 +106,7 @@
             "id": "anime",
             "sites": 18,
             "available": 18,
-            "rules": 474,
+            "rules": 476,
             "items": [
                 {
                     "id": "amedia.site",
@@ -115,7 +115,7 @@
                 },
                 {
                     "id": "anidub.pro",
-                    "routes": 4,
+                    "routes": 5,
                     "missing": 0
                 },
                 {
@@ -135,7 +135,7 @@
                 },
                 {
                     "id": "bato.to",
-                    "routes": 15,
+                    "routes": 16,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10183,
+    "rules_total": 10185,
     "missing_sources": []
 }
