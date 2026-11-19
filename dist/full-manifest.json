@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-19T13:21:46+00:00",
+    "built_at": "2026-11-19T22:13:18+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -106,7 +106,7 @@
             "id": "anime",
             "sites": 18,
             "available": 18,
-            "rules": 476,
+            "rules": 477,
             "items": [
                 {
                     "id": "amedia.site",
@@ -175,7 +175,7 @@
                 },
                 {
                     "id": "myanimelist.net",
-                    "routes": 145,
+                    "routes": 146,
                     "missing": 0
                 },
                 {
@@ -564,7 +564,7 @@
             "id": "news",
             "sites": 48,
             "available": 48,
-            "rules": 1277,
+            "rules": 1278,
             "items": [
                 {
                     "id": "agents.media",
@@ -758,7 +758,7 @@
                 },
                 {
                     "id": "svoboda.org",
-                    "routes": 139,
+                    "routes": 140,
                     "missing": 0
                 },
                 {
@@ -812,7 +812,7 @@
             "id": "porn",
             "sites": 14,
             "available": 14,
-            "rules": 202,
+            "rules": 203,
             "items": [
                 {
                     "id": "beeg.com",
@@ -866,7 +866,7 @@
                 },
                 {
                     "id": "xhamster.com",
-                    "routes": 43,
+                    "routes": 44,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10185,
+    "rules_total": 10188,
     "missing_sources": []
 }
