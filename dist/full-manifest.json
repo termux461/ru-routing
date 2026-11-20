@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-20T13:01:43+00:00",
+    "built_at": "2026-11-20T21:13:26+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -13,7 +13,7 @@
             "id": "ai",
             "sites": 17,
             "available": 17,
-            "rules": 676,
+            "rules": 678,
             "items": [
                 {
                     "id": "aistudio.google.com",
@@ -52,7 +52,7 @@
                 },
                 {
                     "id": "deepseek.com",
-                    "routes": 17,
+                    "routes": 19,
                     "missing": 0
                 },
                 {
@@ -432,11 +432,11 @@
             "id": "hosting",
             "sites": 5,
             "available": 5,
-            "rules": 365,
+            "rules": 367,
             "items": [
                 {
                     "id": "bitninja.com",
-                    "routes": 61,
+                    "routes": 63,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10200,
+    "rules_total": 10204,
     "missing_sources": []
 }
