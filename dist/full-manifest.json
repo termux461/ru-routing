@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-19T22:13:18+00:00",
+    "built_at": "2026-11-20T03:27:55+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -890,7 +890,7 @@
             "id": "shop",
             "sites": 3,
             "available": 3,
-            "rules": 1002,
+            "rules": 1003,
             "items": [
                 {
                     "id": "babook.org",
@@ -904,7 +904,7 @@
                 },
                 {
                     "id": "ui.com",
-                    "routes": 922,
+                    "routes": 923,
                     "missing": 0
                 }
             ]
@@ -913,7 +913,7 @@
             "id": "socials",
             "sites": 12,
             "available": 12,
-            "rules": 1425,
+            "rules": 1427,
             "items": [
                 {
                     "id": "4pda.to",
@@ -927,7 +927,7 @@
                 },
                 {
                     "id": "facebook.com",
-                    "routes": 200,
+                    "routes": 201,
                     "missing": 0
                 },
                 {
@@ -942,7 +942,7 @@
                 },
                 {
                     "id": "linkedin.com",
-                    "routes": 122,
+                    "routes": 123,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10188,
+    "rules_total": 10191,
     "missing_sources": []
 }
