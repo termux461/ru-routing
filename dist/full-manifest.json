@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-20T03:27:55+00:00",
+    "built_at": "2026-11-20T13:01:43+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -13,7 +13,7 @@
             "id": "ai",
             "sites": 17,
             "available": 17,
-            "rules": 671,
+            "rules": 676,
             "items": [
                 {
                     "id": "aistudio.google.com",
@@ -52,7 +52,7 @@
                 },
                 {
                     "id": "deepseek.com",
-                    "routes": 12,
+                    "routes": 17,
                     "missing": 0
                 },
                 {
@@ -106,7 +106,7 @@
             "id": "anime",
             "sites": 18,
             "available": 18,
-            "rules": 477,
+            "rules": 478,
             "items": [
                 {
                     "id": "amedia.site",
@@ -175,7 +175,7 @@
                 },
                 {
                     "id": "myanimelist.net",
-                    "routes": 146,
+                    "routes": 147,
                     "missing": 0
                 },
                 {
@@ -394,7 +394,7 @@
             "id": "games",
             "sites": 6,
             "available": 6,
-            "rules": 146,
+            "rules": 147,
             "items": [
                 {
                     "id": "arma2",
@@ -413,7 +413,7 @@
                 },
                 {
                     "id": "itch.io",
-                    "routes": 113,
+                    "routes": 114,
                     "missing": 0
                 },
                 {
@@ -488,7 +488,7 @@
             "id": "messengers",
             "sites": 6,
             "available": 6,
-            "rules": 841,
+            "rules": 842,
             "items": [
                 {
                     "id": "messenger.com",
@@ -502,7 +502,7 @@
                 },
                 {
                     "id": "telegram.org",
-                    "routes": 57,
+                    "routes": 58,
                     "missing": 0
                 },
                 {
@@ -526,11 +526,11 @@
             "id": "music",
             "sites": 6,
             "available": 6,
-            "rules": 295,
+            "rules": 296,
             "items": [
                 {
                     "id": "deezer.com",
-                    "routes": 100,
+                    "routes": 101,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10191,
+    "rules_total": 10200,
     "missing_sources": []
 }
