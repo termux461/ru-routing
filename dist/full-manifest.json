@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-21T18:04:57+00:00",
+    "built_at": "2026-11-21T23:25:19+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -204,7 +204,7 @@
             "id": "art",
             "sites": 13,
             "available": 13,
-            "rules": 172,
+            "rules": 173,
             "items": [
                 {
                     "id": "archiveofourown.org",
@@ -218,7 +218,7 @@
                 },
                 {
                     "id": "deviantart.com",
-                    "routes": 19,
+                    "routes": 20,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10206,
+    "rules_total": 10207,
     "missing_sources": []
 }
