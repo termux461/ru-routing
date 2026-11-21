@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-20T21:13:26+00:00",
+    "built_at": "2026-11-21T02:27:25+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -890,7 +890,7 @@
             "id": "shop",
             "sites": 3,
             "available": 3,
-            "rules": 1003,
+            "rules": 1004,
             "items": [
                 {
                     "id": "babook.org",
@@ -904,7 +904,7 @@
                 },
                 {
                     "id": "ui.com",
-                    "routes": 923,
+                    "routes": 924,
                     "missing": 0
                 }
             ]
@@ -1222,11 +1222,11 @@
             "id": "video",
             "sites": 14,
             "available": 14,
-            "rules": 298,
+            "rules": 299,
             "items": [
                 {
                     "id": "daramalive.life",
-                    "routes": 2,
+                    "routes": 3,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10204,
+    "rules_total": 10206,
     "missing_sources": []
 }
