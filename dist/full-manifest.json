@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-22T06:59:19+00:00",
+    "built_at": "2026-11-22T15:25:57+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -890,7 +890,7 @@
             "id": "shop",
             "sites": 3,
             "available": 3,
-            "rules": 1004,
+            "rules": 1005,
             "items": [
                 {
                     "id": "babook.org",
@@ -904,7 +904,7 @@
                 },
                 {
                     "id": "ui.com",
-                    "routes": 924,
+                    "routes": 925,
                     "missing": 0
                 }
             ]
@@ -1222,7 +1222,7 @@
             "id": "video",
             "sites": 14,
             "available": 14,
-            "rules": 299,
+            "rules": 301,
             "items": [
                 {
                     "id": "daramalive.life",
@@ -1251,12 +1251,12 @@
                 },
                 {
                     "id": "kinobase.org",
-                    "routes": 4,
+                    "routes": 5,
                     "missing": 0
                 },
                 {
                     "id": "kinovod.pro",
-                    "routes": 6,
+                    "routes": 7,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10207,
+    "rules_total": 10210,
     "missing_sources": []
 }
