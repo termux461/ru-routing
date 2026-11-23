@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-22T21:52:01+00:00",
+    "built_at": "2026-11-23T02:52:09+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -394,7 +394,7 @@
             "id": "games",
             "sites": 6,
             "available": 6,
-            "rules": 147,
+            "rules": 148,
             "items": [
                 {
                     "id": "arma2",
@@ -413,7 +413,7 @@
                 },
                 {
                     "id": "itch.io",
-                    "routes": 114,
+                    "routes": 115,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10210,
+    "rules_total": 10211,
     "missing_sources": []
 }
