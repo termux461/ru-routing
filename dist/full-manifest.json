@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-24T11:02:13+00:00",
+    "built_at": "2026-11-24T21:19:15+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -277,7 +277,7 @@
             "id": "casino",
             "sites": 3,
             "available": 3,
-            "rules": 38,
+            "rules": 39,
             "items": [
                 {
                     "id": "7k.casino",
@@ -286,7 +286,7 @@
                 },
                 {
                     "id": "combotech",
-                    "routes": 6,
+                    "routes": 7,
                     "missing": 0
                 },
                 {
@@ -564,7 +564,7 @@
             "id": "news",
             "sites": 48,
             "available": 48,
-            "rules": 1283,
+            "rules": 1285,
             "items": [
                 {
                     "id": "agents.media",
@@ -678,7 +678,7 @@
                 },
                 {
                     "id": "kavkaz-uzel.eu",
-                    "routes": 7,
+                    "routes": 9,
                     "missing": 0
                 },
                 {
@@ -981,7 +981,7 @@
             "id": "tools",
             "sites": 33,
             "available": 33,
-            "rules": 1605,
+            "rules": 1607,
             "items": [
                 {
                     "id": "9proxy.com",
@@ -1115,7 +1115,7 @@
                 },
                 {
                     "id": "sentry.io",
-                    "routes": 33,
+                    "routes": 35,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10219,
+    "rules_total": 10224,
     "missing_sources": []
 }
