@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-24T00:58:23+00:00",
+    "built_at": "2026-11-24T11:02:13+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -488,7 +488,7 @@
             "id": "messengers",
             "sites": 6,
             "available": 6,
-            "rules": 842,
+            "rules": 843,
             "items": [
                 {
                     "id": "messenger.com",
@@ -512,7 +512,7 @@
                 },
                 {
                     "id": "whatsapp.com",
-                    "routes": 508,
+                    "routes": 509,
                     "missing": 0
                 },
                 {
@@ -564,7 +564,7 @@
             "id": "news",
             "sites": 48,
             "available": 48,
-            "rules": 1278,
+            "rules": 1283,
             "items": [
                 {
                     "id": "agents.media",
@@ -678,7 +678,7 @@
                 },
                 {
                     "id": "kavkaz-uzel.eu",
-                    "routes": 2,
+                    "routes": 7,
                     "missing": 0
                 },
                 {
@@ -890,7 +890,7 @@
             "id": "shop",
             "sites": 3,
             "available": 3,
-            "rules": 1005,
+            "rules": 1006,
             "items": [
                 {
                     "id": "babook.org",
@@ -904,7 +904,7 @@
                 },
                 {
                     "id": "ui.com",
-                    "routes": 925,
+                    "routes": 926,
                     "missing": 0
                 }
             ]
@@ -1222,7 +1222,7 @@
             "id": "video",
             "sites": 14,
             "available": 14,
-            "rules": 301,
+            "rules": 302,
             "items": [
                 {
                     "id": "daramalive.life",
@@ -1231,7 +1231,7 @@
                 },
                 {
                     "id": "doramy.club",
-                    "routes": 7,
+                    "routes": 8,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10211,
+    "rules_total": 10219,
     "missing_sources": []
 }
