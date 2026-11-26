@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-25T04:55:34+00:00",
+    "built_at": "2026-11-26T00:28:33+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -106,7 +106,7 @@
             "id": "anime",
             "sites": 18,
             "available": 18,
-            "rules": 478,
+            "rules": 479,
             "items": [
                 {
                     "id": "amedia.site",
@@ -175,7 +175,7 @@
                 },
                 {
                     "id": "myanimelist.net",
-                    "routes": 147,
+                    "routes": 148,
                     "missing": 0
                 },
                 {
@@ -890,7 +890,7 @@
             "id": "shop",
             "sites": 3,
             "available": 3,
-            "rules": 1006,
+            "rules": 1008,
             "items": [
                 {
                     "id": "babook.org",
@@ -904,7 +904,7 @@
                 },
                 {
                     "id": "ui.com",
-                    "routes": 926,
+                    "routes": 928,
                     "missing": 0
                 }
             ]
@@ -981,7 +981,7 @@
             "id": "tools",
             "sites": 33,
             "available": 33,
-            "rules": 1607,
+            "rules": 1608,
             "items": [
                 {
                     "id": "9proxy.com",
@@ -1045,7 +1045,7 @@
                 },
                 {
                     "id": "fatsecret.com",
-                    "routes": 18,
+                    "routes": 19,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10224,
+    "rules_total": 10228,
     "missing_sources": []
 }
