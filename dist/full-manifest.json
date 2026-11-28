@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "built_at": "2026-11-28T03:57:50+00:00",
+    "built_at": "2026-11-28T13:09:28+00:00",
     "portal_index_revision": "ae442d03331bd79bce03558bbf03322d39b34f47",
     "source": "https://iplist.opencck.org/",
     "source_fields": [
@@ -13,7 +13,7 @@
             "id": "ai",
             "sites": 17,
             "available": 17,
-            "rules": 678,
+            "rules": 679,
             "items": [
                 {
                     "id": "aistudio.google.com",
@@ -37,7 +37,7 @@
                 },
                 {
                     "id": "copilot",
-                    "routes": 157,
+                    "routes": 158,
                     "missing": 0
                 },
                 {
@@ -106,7 +106,7 @@
             "id": "anime",
             "sites": 18,
             "available": 18,
-            "rules": 479,
+            "rules": 480,
             "items": [
                 {
                     "id": "amedia.site",
@@ -170,7 +170,7 @@
                 },
                 {
                     "id": "mangapark.net",
-                    "routes": 2,
+                    "routes": 3,
                     "missing": 0
                 },
                 {
@@ -1316,6 +1316,6 @@
         }
     ],
     "sites_total": 229,
-    "rules_total": 10232,
+    "rules_total": 10234,
     "missing_sources": []
 }
